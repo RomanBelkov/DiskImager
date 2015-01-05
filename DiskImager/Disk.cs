@@ -131,7 +131,7 @@ namespace DynamicDevices.DiskWriter
 
             var errored = true;
 
-            using (var basefs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+            using (var basefs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
                 Stream fs;
 
@@ -224,7 +224,8 @@ namespace DynamicDevices.DiskWriter
                             // Find highest bit (32-bit max)
                             var highBit = 31;
                             for (; ((bufferOffset & (1 << highBit)) == 0) && highBit >= 0; highBit--)
-                                ;
+                            {
+                            }
 
                             // Work out trailing bytes after last power of two
                             var lastPowerOf2 = 1 << highBit;

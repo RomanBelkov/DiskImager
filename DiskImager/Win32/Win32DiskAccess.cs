@@ -8,8 +8,8 @@ namespace DynamicDevices.DiskWriter.Win32
     {
         #region Fields
 
-        SafeFileHandle _partitionHandle = null;
-        SafeFileHandle _diskHandle = null;
+        SafeFileHandle _partitionHandle;
+        SafeFileHandle _diskHandle;
 
         #endregion
 
@@ -19,7 +19,8 @@ namespace DynamicDevices.DiskWriter.Win32
 
         public event ProgressHandler OnProgress;
 
-        public event EventHandler OnDiskChanged;
+        //check if I need it
+        //public event EventHandler OnDiskChanged;
 
         public Handle Open(string drivePath)
         {
@@ -50,9 +51,7 @@ namespace DynamicDevices.DiskWriter.Win32
 
         public bool LockDrive(string drivePath)
         {
-            bool success;
             int intOut;
-            SafeFileHandle partitionHandle;
 
             //
             // Unmount partition (Todo: Note that we currently only handle unmounting of one partition, which is the usual case for SD Cards)
@@ -60,8 +59,8 @@ namespace DynamicDevices.DiskWriter.Win32
 
             //
             // Open the volume
-            ///
-            partitionHandle = NativeMethods.CreateFile(@"\\.\" + drivePath, NativeMethods.GENERIC_READ, NativeMethods.FILE_SHARE_READ, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0, IntPtr.Zero);
+            //
+            var partitionHandle = NativeMethods.CreateFile(@"\\.\" + drivePath, NativeMethods.GENERIC_READ, NativeMethods.FILE_SHARE_READ, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0, IntPtr.Zero);
             if (partitionHandle.IsInvalid)
             {
                 LogMsg(@"Failed to open device");
@@ -72,7 +71,7 @@ namespace DynamicDevices.DiskWriter.Win32
             //
             // Lock it
             //
-            success = NativeMethods.DeviceIoControl(partitionHandle, NativeMethods.FSCTL_LOCK_VOLUME, null, 0, null, 0, out intOut, IntPtr.Zero);
+            var success = NativeMethods.DeviceIoControl(partitionHandle, NativeMethods.FSCTL_LOCK_VOLUME, null, 0, null, 0, out intOut, IntPtr.Zero);
             if (!success)
             {
                 LogMsg(@"Failed to lock device");
@@ -215,11 +214,11 @@ namespace DynamicDevices.DiskWriter.Win32
 
         #endregion
 
-        private void Progress(int progressValue)
-        {
-            if (OnProgress != null)
-                OnProgress(this, progressValue);
-        }
+        //private void Progress(int progressValue)
+        //{
+        //    if (OnProgress != null)
+        //        OnProgress(this, progressValue);
+        //}
 
         private void LogMsg(string msg)
         {

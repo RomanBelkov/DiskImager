@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxDrives = new System.Windows.Forms.ComboBox();
             this.textBoxFileName = new System.Windows.Forms.TextBox();
             this.buttonRead = new System.Windows.Forms.Button();
             this.buttonWrite = new System.Windows.Forms.Button();
@@ -39,7 +38,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.labelFileName = new System.Windows.Forms.Label();
             this.labelDriveTitle = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.groupBoxCompression = new System.Windows.Forms.GroupBox();
             this.radioButtonCompNone = new System.Windows.Forms.RadioButton();
@@ -51,26 +49,18 @@
             this.displayAllDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxTruncation = new System.Windows.Forms.GroupBox();
             this.checkBoxUseMBR = new System.Windows.Forms.CheckBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.statusStrip1.SuspendLayout();
             this.groupBoxCompression.SuspendLayout();
             this.menuStripMain.SuspendLayout();
             this.groupBoxTruncation.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBoxDrives
-            // 
-            this.comboBoxDrives.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBoxDrives.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDrives.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.comboBoxDrives.FormattingEnabled = true;
-            this.comboBoxDrives.Location = new System.Drawing.Point(469, 59);
-            this.comboBoxDrives.Name = "comboBoxDrives";
-            this.comboBoxDrives.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxDrives.TabIndex = 0;
-            // 
             // textBoxFileName
             // 
-            this.textBoxFileName.Location = new System.Drawing.Point(12, 60);
+            this.textBoxFileName.Location = new System.Drawing.Point(10, 61);
             this.textBoxFileName.Name = "textBoxFileName";
             this.textBoxFileName.Size = new System.Drawing.Size(420, 20);
             this.textBoxFileName.TabIndex = 1;
@@ -78,7 +68,7 @@
             // 
             // buttonRead
             // 
-            this.buttonRead.Location = new System.Drawing.Point(12, 115);
+            this.buttonRead.Location = new System.Drawing.Point(10, 115);
             this.buttonRead.Name = "buttonRead";
             this.buttonRead.Size = new System.Drawing.Size(75, 23);
             this.buttonRead.TabIndex = 2;
@@ -108,7 +98,7 @@
             // 
             // buttonChooseFile
             // 
-            this.buttonChooseFile.Location = new System.Drawing.Point(438, 60);
+            this.buttonChooseFile.Location = new System.Drawing.Point(436, 60);
             this.buttonChooseFile.Name = "buttonChooseFile";
             this.buttonChooseFile.Size = new System.Drawing.Size(25, 20);
             this.buttonChooseFile.TabIndex = 5;
@@ -120,9 +110,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 239);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 335);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(605, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(620, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -156,13 +146,6 @@
             this.labelDriveTitle.TabIndex = 8;
             this.labelDriveTitle.Text = "Removable Drive";
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 214);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(578, 10);
-            this.progressBar1.TabIndex = 9;
-            // 
             // buttonCancel
             // 
             this.buttonCancel.Enabled = false;
@@ -180,7 +163,7 @@
             this.groupBoxCompression.Controls.Add(this.radioButtonCompTgz);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompGz);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompZip);
-            this.groupBoxCompression.Location = new System.Drawing.Point(336, 96);
+            this.groupBoxCompression.Location = new System.Drawing.Point(98, 176);
             this.groupBoxCompression.Name = "groupBoxCompression";
             this.groupBoxCompression.Size = new System.Drawing.Size(252, 49);
             this.groupBoxCompression.TabIndex = 11;
@@ -239,7 +222,7 @@
             this.optionsToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(605, 24);
+            this.menuStripMain.Size = new System.Drawing.Size(620, 24);
             this.menuStripMain.TabIndex = 12;
             this.menuStripMain.Text = "menuStrip1";
             // 
@@ -262,7 +245,7 @@
             // groupBoxTruncation
             // 
             this.groupBoxTruncation.Controls.Add(this.checkBoxUseMBR);
-            this.groupBoxTruncation.Location = new System.Drawing.Point(336, 151);
+            this.groupBoxTruncation.Location = new System.Drawing.Point(356, 177);
             this.groupBoxTruncation.Name = "groupBoxTruncation";
             this.groupBoxTruncation.Size = new System.Drawing.Size(252, 48);
             this.groupBoxTruncation.TabIndex = 13;
@@ -279,15 +262,42 @@
             this.checkBoxUseMBR.Text = "Use MBR partition sizes";
             this.checkBoxUseMBR.UseVisualStyleBackColor = true;
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(469, 58);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(139, 109);
+            this.checkedListBox1.Sorted = true;
+            this.checkedListBox1.TabIndex = 15;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 231);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(211, 100);
+            this.flowLayoutPanel1.TabIndex = 16;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(229, 231);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(379, 100);
+            this.flowLayoutPanel2.TabIndex = 17;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 261);
+            this.ClientSize = new System.Drawing.Size(620, 357);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.groupBoxTruncation);
             this.Controls.Add(this.groupBoxCompression);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelDriveTitle);
             this.Controls.Add(this.labelFileName);
             this.Controls.Add(this.statusStrip1);
@@ -297,7 +307,6 @@
             this.Controls.Add(this.buttonWrite);
             this.Controls.Add(this.buttonRead);
             this.Controls.Add(this.textBoxFileName);
-            this.Controls.Add(this.comboBoxDrives);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStripMain;
             this.MaximizeBox = false;
@@ -320,7 +329,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBoxDrives;
         private System.Windows.Forms.TextBox textBoxFileName;
         private System.Windows.Forms.Button buttonRead;
         private System.Windows.Forms.Button buttonWrite;
@@ -331,7 +339,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label labelFileName;
         private System.Windows.Forms.Label labelDriveTitle;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.GroupBox groupBoxCompression;
         private System.Windows.Forms.RadioButton radioButtonCompNone;
@@ -343,6 +350,9 @@
         private System.Windows.Forms.ToolStripMenuItem displayAllDrivesToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBoxTruncation;
         private System.Windows.Forms.CheckBox checkBoxUseMBR;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
 

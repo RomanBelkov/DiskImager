@@ -1,11 +1,14 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using DynamicDevices.DiskWriter.Detection;
 using DynamicDevices.DiskWriter.Win32;
 using Microsoft.Win32;
-using System.Management;
+using System.Threading.Tasks;
 
 namespace DynamicDevices.DiskWriter
 {
@@ -13,8 +16,9 @@ namespace DynamicDevices.DiskWriter
     {
         #region Fields
 
-        private readonly Disk _disk;
-        private readonly IDiskAccess _diskAccess;
+        private readonly List<Disk> _disks = new List<Disk>();
+        internal readonly List<IDiskAccess> DiskAccesses = new List<IDiskAccess>();
+
         private  DriveDetector _watcher = new DriveDetector();
 
         private EnumCompressionType _eCompType;
@@ -29,7 +33,7 @@ namespace DynamicDevices.DiskWriter
 
             checkBoxUseMBR.Checked = true;
 
-            MessageBoxEx.Owner = this.Handle;
+            MessageBoxEx.Owner = Handle;
 
             toolStripStatusLabel1.Text = @"Initialised. Licensed under GPLv3. Use at own risk!";
 
@@ -45,7 +49,7 @@ namespace DynamicDevices.DiskWriter
                 Icon = Utility.GetAppIcon();
 
             PopulateDrives();
-            if (comboBoxDrives.Items.Count > 0)
+            if (checkedListBox1.Items.Count > 0)
                 EnableButtons();
             else
                 DisableButtons(false);
@@ -58,35 +62,11 @@ namespace DynamicDevices.DiskWriter
                 if (File.Exists(file))
                     textBoxFileName.Text = file;
 
-                var drive = (string)key.GetValue("Drive", "");
-                if (string.IsNullOrEmpty(drive))
-                {
-                    foreach(var cbDrive in comboBoxDrives.Items)
-                    {
-                        if((string) cbDrive == drive)
-                        {
-                            comboBoxDrives.SelectedItem = cbDrive;
-                        }
-                    }
-                }
-
                 Globals.CompressionLevel = (int)key.GetValue("CompressionLevel", Globals.CompressionLevel);
                 Globals.MaxBufferSize = (int)key.GetValue("MaxBufferSize", Globals.MaxBufferSize);
 
                 key.Close();
             }
-
-            // Create disk object for media accesses
-            var pid = Environment.OSVersion.Platform;
-            if (pid == PlatformID.Unix)
-                _diskAccess = new LinuxDiskAccess();
-            else 
-                _diskAccess = new Win32DiskAccess();
-
-            _disk = new Disk(_diskAccess);
-
-            _disk.OnLogMsg += _disk_OnLogMsg;
-            _disk.OnProgress += _disk_OnProgress;
             
             // Detect insertions / removals
             _watcher.DeviceArrived += OnDriveArrived;
@@ -104,36 +84,12 @@ namespace DynamicDevices.DiskWriter
 
         #region Disk access event handlers
 
-        /// <summary>
-        /// Called to update progress bar as we read/write disk
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="progressPercentage"></param>
-        void _disk_OnProgress(object sender, int progressPercentage)
-        {
-            progressBar1.Value = progressPercentage;
-            Application.DoEvents();
-        }
-
-        /// <summary>
-        /// Called to display/log messages from disk handling
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="message"></param>
-        void _disk_OnLogMsg(object sender, string message)
-        {
-            toolStripStatusLabel1.Text = message;
-            Application.DoEvents();
-        }
-
-        #endregion
-
-        #region UI Handling
 
         /// <summary>
         /// Close the application
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">
+        /// </param>
         /// <param name="e"></param>
         private void ButtonExitClick(object sender, EventArgs e)
         {
@@ -157,25 +113,45 @@ namespace DynamicDevices.DiskWriter
         /// <param name="e"></param>
         private void ButtonReadClick(object sender, EventArgs e)
         {
-            if (comboBoxDrives.SelectedIndex < 0)
+            if (checkedListBox1.CheckedItems.Count != 1)
+            {
+                MessageBox.Show(
+                    @"You can read from only one drive at a time. Please select only one drive from drive list.", 
+                    @"*** WARNING ***", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
 
-            var drive = (string)comboBoxDrives.SelectedItem;
+            var drive = (string)checkedListBox1.CheckedItems[0];
 
-            if(string.IsNullOrEmpty(textBoxFileName.Text))
-                ChooseFile();
+            ClearLayoutPanels();
+            GetPathIfEmpty();
 
             DisableButtons(true);
 
-            try
+            Task.Factory.StartNew(() =>
             {
-                _disk.ReadDrive(drive, textBoxFileName.Text, _eCompType, checkBoxUseMBR.Checked);
-            } catch(Exception ex)
-            {
-                toolStripStatusLabel1.Text = ex.Message;
-            }
+                var diskAccess = NewDiskAccess();
+                var disk = new Disk(diskAccess);
 
-            EnableButtons();
+                SendProgressToUI(disk);
+
+                var res = false;
+                try
+                {
+                    res = disk.ReadDrive(drive, textBoxFileName.Text, _eCompType, checkBoxUseMBR.Checked);
+                }
+                catch (Exception ex)
+                {
+                    toolStripStatusLabel1.Text = ex.Message;
+                }
+                if (!res && !disk.IsCancelling)
+                {
+                    MessageBoxEx.Show("Problem with reading from disk.", "Read Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                EnableButtons();
+            });
         }
 
         /// <summary>
@@ -185,41 +161,61 @@ namespace DynamicDevices.DiskWriter
         /// <param name="e"></param>
         private void ButtonWriteClick(object sender, EventArgs e)
         {
-            if (comboBoxDrives.SelectedIndex < 0)
+            if (checkedListBox1.CheckedItems.Count == 0)
                 return;
-            
-            var drive = (string)comboBoxDrives.SelectedItem;
 
-            if (string.IsNullOrEmpty(textBoxFileName.Text))
-                ChooseFile();
+            var drives = checkedListBox1.CheckedItems.Cast<Object>().Select(d => d.ToString()).ToArray();
 
-            if( ((string)comboBoxDrives.SelectedItem).ToUpper().StartsWith("C:"))
+            if (drives.Any(d => d.ToUpper().StartsWith("C:")))
             {
                 var dr =
                     MessageBox.Show(
-                        "C: is almost certainly your main hard drive. Writing to this will likely destroy your data, and brick your PC. Are you absolutely sure you want to do this?",
-                        "*** WARNING ***", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        @"C: is almost certainly your main hard drive. Writing to this will likely destroy your data, and brick your PC. Are you absolutely sure you want to do this?",
+                        @"*** WARNING ***", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr != DialogResult.Yes)
                     return;
             }
 
+            ClearLayoutPanels();
+            GetPathIfEmpty();
+
             DisableButtons(true);
 
-            var success = false;
-            try
+            Task.Factory.StartNew(() =>
             {
-                success = _disk.WriteDrive(drive, textBoxFileName.Text, _eCompType);
-            }
-            catch (Exception ex)
-            {
-                success = false;
-                toolStripStatusLabel1.Text = ex.Message;
-            }
+                DiskAccesses.Clear();
+                _disks.Clear();
 
-            if (!success && !_disk.IsCancelling)
-                MessageBoxEx.Show("Problem writing to disk. Is it write-protected?", "Write Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var tasks = drives.Select(drive => Task.Factory.StartNew(() =>
+                {
+                    var diskAccess = new Win32DiskAccess();
+                    var disk = new Disk(diskAccess);
 
-            EnableButtons();
+                    SendProgressToUI(disk);
+
+                    DiskAccesses.Add(diskAccess);
+                    _disks.Add(disk);
+
+                    var res = false;
+                    try
+                    {
+                        res = disk.WriteDrive(drive, textBoxFileName.Text, _eCompType);
+                    }
+                    catch (Exception ex)
+                    {
+                        toolStripStatusLabel1.Text = ex.Message;
+                    }
+                    if (!res && !disk.IsCancelling)
+                    {
+                        MessageBoxEx.Show("Problem writing to disk. Is it write-protected?", "Write Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                })).ToArray();
+
+                Task.WaitAll(tasks);
+
+                EnableButtons();
+            });
         }
 
         /// <summary>
@@ -248,7 +244,10 @@ namespace DynamicDevices.DiskWriter
         /// <param name="e"></param>
         private void ButtonCancelClick(object sender, EventArgs e)
         {
-            _disk.IsCancelling = true;
+            foreach (var disk in _disks)
+            {
+                disk.IsCancelling = true;
+            }
         }
 
         private void RadioButtonCompZipCheckedChanged(object sender, EventArgs e)
@@ -308,7 +307,7 @@ namespace DynamicDevices.DiskWriter
         }
 
         /// <summary>
-        /// Select the file for read/write and setup defaults for whether we're using compression based on extension
+        /// Select the file for read / write and setup defaults for whether we're using compression based on extension
         /// </summary>
         private void ChooseFile()
         {
@@ -319,6 +318,49 @@ namespace DynamicDevices.DiskWriter
             
             textBoxFileName.Text = saveFileDialog1.FileName;
                 TextBoxFileNameTextChanged(this, null);
+        }
+
+        /// <summary>
+        /// Shows on-going process in UI using created elements
+        /// </summary>
+        private void SendProgressToUI(Disk disk)
+        {
+            var pb = new ProgressBar { Size = new Size(flowLayoutPanel1.Width - 10, 10) };
+            var lab = new Label { Size = new Size(flowLayoutPanel2.Width - 10, 17) };
+
+            Invoke((MethodInvoker)delegate
+            {
+                flowLayoutPanel1.Controls.Add(pb);
+                flowLayoutPanel2.Controls.Add(lab);
+                disk.OnLogMsg += (o, message) => lab.Text = message;
+                disk.OnProgress += (o, progressPercentage) => pb.Value = progressPercentage;
+            });
+        }
+
+        /// <summary>
+        /// Before writing / reading we should check that FileName is not empty
+        /// </summary>
+        private void GetPathIfEmpty()
+        {
+            if (string.IsNullOrEmpty(textBoxFileName.Text))
+                ChooseFile();
+        }
+
+        /// <summary>
+        /// Flushes all existing controls from layout panels
+        /// </summary>
+        private void ClearLayoutPanels()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
+        }
+
+        /// <summary>
+        /// Create disk object for media accesses
+        /// </summary>>
+        private IDiskAccess NewDiskAccess()
+        {
+            return (Environment.OSVersion.Platform == PlatformID.Unix) ? new LinuxDiskAccess() as IDiskAccess : new Win32DiskAccess();
         }
 
         private void TextBoxFileNameTextChanged(object sender, EventArgs e)
@@ -345,7 +387,7 @@ namespace DynamicDevices.DiskWriter
         private void DisplayAllDrivesToolStripMenuItemCheckedChanged(object sender, EventArgs e)
         {
             PopulateDrives();
-            if (comboBoxDrives.Items.Count > 0)
+            if (checkedListBox1.Items.Count > 0)
                 EnableButtons();
             else
                 DisableButtons(false);
@@ -362,15 +404,14 @@ namespace DynamicDevices.DiskWriter
                 return;
             }
 
-            comboBoxDrives.SelectedIndex = -1;
-            comboBoxDrives.Items.Clear();
+            checkedListBox1.Items.Clear();
 
             foreach (var drive in DriveInfo.GetDrives())
             {
                 // Only display removable drives
                 if (drive.DriveType == DriveType.Removable || displayAllDrivesToolStripMenuItem.Checked)
                 {
-                    comboBoxDrives.Items.Add(drive.Name.TrimEnd(new[] { '\\' }));
+                    checkedListBox1.Items.Add(drive.Name.TrimEnd('\\'));
                 }
             }
 
@@ -386,8 +427,8 @@ namespace DynamicDevices.DiskWriter
             }
 #endif
 
-            if (comboBoxDrives.Items.Count > 0)
-                comboBoxDrives.SelectedIndex = 0;
+            //if (comboBoxDrives.Items.Count > 0)
+            //    comboBoxDrives.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -405,7 +446,7 @@ namespace DynamicDevices.DiskWriter
 
             PopulateDrives();
 
-            if (comboBoxDrives.Items.Count > 0)
+            if (checkedListBox1.Items.Count > 0)
                 EnableButtons();
             else
                 DisableButtons(false);
@@ -421,7 +462,7 @@ namespace DynamicDevices.DiskWriter
             buttonWrite.Enabled = false;
             buttonExit.Enabled = !running;
             buttonCancel.Enabled = running;
-            comboBoxDrives.Enabled = false;
+            checkedListBox1.Enabled = false;
             textBoxFileName.Enabled = false;
             buttonChooseFile.Enabled = false;
             groupBoxCompression.Enabled = false;
@@ -437,7 +478,7 @@ namespace DynamicDevices.DiskWriter
             buttonWrite.Enabled = true;
             buttonExit.Enabled = true;
             buttonCancel.Enabled = false;
-            comboBoxDrives.Enabled = true;
+            checkedListBox1.Enabled = true;
             textBoxFileName.Enabled = true;
             buttonChooseFile.Enabled = true;
             groupBoxCompression.Enabled = true;
