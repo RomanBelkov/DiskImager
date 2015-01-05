@@ -49,7 +49,7 @@ namespace DynamicDevices.DiskWriter
                 Icon = Utility.GetAppIcon();
 
             PopulateDrives();
-            if (checkedListBox1.Items.Count > 0)
+            if (checkedListBoxDrives.Items.Count > 0)
                 EnableButtons();
             else
                 DisableButtons(false);
@@ -113,7 +113,7 @@ namespace DynamicDevices.DiskWriter
         /// <param name="e"></param>
         private void ButtonReadClick(object sender, EventArgs e)
         {
-            if (checkedListBox1.CheckedItems.Count != 1)
+            if (checkedListBoxDrives.CheckedItems.Count != 1)
             {
                 MessageBox.Show(
                     @"You can read from only one drive at a time. Please select only one drive from drive list.", 
@@ -121,7 +121,7 @@ namespace DynamicDevices.DiskWriter
                 return;
             }
 
-            var drive = (string)checkedListBox1.CheckedItems[0];
+            var drive = (string)checkedListBoxDrives.CheckedItems[0];
 
             ClearLayoutPanels();
             GetPathIfEmpty();
@@ -161,10 +161,10 @@ namespace DynamicDevices.DiskWriter
         /// <param name="e"></param>
         private void ButtonWriteClick(object sender, EventArgs e)
         {
-            if (checkedListBox1.CheckedItems.Count == 0)
+            if (checkedListBoxDrives.CheckedItems.Count == 0)
                 return;
 
-            var drives = checkedListBox1.CheckedItems.Cast<Object>().Select(d => d.ToString()).ToArray();
+            var drives = checkedListBoxDrives.CheckedItems.Cast<Object>().Select(d => d.ToString()).ToArray();
 
             if (drives.Any(d => d.ToUpper().StartsWith("C:")))
             {
@@ -325,13 +325,13 @@ namespace DynamicDevices.DiskWriter
         /// </summary>
         private void SendProgressToUI(Disk disk)
         {
-            var pb = new ProgressBar { Size = new Size(flowLayoutPanel1.Width - 10, 10) };
-            var lab = new Label { Size = new Size(flowLayoutPanel2.Width - 10, 17) };
+            var pb = new ProgressBar { Size = new Size(flowLayoutPanelProgressBars.Width - 10, 10) };
+            var lab = new Label { Size = new Size(flowLayoutPanelProgressLabels.Width - 10, 17) };
 
             Invoke((MethodInvoker)delegate
             {
-                flowLayoutPanel1.Controls.Add(pb);
-                flowLayoutPanel2.Controls.Add(lab);
+                flowLayoutPanelProgressBars.Controls.Add(pb);
+                flowLayoutPanelProgressLabels.Controls.Add(lab);
                 disk.OnLogMsg += (o, message) => lab.Text = message;
                 disk.OnProgress += (o, progressPercentage) => pb.Value = progressPercentage;
             });
@@ -351,8 +351,8 @@ namespace DynamicDevices.DiskWriter
         /// </summary>
         private void ClearLayoutPanels()
         {
-            flowLayoutPanel1.Controls.Clear();
-            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanelProgressBars.Controls.Clear();
+            flowLayoutPanelProgressLabels.Controls.Clear();
         }
 
         /// <summary>
@@ -387,7 +387,7 @@ namespace DynamicDevices.DiskWriter
         private void DisplayAllDrivesToolStripMenuItemCheckedChanged(object sender, EventArgs e)
         {
             PopulateDrives();
-            if (checkedListBox1.Items.Count > 0)
+            if (checkedListBoxDrives.Items.Count > 0)
                 EnableButtons();
             else
                 DisableButtons(false);
@@ -404,14 +404,14 @@ namespace DynamicDevices.DiskWriter
                 return;
             }
 
-            checkedListBox1.Items.Clear();
+            checkedListBoxDrives.Items.Clear();
 
             foreach (var drive in DriveInfo.GetDrives())
             {
                 // Only display removable drives
                 if (drive.DriveType == DriveType.Removable || displayAllDrivesToolStripMenuItem.Checked)
                 {
-                    checkedListBox1.Items.Add(drive.Name.TrimEnd('\\'));
+                    checkedListBoxDrives.Items.Add(drive.Name.TrimEnd('\\'));
                 }
             }
 
@@ -446,7 +446,7 @@ namespace DynamicDevices.DiskWriter
 
             PopulateDrives();
 
-            if (checkedListBox1.Items.Count > 0)
+            if (checkedListBoxDrives.Items.Count > 0)
                 EnableButtons();
             else
                 DisableButtons(false);
@@ -462,7 +462,7 @@ namespace DynamicDevices.DiskWriter
             buttonWrite.Enabled = false;
             buttonExit.Enabled = !running;
             buttonCancel.Enabled = running;
-            checkedListBox1.Enabled = false;
+            checkedListBoxDrives.Enabled = false;
             textBoxFileName.Enabled = false;
             buttonChooseFile.Enabled = false;
             groupBoxCompression.Enabled = false;
@@ -478,7 +478,7 @@ namespace DynamicDevices.DiskWriter
             buttonWrite.Enabled = true;
             buttonExit.Enabled = true;
             buttonCancel.Enabled = false;
-            checkedListBox1.Enabled = true;
+            checkedListBoxDrives.Enabled = true;
             textBoxFileName.Enabled = true;
             buttonChooseFile.Enabled = true;
             groupBoxCompression.Enabled = true;

@@ -49,9 +49,9 @@
             this.displayAllDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxTruncation = new System.Windows.Forms.GroupBox();
             this.checkBoxUseMBR = new System.Windows.Forms.CheckBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkedListBoxDrives = new System.Windows.Forms.CheckedListBox();
+            this.flowLayoutPanelProgressBars = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelProgressLabels = new System.Windows.Forms.FlowLayoutPanel();
             this.statusStrip1.SuspendLayout();
             this.groupBoxCompression.SuspendLayout();
             this.menuStripMain.SuspendLayout();
@@ -142,9 +142,9 @@
             this.labelDriveTitle.AutoSize = true;
             this.labelDriveTitle.Location = new System.Drawing.Point(466, 34);
             this.labelDriveTitle.Name = "labelDriveTitle";
-            this.labelDriveTitle.Size = new System.Drawing.Size(89, 13);
+            this.labelDriveTitle.Size = new System.Drawing.Size(94, 13);
             this.labelDriveTitle.TabIndex = 8;
-            this.labelDriveTitle.Text = "Removable Drive";
+            this.labelDriveTitle.Text = "Removable Drives";
             // 
             // buttonCancel
             // 
@@ -262,39 +262,39 @@
             this.checkBoxUseMBR.Text = "Use MBR partition sizes";
             this.checkBoxUseMBR.UseVisualStyleBackColor = true;
             // 
-            // checkedListBox1
+            // checkedListBoxDrives
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(469, 58);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(139, 109);
-            this.checkedListBox1.Sorted = true;
-            this.checkedListBox1.TabIndex = 15;
+            this.checkedListBoxDrives.FormattingEnabled = true;
+            this.checkedListBoxDrives.Location = new System.Drawing.Point(469, 58);
+            this.checkedListBoxDrives.Name = "checkedListBoxDrives";
+            this.checkedListBoxDrives.Size = new System.Drawing.Size(139, 109);
+            this.checkedListBoxDrives.Sorted = true;
+            this.checkedListBoxDrives.TabIndex = 15;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelProgressBars
             // 
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 231);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(211, 100);
-            this.flowLayoutPanel1.TabIndex = 16;
+            this.flowLayoutPanelProgressBars.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelProgressBars.Location = new System.Drawing.Point(10, 231);
+            this.flowLayoutPanelProgressBars.Name = "flowLayoutPanelProgressBars";
+            this.flowLayoutPanelProgressBars.Size = new System.Drawing.Size(211, 100);
+            this.flowLayoutPanelProgressBars.TabIndex = 16;
             // 
-            // flowLayoutPanel2
+            // flowLayoutPanelProgressLabels
             // 
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(229, 231);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(379, 100);
-            this.flowLayoutPanel2.TabIndex = 17;
+            this.flowLayoutPanelProgressLabels.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelProgressLabels.Location = new System.Drawing.Point(229, 231);
+            this.flowLayoutPanelProgressLabels.Name = "flowLayoutPanelProgressLabels";
+            this.flowLayoutPanelProgressLabels.Size = new System.Drawing.Size(379, 100);
+            this.flowLayoutPanelProgressLabels.TabIndex = 17;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 357);
-            this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.flowLayoutPanelProgressLabels);
+            this.Controls.Add(this.flowLayoutPanelProgressBars);
+            this.Controls.Add(this.checkedListBoxDrives);
             this.Controls.Add(this.groupBoxTruncation);
             this.Controls.Add(this.groupBoxCompression);
             this.Controls.Add(this.buttonCancel);
@@ -350,9 +350,9 @@
         private System.Windows.Forms.ToolStripMenuItem displayAllDrivesToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBoxTruncation;
         private System.Windows.Forms.CheckBox checkBoxUseMBR;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.CheckedListBox checkedListBoxDrives;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelProgressBars;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelProgressLabels;
     }
 }
 
