@@ -1,18 +1,30 @@
-﻿using System.Reflection;
+﻿/**
+ *  DiskImager - a tool for writing / reading images on SD cards
+ *
+ *  Copyright 2015 by Roman Belkov <romanbelkov@gmail.com>
+ *  Copyright 2013, 2014 by Alex J. Lennon <ajlennon@dynamicdevices.co.uk>
+ *
+ *  Licensed under GNU General Public License 3.0 or later. 
+ *  Some rights reserved. See LICENSE, AUTHORS.
+ *
+ * @license GPL-3.0+ <http://www.gnu.org/licenses/gpl-3.0.en.html>
+ */
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DiskWriter")]
+[assembly: AssemblyTitle("DiskImager")]
 #if DEBUG
-[assembly: AssemblyDescription("Windows Disk Writer - reads/writes images to removable storage (DEBUG BUILD)")]
+[assembly: AssemblyDescription("Windows Disk Imager - reads/writes images to removable storage (DEBUG BUILD)")]
 #else
 [assembly: AssemblyDescription("Windows Disk Writer - reads/writes images to removable storage")]
 #endif
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Dynamic Devices Ltd")]
-[assembly: AssemblyProduct("DiskWriter")]
+[assembly: AssemblyProduct("DiskImager")]
 [assembly: AssemblyCopyright("Copyright © Dynamic Devices 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
