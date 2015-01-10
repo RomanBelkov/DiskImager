@@ -1,9 +1,10 @@
 DiskImager
 ==========
 
-A Windows Disk Imager. A C#.NET utility for reading / writing SD cards and USB devices
+A Windows Disk Imager. A C#.NET utility for reading / writing SD cards and USB devices.
 
-License: This software utility is released under GPLv3.
+Licensed under GNU General Public License 3.0 or later.
+Some rights reserved. See LICENSE, AUTHORS.
 
 The current release can be downloaded here 
 
@@ -11,7 +12,9 @@ http://www.dynamicdevices.co.uk/downloads/DiskImager.Installer.msi
 
 (Please feed back any platform testing you do, or any issues you encounter. Thanks.)
 
-This utility is a C#.NET implementation, and adds a couple of features I wanted to see:
+This utility is a C#.NET implementation of Win32DiskImager with a couple of features authors wanted to use:
+
+- writing images to a number of SD cards at once
 
 - reads/writes images to/from compressed file formats: ZIP, TGZ, GZ
 
@@ -28,25 +31,29 @@ Credits: Inspired by the excellent Win32DiskImager.
 ChangeLog
 =========
 
-1.1.0	12/05/14	AJL		Updated to use latest SharpZipLib as we were encountering (de-)compression errors with the previous version
-							Added the option to truncate the read image based on the partition sizes found in the master boot record on the disk/stick
-							Improved logging of sizes read and written
+1.2.0 06/01/15 RB Added ability to write the same image to many SD simultaneously. Changed the look of GUI. 
+	
 
-1.0.3	30/04/14	AJL		Added warning dialog box when there's a write error 
+1.1.0	12/05/14	AJL		Updated to use latest SharpZipLib as we were encountering (de-)compression errors with the previous version.
+							Added the option to truncate the read image based on the partition sizes found in the master boot record on the disk/stick.
+							Improved logging of sizes read and written.
+
+1.0.3	30/04/14	AJL		Added warning dialog box when there's a write error.
 
 1.0.2	09/11/13	AJL		Added support for reading and writing directly to compressed formats: .zip, .tgz, .gz
 
 	Testing - Windows 8.1 Professional
 
-1.0.1	08/11/13	AJL		Refactoring for cleanup. Fixed issue with SEH exception due to SafeHandle disposal
+1.0.1	08/11/13	AJL		Refactoring for cleanup. Fixed issue with SEH exception due to SafeHandle disposal.
 
 	Testing - Windows 8.1 Professional
 
-1.0.0	08/11/13	AJL		Initial Commit. Reads and Writes SD cards
+1.0.0	08/11/13	AJL		Initial Commit. Reads and Writes SD cards.
 
 	Testing - Windows 8.1 Professional
 
 Contact
 =======
+Roman Belkov  - romanbelkov@gmail.com
 
 Alex J Lennon - ajlennon@dynamicdevices.co.uk

@@ -68,7 +68,7 @@
             // 
             // buttonRead
             // 
-            this.buttonRead.Location = new System.Drawing.Point(10, 115);
+            this.buttonRead.Location = new System.Drawing.Point(10, 98);
             this.buttonRead.Name = "buttonRead";
             this.buttonRead.Size = new System.Drawing.Size(75, 23);
             this.buttonRead.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             // buttonWrite
             // 
-            this.buttonWrite.Location = new System.Drawing.Point(93, 115);
+            this.buttonWrite.Location = new System.Drawing.Point(98, 98);
             this.buttonWrite.Name = "buttonWrite";
             this.buttonWrite.Size = new System.Drawing.Size(75, 23);
             this.buttonWrite.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(255, 115);
+            this.buttonExit.Location = new System.Drawing.Point(275, 98);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 4;
@@ -149,7 +149,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Enabled = false;
-            this.buttonCancel.Location = new System.Drawing.Point(174, 115);
+            this.buttonCancel.Location = new System.Drawing.Point(187, 98);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 10;
@@ -163,9 +163,9 @@
             this.groupBoxCompression.Controls.Add(this.radioButtonCompTgz);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompGz);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompZip);
-            this.groupBoxCompression.Location = new System.Drawing.Point(98, 176);
+            this.groupBoxCompression.Location = new System.Drawing.Point(33, 132);
             this.groupBoxCompression.Name = "groupBoxCompression";
-            this.groupBoxCompression.Size = new System.Drawing.Size(252, 49);
+            this.groupBoxCompression.Size = new System.Drawing.Size(252, 50);
             this.groupBoxCompression.TabIndex = 11;
             this.groupBoxCompression.TabStop = false;
             this.groupBoxCompression.Text = "Compression";
@@ -245,9 +245,9 @@
             // groupBoxTruncation
             // 
             this.groupBoxTruncation.Controls.Add(this.checkBoxUseMBR);
-            this.groupBoxTruncation.Location = new System.Drawing.Point(356, 177);
+            this.groupBoxTruncation.Location = new System.Drawing.Point(291, 132);
             this.groupBoxTruncation.Name = "groupBoxTruncation";
-            this.groupBoxTruncation.Size = new System.Drawing.Size(252, 48);
+            this.groupBoxTruncation.Size = new System.Drawing.Size(172, 50);
             this.groupBoxTruncation.TabIndex = 13;
             this.groupBoxTruncation.TabStop = false;
             this.groupBoxTruncation.Text = "Image Truncation";
@@ -267,24 +267,26 @@
             this.checkedListBoxDrives.FormattingEnabled = true;
             this.checkedListBoxDrives.Location = new System.Drawing.Point(469, 58);
             this.checkedListBoxDrives.Name = "checkedListBoxDrives";
-            this.checkedListBoxDrives.Size = new System.Drawing.Size(139, 109);
+            this.checkedListBoxDrives.Size = new System.Drawing.Size(139, 124);
             this.checkedListBoxDrives.Sorted = true;
             this.checkedListBoxDrives.TabIndex = 15;
             // 
             // flowLayoutPanelProgressBars
             // 
+            this.flowLayoutPanelProgressBars.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanelProgressBars.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelProgressBars.Location = new System.Drawing.Point(10, 231);
+            this.flowLayoutPanelProgressBars.Location = new System.Drawing.Point(10, 194);
             this.flowLayoutPanelProgressBars.Name = "flowLayoutPanelProgressBars";
-            this.flowLayoutPanelProgressBars.Size = new System.Drawing.Size(211, 100);
+            this.flowLayoutPanelProgressBars.Size = new System.Drawing.Size(211, 137);
             this.flowLayoutPanelProgressBars.TabIndex = 16;
             // 
             // flowLayoutPanelProgressLabels
             // 
+            this.flowLayoutPanelProgressLabels.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanelProgressLabels.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelProgressLabels.Location = new System.Drawing.Point(229, 231);
+            this.flowLayoutPanelProgressLabels.Location = new System.Drawing.Point(229, 194);
             this.flowLayoutPanelProgressLabels.Name = "flowLayoutPanelProgressLabels";
-            this.flowLayoutPanelProgressLabels.Size = new System.Drawing.Size(379, 100);
+            this.flowLayoutPanelProgressLabels.Size = new System.Drawing.Size(379, 137);
             this.flowLayoutPanelProgressLabels.TabIndex = 17;
             // 
             // MainForm
