@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -114,4 +113,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="MainForm_MainForm_Initialised__Licensed_under_GPLv3__Use_at_own_risk_" xml:space="preserve">
+    <value>Initialised. Licensed under GPLv3. Use at own risk!</value>
+  </data>
+  <data name="MainForm_MainForm_Image_Files__Choose" xml:space="preserve">
+    <value>Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Compressed Files (*.zip,*.gz,*tgz)|*.zip;*.gz;*.tgz|All files (*.*)|*.*</value>
+  </data>
+  <data name="MainForm_ButtonReadClick_You_can_read_from_only_one_drive_at_a_time" xml:space="preserve">
+    <value>You can read from only one drive at a time. Please select only one drive from drive list.</value>
+  </data>
+  <data name="MainForm_ButtonReadClick_____WARNING____" xml:space="preserve">
+    <value>*** WARNING ***</value>
+  </data>
+  <data name="MainForm_ButtonReadClick_Problem_with_reading_from_disk_" xml:space="preserve">
+    <value>Problem with reading from disk.</value>
+  </data>
+  <data name="MainForm_ButtonReadClick_Read_Error" xml:space="preserve">
+    <value>Read Error</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_C__is_almost_certainly_your_main_HDD" xml:space="preserve">
+    <value>C: is almost certainly your main hard drive. Writing to this will likely destroy your data, and brick your PC. Are you absolutely sure you want to do this?</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_Problem_writing_to_disk__Is_it_write_protected_" xml:space="preserve">
+    <value>Problem writing to disk. Is it write-protected?</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_Write_Error" xml:space="preserve">
+    <value>Write Error</value>
+  </data>
 </root>
