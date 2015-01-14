@@ -14,13 +14,17 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Reflection;
+using System.Threading;
 using System.Windows.Forms;
 using DynamicDevices.DiskWriter.Detection;
 using DynamicDevices.DiskWriter.Win32;
 using Microsoft.Win32;
 using System.Threading.Tasks;
+using DynamicDevices.DiskWriter.Properties;
 
 namespace DynamicDevices.DiskWriter
 {
@@ -34,10 +38,14 @@ namespace DynamicDevices.DiskWriter
         private  DriveDetector _watcher = new DriveDetector();
 
         private EnumCompressionType _eCompType;
+        
+        private CultureInfo CurrentLocale { get; set; }
 
         #endregion
 
         #region Constructor
+
+        //var LocRM = new ResourceManager("")
 
         public MainForm()
         {
@@ -47,10 +55,10 @@ namespace DynamicDevices.DiskWriter
 
             MessageBoxEx.Owner = Handle;
 
-            toolStripStatusLabel1.Text = @"Initialised. Licensed under GPLv3. Use at own risk!";
+            toolStripStatusLabel1.Text = Resources.MainForm_MainForm_Initialised__Licensed_under_GPLv3__Use_at_own_risk_;
 
             saveFileDialog1.OverwritePrompt = false;
-            saveFileDialog1.Filter = @"Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Compressed Files (*.zip,*.gz,*tgz)|*.zip;*.gz;*.tgz|All files (*.*)|*.*";
+            saveFileDialog1.Filter = Resources.MainForm_MainForm_Image_Files__Choose;
 
             // Set version into title
             var version = Assembly.GetEntryAssembly().GetName().Version;
@@ -128,8 +136,8 @@ namespace DynamicDevices.DiskWriter
             if (checkedListBoxDrives.CheckedItems.Count != 1)
             {
                 MessageBox.Show(
-                    @"You can read from only one drive at a time. Please select only one drive from drive list.", 
-                    @"*** WARNING ***", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Resources.MainForm_ButtonReadClick_You_can_read_from_only_one_drive_at_a_time, 
+                    Resources.MainForm_ButtonReadClick_____WARNING____, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -158,7 +166,7 @@ namespace DynamicDevices.DiskWriter
                 }
                 if (!res && !disk.IsCancelling)
                 {
-                    MessageBoxEx.Show("Problem with reading from disk.", "Read Error",
+                    MessageBoxEx.Show(Resources.MainForm_ButtonReadClick_Problem_with_reading_from_disk_, Resources.MainForm_ButtonReadClick_Read_Error,
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
@@ -182,8 +190,8 @@ namespace DynamicDevices.DiskWriter
             {
                 var dr =
                     MessageBox.Show(
-                        @"C: is almost certainly your main hard drive. Writing to this will likely destroy your data, and brick your PC. Are you absolutely sure you want to do this?",
-                        @"*** WARNING ***", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        Resources.MainForm_ButtonWriteClick_C__is_almost_certainly_your_main_HDD,
+                        Resources.MainForm_ButtonReadClick_____WARNING____, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr != DialogResult.Yes)
                     return;
             }
@@ -219,7 +227,7 @@ namespace DynamicDevices.DiskWriter
                     }
                     if (!res && !disk.IsCancelling)
                     {
-                        MessageBoxEx.Show("Problem writing to disk. Is it write-protected?", "Write Error",
+                        MessageBoxEx.Show(Resources.MainForm_ButtonWriteClick_Problem_writing_to_disk__Is_it_write_protected_, Resources.MainForm_ButtonWriteClick_Write_Error,
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 })).ToArray();
@@ -528,5 +536,55 @@ namespace DynamicDevices.DiskWriter
         }
 
         #endregion
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            ChangeLanguage("en-US");
+        }
+        private void russianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+            ChangeLanguage("ru-RU");
+        }
+
+        //change the language in real time 
+        private void ChangeLanguage(string lang)
+        {
+            CurrentLocale = new CultureInfo(lang);
+            var resources = new ComponentResourceManager(typeof (MainForm));
+            foreach (Control c in Controls)
+            {
+                resources.ApplyResources(c, c.Name, CurrentLocale);
+                RefreshFormResources(c, resources);
+            }
+            
+            ChangeMenuStripLanguage(menuStripMain.Items, resources);
+            toolStripStatusLabel1.Text = Resources.MainForm_MainForm_Initialised__Licensed_under_GPLv3__Use_at_own_risk_;
+            saveFileDialog1.Filter = Resources.MainForm_MainForm_Image_Files__Choose;
+        }
+
+        //refresh all menu strip controls recursively
+        private void ChangeMenuStripLanguage(ToolStripItemCollection collection, ComponentResourceManager resources)
+        {
+            foreach (ToolStripItem m in collection)
+            {
+                resources.ApplyResources(m, m.Name, CurrentLocale);
+                var item = m as ToolStripDropDownItem;
+                if (item != null)
+                    ChangeMenuStripLanguage(item.DropDownItems, resources);
+            }
+        }
+
+        //refresh all the sub-controls of the form recursively
+        private void RefreshFormResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            res.ApplyResources(ctrl, ctrl.Name, CurrentLocale);
+            foreach (Control c in ctrl.Controls)
+                RefreshFormResources(c, res); // recursion
+            ctrl.ResumeLayout(false);
+        }
+
     }
 }

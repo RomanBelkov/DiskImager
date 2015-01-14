@@ -6,12 +6,12 @@ A Windows Disk Imager. A C#.NET utility for reading / writing SD cards and USB d
 Licensed under GNU General Public License 3.0 or later.
 Some rights reserved. See LICENSE, AUTHORS.
 
-The current release can be downloaded here 
-
-http://www.dynamicdevices.co.uk/downloads/DiskImager.Installer.msi
+The current release can be downloaded [here](https://github.com/RomanBelkov/DiskImager/releases)
+or [here (old link)](http://www.dynamicdevices.co.uk/downloads/DiskImager.Installer.msi)
 
 (Please feed back any platform testing you do, or any issues you encounter. Thanks.)
 
+## Description ##
 This utility is a C#.NET implementation of Win32DiskImager with a couple of features authors wanted to use:
 
 - writing images to a number of SD cards at once
@@ -24,12 +24,13 @@ This utility is a C#.NET implementation of Win32DiskImager with a couple of feat
 
 - it also *might* be slightly faster when dealing with uncompressed read/write
 
-*NOTE This application is under development and could possibly cause damage to your computer drive(s). We cannot take responsibility for any damage caused or losses incurred through use of this utility. Use at own risk!*
+*NOTE: This application is under development and could possibly cause damage to your computer drive(s). We cannot take responsibility for any damage caused or losses incurred through use of this utility. Use at own risk!*
 
 Credits: Inspired by the excellent Win32DiskImager.
 
-ChangeLog
-=========
+## ChangeLog ##
+
+1.2.1 14/01/15 RB Added Russian localization and tweaked GUI a bit.
 
 1.2.0 06/01/15 RB Added ability to write the same image to many SD simultaneously. Changed the look of GUI. 
 	

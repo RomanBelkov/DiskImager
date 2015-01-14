@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.textBoxFileName = new System.Windows.Forms.TextBox();
             this.buttonRead = new System.Windows.Forms.Button();
             this.buttonWrite = new System.Windows.Forms.Button();
@@ -47,6 +48,9 @@
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayAllDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxTruncation = new System.Windows.Forms.GroupBox();
             this.checkBoxUseMBR = new System.Windows.Forms.CheckBox();
             this.checkedListBoxDrives = new System.Windows.Forms.CheckedListBox();
@@ -60,240 +64,191 @@
             // 
             // textBoxFileName
             // 
-            this.textBoxFileName.Location = new System.Drawing.Point(10, 61);
+            resources.ApplyResources(this.textBoxFileName, "textBoxFileName");
             this.textBoxFileName.Name = "textBoxFileName";
-            this.textBoxFileName.Size = new System.Drawing.Size(420, 20);
-            this.textBoxFileName.TabIndex = 1;
             this.textBoxFileName.TextChanged += new System.EventHandler(this.TextBoxFileNameTextChanged);
             // 
             // buttonRead
             // 
-            this.buttonRead.Location = new System.Drawing.Point(10, 98);
+            resources.ApplyResources(this.buttonRead, "buttonRead");
             this.buttonRead.Name = "buttonRead";
-            this.buttonRead.Size = new System.Drawing.Size(75, 23);
-            this.buttonRead.TabIndex = 2;
-            this.buttonRead.Text = "Read";
             this.buttonRead.UseVisualStyleBackColor = true;
             this.buttonRead.Click += new System.EventHandler(this.ButtonReadClick);
             // 
             // buttonWrite
             // 
-            this.buttonWrite.Location = new System.Drawing.Point(98, 98);
+            resources.ApplyResources(this.buttonWrite, "buttonWrite");
             this.buttonWrite.Name = "buttonWrite";
-            this.buttonWrite.Size = new System.Drawing.Size(75, 23);
-            this.buttonWrite.TabIndex = 3;
-            this.buttonWrite.Text = "Write";
             this.buttonWrite.UseVisualStyleBackColor = true;
             this.buttonWrite.Click += new System.EventHandler(this.ButtonWriteClick);
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(275, 98);
+            resources.ApplyResources(this.buttonExit, "buttonExit");
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(75, 23);
-            this.buttonExit.TabIndex = 4;
-            this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.ButtonExitClick);
             // 
             // buttonChooseFile
             // 
-            this.buttonChooseFile.Location = new System.Drawing.Point(436, 60);
+            resources.ApplyResources(this.buttonChooseFile, "buttonChooseFile");
             this.buttonChooseFile.Name = "buttonChooseFile";
-            this.buttonChooseFile.Size = new System.Drawing.Size(25, 20);
-            this.buttonChooseFile.TabIndex = 5;
-            this.buttonChooseFile.Text = "...";
             this.buttonChooseFile.UseVisualStyleBackColor = true;
             this.buttonChooseFile.Click += new System.EventHandler(this.ButtonChooseFileClick);
             // 
             // statusStrip1
             // 
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 335);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(620, 22);
-            this.statusStrip1.TabIndex = 6;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // saveFileDialog1
             // 
             this.saveFileDialog1.AddExtension = false;
             this.saveFileDialog1.DefaultExt = "img";
-            this.saveFileDialog1.Filter = "Image Files (*.img)|*.img|Binary files (*.bin)|*.bin|All files (*.*)|*.*";
+            resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
             // 
             // labelFileName
             // 
-            this.labelFileName.AutoSize = true;
-            this.labelFileName.Location = new System.Drawing.Point(12, 34);
+            resources.ApplyResources(this.labelFileName, "labelFileName");
             this.labelFileName.Name = "labelFileName";
-            this.labelFileName.Size = new System.Drawing.Size(54, 13);
-            this.labelFileName.TabIndex = 7;
-            this.labelFileName.Text = "File Name";
             // 
             // labelDriveTitle
             // 
-            this.labelDriveTitle.AutoSize = true;
-            this.labelDriveTitle.Location = new System.Drawing.Point(466, 34);
+            resources.ApplyResources(this.labelDriveTitle, "labelDriveTitle");
             this.labelDriveTitle.Name = "labelDriveTitle";
-            this.labelDriveTitle.Size = new System.Drawing.Size(94, 13);
-            this.labelDriveTitle.TabIndex = 8;
-            this.labelDriveTitle.Text = "Removable Drives";
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Enabled = false;
-            this.buttonCancel.Location = new System.Drawing.Point(187, 98);
+            resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 10;
-            this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancelClick);
             // 
             // groupBoxCompression
             // 
+            resources.ApplyResources(this.groupBoxCompression, "groupBoxCompression");
             this.groupBoxCompression.Controls.Add(this.radioButtonCompNone);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompTgz);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompGz);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompZip);
-            this.groupBoxCompression.Location = new System.Drawing.Point(33, 132);
             this.groupBoxCompression.Name = "groupBoxCompression";
-            this.groupBoxCompression.Size = new System.Drawing.Size(252, 50);
-            this.groupBoxCompression.TabIndex = 11;
             this.groupBoxCompression.TabStop = false;
-            this.groupBoxCompression.Text = "Compression";
             // 
             // radioButtonCompNone
             // 
-            this.radioButtonCompNone.AutoSize = true;
+            resources.ApplyResources(this.radioButtonCompNone, "radioButtonCompNone");
             this.radioButtonCompNone.Checked = true;
-            this.radioButtonCompNone.Location = new System.Drawing.Point(170, 19);
             this.radioButtonCompNone.Name = "radioButtonCompNone";
-            this.radioButtonCompNone.Size = new System.Drawing.Size(56, 17);
-            this.radioButtonCompNone.TabIndex = 3;
             this.radioButtonCompNone.TabStop = true;
-            this.radioButtonCompNone.Text = "NONE";
             this.radioButtonCompNone.UseVisualStyleBackColor = true;
             this.radioButtonCompNone.CheckedChanged += new System.EventHandler(this.RadioButtonCompNoneCheckedChanged);
             // 
             // radioButtonCompTgz
             // 
-            this.radioButtonCompTgz.AutoSize = true;
-            this.radioButtonCompTgz.Location = new System.Drawing.Point(117, 19);
+            resources.ApplyResources(this.radioButtonCompTgz, "radioButtonCompTgz");
             this.radioButtonCompTgz.Name = "radioButtonCompTgz";
-            this.radioButtonCompTgz.Size = new System.Drawing.Size(47, 17);
-            this.radioButtonCompTgz.TabIndex = 2;
-            this.radioButtonCompTgz.Text = "TGZ";
             this.radioButtonCompTgz.UseVisualStyleBackColor = true;
             this.radioButtonCompTgz.CheckedChanged += new System.EventHandler(this.RadioButtonCompTgzCheckedChanged);
             // 
             // radioButtonCompGz
             // 
-            this.radioButtonCompGz.AutoSize = true;
-            this.radioButtonCompGz.Location = new System.Drawing.Point(71, 19);
+            resources.ApplyResources(this.radioButtonCompGz, "radioButtonCompGz");
             this.radioButtonCompGz.Name = "radioButtonCompGz";
-            this.radioButtonCompGz.Size = new System.Drawing.Size(40, 17);
-            this.radioButtonCompGz.TabIndex = 1;
-            this.radioButtonCompGz.Text = "GZ";
             this.radioButtonCompGz.UseVisualStyleBackColor = true;
             this.radioButtonCompGz.CheckedChanged += new System.EventHandler(this.RadioButtonCompGzCheckedChanged);
             // 
             // radioButtonCompZip
             // 
-            this.radioButtonCompZip.AutoSize = true;
-            this.radioButtonCompZip.Location = new System.Drawing.Point(23, 19);
+            resources.ApplyResources(this.radioButtonCompZip, "radioButtonCompZip");
             this.radioButtonCompZip.Name = "radioButtonCompZip";
-            this.radioButtonCompZip.Size = new System.Drawing.Size(42, 17);
-            this.radioButtonCompZip.TabIndex = 0;
-            this.radioButtonCompZip.Text = "ZIP";
             this.radioButtonCompZip.UseVisualStyleBackColor = true;
             this.radioButtonCompZip.CheckedChanged += new System.EventHandler(this.RadioButtonCompZipCheckedChanged);
             // 
             // menuStripMain
             // 
+            resources.ApplyResources(this.menuStripMain, "menuStripMain");
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem});
-            this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(620, 24);
-            this.menuStripMain.TabIndex = 12;
-            this.menuStripMain.Text = "menuStrip1";
             // 
             // optionsToolStripMenuItem
             // 
+            resources.ApplyResources(this.optionsToolStripMenuItem, "optionsToolStripMenuItem");
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.displayAllDrivesToolStripMenuItem});
+            this.displayAllDrivesToolStripMenuItem,
+            this.languageToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "Options";
             // 
             // displayAllDrivesToolStripMenuItem
             // 
+            resources.ApplyResources(this.displayAllDrivesToolStripMenuItem, "displayAllDrivesToolStripMenuItem");
             this.displayAllDrivesToolStripMenuItem.CheckOnClick = true;
             this.displayAllDrivesToolStripMenuItem.Name = "displayAllDrivesToolStripMenuItem";
-            this.displayAllDrivesToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
-            this.displayAllDrivesToolStripMenuItem.Text = "Display All Drives  *** DANGEROUS ***";
             this.displayAllDrivesToolStripMenuItem.CheckedChanged += new System.EventHandler(this.DisplayAllDrivesToolStripMenuItemCheckedChanged);
+            // 
+            // languageToolStripMenuItem
+            // 
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.russianToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            // 
+            // englishToolStripMenuItem
+            // 
+            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // russianToolStripMenuItem
+            // 
+            resources.ApplyResources(this.russianToolStripMenuItem, "russianToolStripMenuItem");
+            this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
+            this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
             // 
             // groupBoxTruncation
             // 
+            resources.ApplyResources(this.groupBoxTruncation, "groupBoxTruncation");
             this.groupBoxTruncation.Controls.Add(this.checkBoxUseMBR);
-            this.groupBoxTruncation.Location = new System.Drawing.Point(291, 132);
             this.groupBoxTruncation.Name = "groupBoxTruncation";
-            this.groupBoxTruncation.Size = new System.Drawing.Size(172, 50);
-            this.groupBoxTruncation.TabIndex = 13;
             this.groupBoxTruncation.TabStop = false;
-            this.groupBoxTruncation.Text = "Image Truncation";
             // 
             // checkBoxUseMBR
             // 
-            this.checkBoxUseMBR.AutoSize = true;
-            this.checkBoxUseMBR.Location = new System.Drawing.Point(23, 19);
+            resources.ApplyResources(this.checkBoxUseMBR, "checkBoxUseMBR");
             this.checkBoxUseMBR.Name = "checkBoxUseMBR";
-            this.checkBoxUseMBR.Size = new System.Drawing.Size(138, 17);
-            this.checkBoxUseMBR.TabIndex = 0;
-            this.checkBoxUseMBR.Text = "Use MBR partition sizes";
             this.checkBoxUseMBR.UseVisualStyleBackColor = true;
             // 
             // checkedListBoxDrives
             // 
+            resources.ApplyResources(this.checkedListBoxDrives, "checkedListBoxDrives");
             this.checkedListBoxDrives.FormattingEnabled = true;
-            this.checkedListBoxDrives.Location = new System.Drawing.Point(469, 58);
             this.checkedListBoxDrives.Name = "checkedListBoxDrives";
-            this.checkedListBoxDrives.Size = new System.Drawing.Size(139, 124);
             this.checkedListBoxDrives.Sorted = true;
-            this.checkedListBoxDrives.TabIndex = 15;
             // 
             // flowLayoutPanelProgressBars
             // 
+            resources.ApplyResources(this.flowLayoutPanelProgressBars, "flowLayoutPanelProgressBars");
             this.flowLayoutPanelProgressBars.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanelProgressBars.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelProgressBars.Location = new System.Drawing.Point(10, 194);
             this.flowLayoutPanelProgressBars.Name = "flowLayoutPanelProgressBars";
-            this.flowLayoutPanelProgressBars.Size = new System.Drawing.Size(211, 137);
-            this.flowLayoutPanelProgressBars.TabIndex = 16;
             // 
             // flowLayoutPanelProgressLabels
             // 
+            resources.ApplyResources(this.flowLayoutPanelProgressLabels, "flowLayoutPanelProgressLabels");
             this.flowLayoutPanelProgressLabels.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanelProgressLabels.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelProgressLabels.Location = new System.Drawing.Point(229, 194);
             this.flowLayoutPanelProgressLabels.Name = "flowLayoutPanelProgressLabels";
-            this.flowLayoutPanelProgressLabels.Size = new System.Drawing.Size(379, 137);
-            this.flowLayoutPanelProgressLabels.TabIndex = 17;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 357);
             this.Controls.Add(this.flowLayoutPanelProgressLabels);
             this.Controls.Add(this.flowLayoutPanelProgressBars);
             this.Controls.Add(this.checkedListBoxDrives);
@@ -314,7 +269,6 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Disk Imager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -355,6 +309,9 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxDrives;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelProgressBars;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelProgressLabels;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
     }
 }
 

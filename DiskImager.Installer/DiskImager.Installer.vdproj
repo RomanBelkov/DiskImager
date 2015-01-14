@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:DiskImager.Installer"
-"LanguageId" = "3:1033"
+"LanguageId" = "3:0"
 "CodePage" = "3:1252"
-"UILanguageId" = "3:1033"
+"UILanguageId" = "3:0"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DB06497D6EA628F02D7A42761AF2DBAE"
+        "MsmKey" = "8:_B1090C5A5662721B31DE535DD9FE3833"
         "OwnerKey" = "8:_8FDF365DCE9B4F70A60EF2BB1651CCBF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -34,7 +34,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DB06497D6EA628F02D7A42761AF2DBAE"
+        "OwnerKey" = "8:_B1090C5A5662721B31DE535DD9FE3833"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -142,14 +142,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DB06497D6EA628F02D7A42761AF2DBAE"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B1090C5A5662721B31DE535DD9FE3833"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DB06497D6EA628F02D7A42761AF2DBAE"
+                    "_B1090C5A5662721B31DE535DD9FE3833"
                     {
                     "Name" = "8:ICSharpCode.SharpZipLib.dll"
                     "Attributes" = "3:512"
@@ -222,22 +222,22 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:1033"
+        "LangId" = "3:0"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Disk Imager"
-        "ProductCode" = "8:{BEFE1D43-19A6-48F2-8340-92AD4513A108}"
-        "PackageCode" = "8:{1F1B2C34-933B-4AF1-8972-0CD044A9E172}"
+        "ProductCode" = "8:{51B52296-A8DC-4D25-9823-E85F0F7AADCF}"
+        "PackageCode" = "8:{43DD1045-2E31-4B8B-8299-C4C2D7BF62D1}"
         "UpgradeCode" = "8:{A2F957D8-23F6-44DB-A22C-CCA8275E1FCE}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.1.0"
+        "ProductVersion" = "8:1.2.1"
         "Manufacturer" = "8:Dynamic Devices"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -779,7 +779,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8FDF365DCE9B4F70A60EF2BB1651CCBF"
             {
-            "SourcePath" = "8:..\\DiskImager\\obj\\x86\\Debug\\DiskImager.exe"
+            "SourcePath" = "8:..\\DiskImager\\obj\\x86\\Release\\DiskImager.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
@@ -827,6 +827,34 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:ContentFiles"
+            "OutputProjectGuid" = "8:{4A73C63C-2BF2-4F85-AA55-A5CA581A33B4}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D9008FB07D394DC88312BB67F0526092"
+            {
+            "SourcePath" = "8:"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:LocalizedResourceDlls"
             "OutputProjectGuid" = "8:{4A73C63C-2BF2-4F85-AA55-A5CA581A33B4}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
