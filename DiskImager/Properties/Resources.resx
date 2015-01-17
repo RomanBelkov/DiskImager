@@ -140,4 +140,64 @@
   <data name="MainForm_ButtonWriteClick_Write_Error" xml:space="preserve">
     <value>Write Error</value>
   </data>
+  <data name="Disk_WriteDrive__doesn_t_exist" xml:space="preserve">
+    <value> doesn't exist</value>
+  </data>
+  <data name="Disk_WriteDrive_Error__Couldn_t_map_partition_to_physical_drive" xml:space="preserve">
+    <value>Error: Couldn't map partition to physical drive</value>
+  </data>
+  <data name="Disk_WriteDrive_Failed_to_lock_drive" xml:space="preserve">
+    <value>Failed to lock drive</value>
+  </data>
+  <data name="Disk_WriteDrive_Failed_to_get_device_size" xml:space="preserve">
+    <value>Failed to get device size</value>
+  </data>
+  <data name="Disk_WriteDrive_Failed_to_open_physical_drive" xml:space="preserve">
+    <value>Failed to open physical drive</value>
+  </data>
+  <data name="Disk_WriteDrive_Error_reading_zip_input_stream" xml:space="preserve">
+    <value>Error reading zip input stream</value>
+  </data>
+  <data name="Disk_WriteDrive_Error_writing_data_to_drive__" xml:space="preserve">
+    <value>Error writing data to drive: </value>
+  </data>
+  <data name="Disk_WriteDrive_Error_writing_data_to_drive___past_EOF_" xml:space="preserve">
+    <value>Error writing data to drive - past EOF?</value>
+  </data>
+  <data name="Disk_WriteDrive_Cancelled" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="Disk_WriteDrive_All_Done___Wrote_" xml:space="preserve">
+    <value>All Done - Wrote </value>
+  </data>
+  <data name="Disk_WriteDrive__bytes__Elapsed_time_" xml:space="preserve">
+    <value> bytes. Elapsed time </value>
+  </data>
+  <data name="Disk_WriteDrive_Wrote_" xml:space="preserve">
+    <value>Wrote </value>
+  </data>
+  <data name="Disk_WriteDrive_Elapsed_time__" xml:space="preserve">
+    <value>Elapsed time: </value>
+  </data>
+  <data name="Disk_ReadDrive_Error_reading_data_from_drive__" xml:space="preserve">
+    <value>Error reading data from drive: </value>
+  </data>
+  <data name="Disk_ReadDrive_Error_reading_data_from_drive___past_EOF_" xml:space="preserve">
+    <value>Error reading data from drive - past EOF?</value>
+  </data>
+  <data name="Disk_ReadDrive_Problem_with_filesystem__It_reports_it_is_larger_than_the_disk_" xml:space="preserve">
+    <value>Problem with filesystem. It reports it is larger than the disk!</value>
+  </data>
+  <data name="Disk_ReadDrive_No_valid_partitions_on_drive" xml:space="preserve">
+    <value>No valid partitions on drive</value>
+  </data>
+  <data name="Disk_ReadDrive_Read_" xml:space="preserve">
+    <value>Read </value>
+  </data>
+  <data name="Disk_ReadDrive__Physical__" xml:space="preserve">
+    <value>(Physical: </value>
+  </data>
+  <data name="Disk_ReadDrive_Elapsed_time__" xml:space="preserve">
+    <value>Elapsed time: </value>
+  </data>
 </root>

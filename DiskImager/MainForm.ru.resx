@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -192,5 +191,35 @@
   </data>
   <data name="groupBoxTruncation.Text" xml:space="preserve">
     <value>Образ логических разделов</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Disk Imager</value>
+  </data>
+  <data name="buttonChooseFile.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="menuStripMain.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="radioButtonCompGz.Text" xml:space="preserve">
+    <value>GZ</value>
+  </data>
+  <data name="radioButtonCompNone.Text" xml:space="preserve">
+    <value>NONE</value>
+  </data>
+  <data name="radioButtonCompTgz.Text" xml:space="preserve">
+    <value>TGZ</value>
+  </data>
+  <data name="radioButtonCompZip.Text" xml:space="preserve">
+    <value>ZIP</value>
+  </data>
+  <data name="saveFileDialog1.Filter" xml:space="preserve">
+    <value>Образы файлов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Сжатые файлы (*.zip,*.gz,*tgz)|*.zip;*.gz;*.tgz|Все файлы (*.*)|*.*</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
   </data>
 </root>

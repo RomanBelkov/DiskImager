@@ -61,6 +61,186 @@ namespace DynamicDevices.DiskWriter.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to (Physical: .
+        /// </summary>
+        internal static string Disk_ReadDrive__Physical__ {
+            get {
+                return ResourceManager.GetString("Disk_ReadDrive__Physical__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elapsed time: .
+        /// </summary>
+        internal static string Disk_ReadDrive_Elapsed_time__ {
+            get {
+                return ResourceManager.GetString("Disk_ReadDrive_Elapsed_time__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error reading data from drive: .
+        /// </summary>
+        internal static string Disk_ReadDrive_Error_reading_data_from_drive__ {
+            get {
+                return ResourceManager.GetString("Disk_ReadDrive_Error_reading_data_from_drive__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error reading data from drive - past EOF?.
+        /// </summary>
+        internal static string Disk_ReadDrive_Error_reading_data_from_drive___past_EOF_ {
+            get {
+                return ResourceManager.GetString("Disk_ReadDrive_Error_reading_data_from_drive___past_EOF_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No valid partitions on drive.
+        /// </summary>
+        internal static string Disk_ReadDrive_No_valid_partitions_on_drive {
+            get {
+                return ResourceManager.GetString("Disk_ReadDrive_No_valid_partitions_on_drive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Problem with filesystem. It reports it is larger than the disk!.
+        /// </summary>
+        internal static string Disk_ReadDrive_Problem_with_filesystem__It_reports_it_is_larger_than_the_disk_ {
+            get {
+                return ResourceManager.GetString("Disk_ReadDrive_Problem_with_filesystem__It_reports_it_is_larger_than_the_disk_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Read .
+        /// </summary>
+        internal static string Disk_ReadDrive_Read_ {
+            get {
+                return ResourceManager.GetString("Disk_ReadDrive_Read_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  bytes. Elapsed time .
+        /// </summary>
+        internal static string Disk_WriteDrive__bytes__Elapsed_time_ {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive__bytes__Elapsed_time_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  doesn&apos;t exist.
+        /// </summary>
+        internal static string Disk_WriteDrive__doesn_t_exist {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive__doesn_t_exist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Done - Wrote .
+        /// </summary>
+        internal static string Disk_WriteDrive_All_Done___Wrote_ {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_All_Done___Wrote_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancelled.
+        /// </summary>
+        internal static string Disk_WriteDrive_Cancelled {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_Cancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elapsed time: .
+        /// </summary>
+        internal static string Disk_WriteDrive_Elapsed_time__ {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_Elapsed_time__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: Couldn&apos;t map partition to physical drive.
+        /// </summary>
+        internal static string Disk_WriteDrive_Error__Couldn_t_map_partition_to_physical_drive {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_Error__Couldn_t_map_partition_to_physical_drive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error reading zip input stream.
+        /// </summary>
+        internal static string Disk_WriteDrive_Error_reading_zip_input_stream {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_Error_reading_zip_input_stream", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error writing data to drive: .
+        /// </summary>
+        internal static string Disk_WriteDrive_Error_writing_data_to_drive__ {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_Error_writing_data_to_drive__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error writing data to drive - past EOF?.
+        /// </summary>
+        internal static string Disk_WriteDrive_Error_writing_data_to_drive___past_EOF_ {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_Error_writing_data_to_drive___past_EOF_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to get device size.
+        /// </summary>
+        internal static string Disk_WriteDrive_Failed_to_get_device_size {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_Failed_to_get_device_size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to lock drive.
+        /// </summary>
+        internal static string Disk_WriteDrive_Failed_to_lock_drive {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_Failed_to_lock_drive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to open physical drive.
+        /// </summary>
+        internal static string Disk_WriteDrive_Failed_to_open_physical_drive {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_Failed_to_open_physical_drive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrote .
+        /// </summary>
+        internal static string Disk_WriteDrive_Wrote_ {
+            get {
+                return ResourceManager.GetString("Disk_WriteDrive_Wrote_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to *** WARNING ***.
         /// </summary>
         internal static string MainForm_ButtonReadClick_____WARNING____ {

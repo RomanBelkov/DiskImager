@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -143,5 +142,65 @@
   </data>
   <data name="MainForm_MainForm_Initialised__Licensed_under_GPLv3__Use_at_own_risk_" xml:space="preserve">
     <value>Программа лицензирована GNU GPL v3. Авторы не несут ответственность за ущерб!</value>
+  </data>
+  <data name="Disk_ReadDrive__Physical__" xml:space="preserve">
+    <value>(Физический: </value>
+  </data>
+  <data name="Disk_ReadDrive_Elapsed_time__" xml:space="preserve">
+    <value>Время: </value>
+  </data>
+  <data name="Disk_ReadDrive_Error_reading_data_from_drive__" xml:space="preserve">
+    <value>Ошибка чтения с диска:</value>
+  </data>
+  <data name="Disk_ReadDrive_Error_reading_data_from_drive___past_EOF_" xml:space="preserve">
+    <value>Ошибка чтения. Ушли за EOF?</value>
+  </data>
+  <data name="Disk_ReadDrive_No_valid_partitions_on_drive" xml:space="preserve">
+    <value>На диске нет доступных разделов</value>
+  </data>
+  <data name="Disk_ReadDrive_Problem_with_filesystem__It_reports_it_is_larger_than_the_disk_" xml:space="preserve">
+    <value>Проблема с файловой системой!</value>
+  </data>
+  <data name="Disk_ReadDrive_Read_" xml:space="preserve">
+    <value>Чтение</value>
+  </data>
+  <data name="Disk_WriteDrive__bytes__Elapsed_time_" xml:space="preserve">
+    <value> байт. Время </value>
+  </data>
+  <data name="Disk_WriteDrive__doesn_t_exist" xml:space="preserve">
+    <value> не существует</value>
+  </data>
+  <data name="Disk_WriteDrive_All_Done___Wrote_" xml:space="preserve">
+    <value>Операция выполнена. Записано </value>
+  </data>
+  <data name="Disk_WriteDrive_Cancelled" xml:space="preserve">
+    <value>Отменено</value>
+  </data>
+  <data name="Disk_WriteDrive_Elapsed_time__" xml:space="preserve">
+    <value>Время: </value>
+  </data>
+  <data name="Disk_WriteDrive_Error__Couldn_t_map_partition_to_physical_drive" xml:space="preserve">
+    <value>Ошибка: раздел не может быть записан на диск</value>
+  </data>
+  <data name="Disk_WriteDrive_Error_reading_zip_input_stream" xml:space="preserve">
+    <value>Ошибка чтения zip</value>
+  </data>
+  <data name="Disk_WriteDrive_Error_writing_data_to_drive__" xml:space="preserve">
+    <value>Ошибка записи данных на диск:</value>
+  </data>
+  <data name="Disk_WriteDrive_Error_writing_data_to_drive___past_EOF_" xml:space="preserve">
+    <value>Ошибка записи данных на диск. Прошли EOF?</value>
+  </data>
+  <data name="Disk_WriteDrive_Failed_to_get_device_size" xml:space="preserve">
+    <value>Невозможно получить размер устройства</value>
+  </data>
+  <data name="Disk_WriteDrive_Failed_to_lock_drive" xml:space="preserve">
+    <value>Невозможно получить доступ к устройству</value>
+  </data>
+  <data name="Disk_WriteDrive_Failed_to_open_physical_drive" xml:space="preserve">
+    <value>Невозможно открыть доступ к диску</value>
+  </data>
+  <data name="Disk_WriteDrive_Wrote_" xml:space="preserve">
+    <value>Записано </value>
   </data>
 </root>

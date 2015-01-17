@@ -14,6 +14,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using DynamicDevices.DiskWriter.Properties;
 using ICSharpCode.SharpZipLib.GZip;
 using ICSharpCode.SharpZipLib.Tar;
 using ICSharpCode.SharpZipLib.Zip;
@@ -88,7 +89,7 @@ namespace DynamicDevices.DiskWriter
             var dtStart = DateTime.Now;
 
             if(!File.Exists(fileName))
-                throw new ArgumentException(fileName + " doesn't exist");
+                throw new ArgumentException(fileName + Resources.Disk_WriteDrive__doesn_t_exist);
 
             //
             // Get physical drive partition for logical partition
@@ -96,7 +97,7 @@ namespace DynamicDevices.DiskWriter
             var physicalDrive = _diskAccess.GetPhysicalPathForLogicalPath(driveLetter);
             if (string.IsNullOrEmpty(physicalDrive))
             {
-                LogMsg(@"Error: Couldn't map partition to physical drive");
+                LogMsg(Resources.Disk_WriteDrive_Error__Couldn_t_map_partition_to_physical_drive);
                 _diskAccess.UnlockDrive();
                 return false;
             }
@@ -107,7 +108,7 @@ namespace DynamicDevices.DiskWriter
             var success = _diskAccess.LockDrive(driveLetter);
             if (!success)
             {
-                LogMsg(@"Failed to lock drive");
+                LogMsg(Resources.Disk_WriteDrive_Failed_to_lock_drive);
                 return false;
             }            
             
@@ -118,7 +119,7 @@ namespace DynamicDevices.DiskWriter
             var driveSize = _diskAccess.GetDriveSize(physicalDrive);
             if (driveSize <= 0)
             {
-                LogMsg(@"Failed to get device size");
+                LogMsg(Resources.Disk_WriteDrive_Failed_to_get_device_size);
                 _diskAccess.UnlockDrive();
                 return false;
             }
@@ -129,7 +130,7 @@ namespace DynamicDevices.DiskWriter
             var physicalHandle = _diskAccess.Open(physicalDrive);
             if (physicalHandle == null)
             {
-                LogMsg(@"Failed to open physical drive");
+                LogMsg(Resources.Disk_WriteDrive_Failed_to_open_physical_drive);
                 _diskAccess.UnlockDrive();
                 return false;
             }
@@ -159,7 +160,7 @@ namespace DynamicDevices.DiskWriter
 
                             if(ze == null)
                             {
-                                LogMsg(@"Error reading zip input stream");
+                                LogMsg(Resources.Disk_WriteDrive_Error_reading_zip_input_stream);
                                 goto readfail2;                                
                             }
 
@@ -248,13 +249,13 @@ namespace DynamicDevices.DiskWriter
 
                         if (_diskAccess.Write(buffer, bytesToWrite, out wroteBytes) < 0)
                         {
-                            LogMsg(@"Error writing data to drive: " + Marshal.GetHRForLastWin32Error());
+                            LogMsg(Resources.Disk_WriteDrive_Error_writing_data_to_drive__ + Marshal.GetHRForLastWin32Error());
                             goto readfail1;
                         }
 
                         if (wroteBytes != bytesToWrite)
                         {
-                            LogMsg(@"Error writing data to drive - past EOF?");
+                            LogMsg(Resources.Disk_WriteDrive_Error_writing_data_to_drive___past_EOF_);
                             goto readfail1;
                         }
 
@@ -276,9 +277,9 @@ namespace DynamicDevices.DiskWriter
 
                         Progress(percentDone);
                         
-                        LogMsg(@"Wrote " + percentDone + @"%, " + (offset / (1024 * 1024)) + @" MB / " +
+                        LogMsg(Resources.Disk_WriteDrive_Wrote_ + percentDone + @"%, " + (offset / (1024 * 1024)) + @" MB / " +
                                                      (uncompressedlength / (1024 * 1024) + " MB, " +
-                                                      string.Format("{0:F}", (bytesPerSec / (1024 * 1024))) + @" MB/sec, Elapsed time: " + tsElapsed.ToString(@"dd\.hh\:mm\:ss")));
+                                                      string.Format("{0:F}", (bytesPerSec / (1024 * 1024))) + @" MB/sec," +  Resources.Disk_WriteDrive_Elapsed_time__ + tsElapsed.ToString(@"dd\.hh\:mm\:ss")));
                     }
                 }
             }
@@ -292,9 +293,9 @@ namespace DynamicDevices.DiskWriter
             var tstotalTime = DateTime.Now.Subtract(dtStart);
 
             if (IsCancelling)
-                LogMsg("Cancelled");
+                LogMsg(Resources.Disk_WriteDrive_Cancelled);
             else 
-                LogMsg("All Done - Wrote " + offset + " bytes. Elapsed time " + tstotalTime.ToString(@"dd\.hh\:mm\:ss"));
+                LogMsg(Resources.Disk_WriteDrive_All_Done___Wrote_ + offset + Resources.Disk_WriteDrive__bytes__Elapsed_time_ + tstotalTime.ToString(@"dd\.hh\:mm\:ss"));
 
             Progress(0);
             return !errored;
@@ -319,7 +320,7 @@ namespace DynamicDevices.DiskWriter
             var physicalDrive = _diskAccess.GetPhysicalPathForLogicalPath(driveLetter);
             if(string.IsNullOrEmpty(physicalDrive))
             {
-                LogMsg(@"Error: Couldn't map partition to physical drive");
+                LogMsg(Resources.Disk_WriteDrive_Error__Couldn_t_map_partition_to_physical_drive);
                 _diskAccess.UnlockDrive();
                 return false;
             }
@@ -330,7 +331,7 @@ namespace DynamicDevices.DiskWriter
             var success = _diskAccess.LockDrive(driveLetter);
             if (!success)
             {
-                LogMsg(@"Failed to lock drive");
+                LogMsg(Resources.Disk_WriteDrive_Failed_to_lock_drive);
                 return false;
             }
 
@@ -340,7 +341,7 @@ namespace DynamicDevices.DiskWriter
             var driveSize = _diskAccess.GetDriveSize(physicalDrive);
             if(driveSize <= 0)
             {
-                LogMsg(@"Failed to get device size");
+                LogMsg(Resources.Disk_WriteDrive_Failed_to_get_device_size);
                 _diskAccess.UnlockDrive();
                 return false;                
             }
@@ -353,7 +354,7 @@ namespace DynamicDevices.DiskWriter
             var physicalHandle = _diskAccess.Open(physicalDrive);
             if (physicalHandle == null)
             {
-                LogMsg(@"Failed to open physical drive");
+                LogMsg(Resources.Disk_WriteDrive_Failed_to_open_physical_drive);
                 _diskAccess.UnlockDrive();
                 return false;
             }
@@ -439,14 +440,14 @@ namespace DynamicDevices.DiskWriter
                         int readBytes;
                         if (_diskAccess.Read(buffer, readMaxLength, out readBytes) < 0)
                         {
-                            LogMsg(@"Error reading data from drive: " +
+                            LogMsg(Resources.Disk_ReadDrive_Error_reading_data_from_drive__ +
                                            Marshal.GetHRForLastWin32Error());
                             goto readfail1;
                         }
 
                         if (readBytes == 0)
                         {
-                            LogMsg(@"Error reading data from drive - past EOF?");
+                            LogMsg(Resources.Disk_ReadDrive_Error_reading_data_from_drive___past_EOF_);
                             goto readfail1;
                         }
 
@@ -457,13 +458,13 @@ namespace DynamicDevices.DiskWriter
                             
                             if(truncatedSize > driveSize)
                             {
-                                LogMsg("Problem with filesystem. It reports it is larger than the disk!");
+                                LogMsg(Resources.Disk_ReadDrive_Problem_with_filesystem__It_reports_it_is_larger_than_the_disk_);
                                 goto readfail1;
                             }
 
                             if(truncatedSize == 0)
                             {
-                                LogMsg("No valid partitions on drive");
+                                LogMsg(Resources.Disk_ReadDrive_No_valid_partitions_on_drive);
                                 goto readfail1;
                             }
 
@@ -499,9 +500,9 @@ namespace DynamicDevices.DiskWriter
                         var bytesPerSec = offset/tsElapsed.TotalSeconds;
 
                         Progress(percentDone);
-                        LogMsg(@"Read " + percentDone + @"%, " + (offset/(1024*1024)) + @" MB / " +
-                                       (readSize/(1024*1024) + " MB (Physical: " + (driveSize/(1024*1024)) + " MB), " +
-                                        string.Format("{0:F}", (bytesPerSec/(1024*1024))) + @" MB/sec, Elapsed time: " +
+                        LogMsg(Resources.Disk_ReadDrive_Read_ + percentDone + @"%, " + (offset/(1024*1024)) + @" MB / " +
+                                       (readSize/(1024*1024) + @" MB" + Resources.Disk_ReadDrive__Physical__ + (driveSize/(1024*1024)) + " MB), " +
+                                        string.Format("{0:F}", (bytesPerSec/(1024*1024))) + @" MB/sec," + Resources.Disk_ReadDrive_Elapsed_time__ +
                                         tsElapsed.ToString(@"dd\.hh\:mm\:ss")));
 
                     }
@@ -534,9 +535,9 @@ namespace DynamicDevices.DiskWriter
             var tstotalTime = DateTime.Now.Subtract(dtStart);
 
             if (IsCancelling)
-                LogMsg("Cancelled");
+                LogMsg(Resources.Disk_WriteDrive_Cancelled);
             else
-                LogMsg("All Done - Read " + offset + " bytes. Elapsed time " + tstotalTime.ToString(@"dd\.hh\:mm\:ss"));
+                LogMsg("All Done - Read " + offset + Resources.Disk_WriteDrive__bytes__Elapsed_time_ + tstotalTime.ToString(@"dd\.hh\:mm\:ss"));
             Progress(0);
             return true;
         }
