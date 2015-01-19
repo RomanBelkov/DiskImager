@@ -35,8 +35,7 @@ namespace DynamicDevices.DiskWriter
         private readonly List<Disk> _disks = new List<Disk>();
         internal readonly List<IDiskAccess> DiskAccesses = new List<IDiskAccess>();
 
-        private  DriveDetector _watcher = new DriveDetector();
-
+        private DriveDetector _watcher = new DriveDetector();
         private EnumCompressionType _eCompType;
         
         private CultureInfo CurrentLocale { get; set; }
@@ -44,8 +43,6 @@ namespace DynamicDevices.DiskWriter
         #endregion
 
         #region Constructor
-
-        //var LocRM = new ResourceManager("")
 
         public MainForm()
         {
@@ -150,6 +147,9 @@ namespace DynamicDevices.DiskWriter
 
             Task.Factory.StartNew(() =>
             {
+                DiskAccesses.Clear();
+                _disks.Clear();
+
                 var diskAccess = NewDiskAccess();
                 var disk = new Disk(diskAccess);
 
@@ -230,12 +230,14 @@ namespace DynamicDevices.DiskWriter
                         MessageBoxEx.Show(Resources.MainForm_ButtonWriteClick_Problem_writing_to_disk__Is_it_write_protected_, Resources.MainForm_ButtonWriteClick_Write_Error,
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                 })).ToArray();
 
                 Task.WaitAll(tasks);
 
-                EnableButtons();
+                Invoke((MethodInvoker) EnableButtons);
             });
+            
         }
 
         /// <summary>
@@ -352,8 +354,9 @@ namespace DynamicDevices.DiskWriter
             {
                 flowLayoutPanelProgressBars.Controls.Add(pb);
                 flowLayoutPanelProgressLabels.Controls.Add(lab);
-                disk.OnLogMsg += (o, message) => lab.Text = message;
-                disk.OnProgress += (o, progressPercentage) => pb.Value = progressPercentage;
+                disk.OnLogMsg += (o, message) => Invoke((MethodInvoker) delegate { lab.Text = message; });
+                disk.OnProgress +=
+                    (o, progressPercentage) => Invoke((MethodInvoker) delegate { pb.Value = progressPercentage; });
             });
         }
 
@@ -378,7 +381,7 @@ namespace DynamicDevices.DiskWriter
         /// <summary>
         /// Create disk object for media accesses
         /// </summary>>
-        private IDiskAccess NewDiskAccess()
+        private static IDiskAccess NewDiskAccess()
         {
             return (Environment.OSVersion.Platform == PlatformID.Unix) ? new LinuxDiskAccess() as IDiskAccess : new Win32DiskAccess();
         }
@@ -542,6 +545,7 @@ namespace DynamicDevices.DiskWriter
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             ChangeLanguage("en-US");
         }
+
         private void russianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
