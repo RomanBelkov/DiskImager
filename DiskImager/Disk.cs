@@ -81,8 +81,9 @@ namespace DynamicDevices.DiskWriter
         /// <param name="driveLetter"></param>
         /// <param name="fileName"></param>
         /// <param name="eCompType"></param>
+        /// <param name="removeAfter"></param>
         /// <returns></returns>
-        public bool WriteDrive(string driveLetter, string fileName, EnumCompressionType eCompType)
+        public bool WriteDrive(string driveLetter, string fileName, EnumCompressionType eCompType, bool removeAfter)
         {
             IsCancelling = false;
 
@@ -284,6 +285,9 @@ namespace DynamicDevices.DiskWriter
                 }
             }
             errored = false;
+
+            if (removeAfter)
+                _diskAccess.UnmountDrive();
 
         readfail1:
             _diskAccess.Close();
@@ -537,7 +541,7 @@ namespace DynamicDevices.DiskWriter
             if (IsCancelling)
                 LogMsg(Resources.Disk_WriteDrive_Cancelled);
             else
-                LogMsg("All Done - Read " + offset + Resources.Disk_WriteDrive__bytes__Elapsed_time_ + tstotalTime.ToString(@"dd\.hh\:mm\:ss"));
+                LogMsg(Resources.Disk_ReadDrive_All_Done___Read_ + offset + Resources.Disk_WriteDrive__bytes__Elapsed_time_ + tstotalTime.ToString(@"dd\.hh\:mm\:ss"));
             Progress(0);
             return true;
         }

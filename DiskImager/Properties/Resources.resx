@@ -200,4 +200,7 @@
   <data name="Disk_ReadDrive_Elapsed_time__" xml:space="preserve">
     <value>Elapsed time: </value>
   </data>
+  <data name="Disk_ReadDrive_All_Done___Read_" xml:space="preserve">
+    <value>All Done - Read </value>
+  </data>
 </root>

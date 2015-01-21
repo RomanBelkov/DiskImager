@@ -203,4 +203,7 @@
   <data name="Disk_WriteDrive_Wrote_" xml:space="preserve">
     <value>Записано </value>
   </data>
+  <data name="Disk_ReadDrive_All_Done___Read_" xml:space="preserve">
+    <value>Прочитано</value>
+  </data>
 </root>

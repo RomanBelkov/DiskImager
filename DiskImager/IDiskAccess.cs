@@ -23,6 +23,8 @@ namespace DynamicDevices.DiskWriter
 
         void UnlockDrive();
 
+        bool UnmountDrive();
+
         int Read(byte[] buffer, int readMaxLength, out int readBytes);
 
         int Write(byte[] buffer, int bytesToWrite, out int wroteBytes);

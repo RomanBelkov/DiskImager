@@ -20,12 +20,12 @@ using System.Runtime.InteropServices;
 #if DEBUG
 [assembly: AssemblyDescription("Windows Disk Imager - reads/writes images to removable storage (DEBUG BUILD)")]
 #else
-[assembly: AssemblyDescription("Windows Disk Writer - reads/writes images to removable storage")]
+[assembly: AssemblyDescription("Windows Disk Imager - reads/writes images to removable storage")]
 #endif
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Dynamic Devices Ltd")]
+[assembly: AssemblyCompany("Dynamic Devices Ltd & Roman Belkov")]
 [assembly: AssemblyProduct("DiskImager")]
-[assembly: AssemblyCopyright("Copyright © Dynamic Devices 2013")]
+[assembly: AssemblyCopyright("Copyright © Dynamic Devices 2013-2015 & Roman Belkov 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -47,5 +47,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.1.*")]
-[assembly: AssemblyFileVersion("1.2.1.0")]
+[assembly: AssemblyVersion("1.2.2.*")]
+[assembly: AssemblyFileVersion("1.2.2.0")]

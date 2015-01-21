@@ -48,7 +48,10 @@ namespace DynamicDevices.DiskWriter
         {
             InitializeComponent();
 
-            checkBoxUseMBR.Checked = true;
+            ChangeLanguage("en-US");
+
+            checkBoxUseMBR.Checked  = true;
+            checkBoxUnmount.Checked = true;
 
             MessageBoxEx.Owner = Handle;
 
@@ -71,21 +74,8 @@ namespace DynamicDevices.DiskWriter
             else
                 DisableButtons(false);
 
-            // Read registry values
-            var key = Registry.LocalMachine.CreateSubKey("SOFTWARE\\Dynamic Devices Ltd\\DiskImager");
-            if (key != null)
-            {
-                var file = (string)key.GetValue("FileName", "");
-                if (File.Exists(file))
-                    textBoxFileName.Text = file;
+            ReadRegistry();
 
-                Globals.CompressionLevel = (int)key.GetValue("CompressionLevel", Globals.CompressionLevel);
-                Globals.MaxBufferSize = (int)key.GetValue("MaxBufferSize", Globals.MaxBufferSize);
-
-                key.Close();
-            }
-            
-            // Detect insertions / removals
             _watcher.DeviceArrived += OnDriveArrived;
             _watcher.DeviceRemoved += OnDriveRemoved;
             StartListenForChanges();
@@ -100,18 +90,6 @@ namespace DynamicDevices.DiskWriter
         }
 
         #region Disk access event handlers
-
-
-        /// <summary>
-        /// Close the application
-        /// </summary>
-        /// <param name="sender">
-        /// </param>
-        /// <param name="e"></param>
-        private void ButtonExitClick(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         /// <summary>
         /// Select a file for read/write from/to removable media
@@ -153,6 +131,7 @@ namespace DynamicDevices.DiskWriter
                 var diskAccess = NewDiskAccess();
                 var disk = new Disk(diskAccess);
 
+                Thread.CurrentThread.CurrentUICulture = CurrentLocale;
                 SendProgressToUI(disk);
 
                 var res = false;
@@ -170,7 +149,7 @@ namespace DynamicDevices.DiskWriter
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                EnableButtons();
+                Invoke((MethodInvoker) EnableButtons);
             });
         }
 
@@ -208,9 +187,10 @@ namespace DynamicDevices.DiskWriter
 
                 var tasks = drives.Select(drive => Task.Factory.StartNew(() =>
                 {
-                    var diskAccess = new Win32DiskAccess();
+                    var diskAccess = NewDiskAccess();
                     var disk = new Disk(diskAccess);
 
+                    Thread.CurrentThread.CurrentUICulture = CurrentLocale;
                     SendProgressToUI(disk);
 
                     DiskAccesses.Add(diskAccess);
@@ -219,7 +199,7 @@ namespace DynamicDevices.DiskWriter
                     var res = false;
                     try
                     {
-                        res = disk.WriteDrive(drive, textBoxFileName.Text, _eCompType);
+                        res = disk.WriteDrive(drive, textBoxFileName.Text, _eCompType, checkBoxUnmount.Checked);
                     }
                     catch (Exception ex)
                     {
@@ -247,12 +227,10 @@ namespace DynamicDevices.DiskWriter
         /// <param name="e"></param>
         private void MainFormFormClosing(object sender, FormClosingEventArgs e)
         {
-            var key = Registry.LocalMachine.CreateSubKey("SOFTWARE\\Dynamic Devices Ltd\\DiskImager");
-            if (key != null)
-            {
-                key.SetValue("FileName", textBoxFileName.Text);
-                key.Close();
-            }
+            const string registryPath = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Dynamic Devices Ltd\\DiskImager";
+
+            Registry.SetValue(registryPath, "FileName", textBoxFileName.Text);
+            Registry.SetValue(registryPath, "Language", CurrentLocale.Name);
 
             _watcher.DeviceArrived -= OnDriveArrived;
             _watcher.DeviceRemoved -= OnDriveRemoved;
@@ -298,9 +276,7 @@ namespace DynamicDevices.DiskWriter
 
         private void UpdateFileNameText()
         {
-            
             var text = textBoxFileName.Text;
-
          
             text = text.Replace(".tar.gz", "");
             text = text.Replace(".tgz", "");
@@ -347,16 +323,16 @@ namespace DynamicDevices.DiskWriter
         /// </summary>
         private void SendProgressToUI(Disk disk)
         {
-            var pb = new ProgressBar { Size = new Size(flowLayoutPanelProgressBars.Width - 10, 10) };
-            var lab = new Label { Size = new Size(flowLayoutPanelProgressLabels.Width - 10, 17) };
-
             Invoke((MethodInvoker)delegate
             {
-                flowLayoutPanelProgressBars.Controls.Add(pb);
-                flowLayoutPanelProgressLabels.Controls.Add(lab);
-                disk.OnLogMsg += (o, message) => Invoke((MethodInvoker) delegate { lab.Text = message; });
+                var progressBar = new ProgressBar { Size = new Size(flowLayoutPanelProgressBars.Width - 10, 10) };
+                var label = new Label { Size = new Size(flowLayoutPanelProgressLabels.Width - 10, 17) };
+                flowLayoutPanelProgressBars.Controls.Add(progressBar);
+                flowLayoutPanelProgressLabels.Controls.Add(label);
+
+                disk.OnLogMsg += (o, message) => Invoke((MethodInvoker) delegate { label.Text = message; });
                 disk.OnProgress +=
-                    (o, progressPercentage) => Invoke((MethodInvoker) delegate { pb.Value = progressPercentage; });
+                    (o, progressPercentage) => Invoke((MethodInvoker) delegate { progressBar.Value = progressPercentage; });
             });
         }
 
@@ -483,13 +459,13 @@ namespace DynamicDevices.DiskWriter
         {
             buttonRead.Enabled = false;
             buttonWrite.Enabled = false;
-            buttonExit.Enabled = !running;
             buttonCancel.Enabled = running;
             checkedListBoxDrives.Enabled = false;
             textBoxFileName.Enabled = false;
             buttonChooseFile.Enabled = false;
             groupBoxCompression.Enabled = false;
             groupBoxTruncation.Enabled = false;
+            menuStripMain.Enabled = !running;
         }
 
         /// <summary>
@@ -499,13 +475,13 @@ namespace DynamicDevices.DiskWriter
         {
             buttonRead.Enabled = true;
             buttonWrite.Enabled = true;
-            buttonExit.Enabled = true;
             buttonCancel.Enabled = false;
             checkedListBoxDrives.Enabled = true;
             textBoxFileName.Enabled = true;
             buttonChooseFile.Enabled = true;
             groupBoxCompression.Enabled = true;
             groupBoxTruncation.Enabled = true;
+            menuStripMain.Enabled = true;
         }
 
         #endregion
@@ -542,13 +518,11 @@ namespace DynamicDevices.DiskWriter
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             ChangeLanguage("en-US");
         }
 
         private void russianToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
             ChangeLanguage("ru-RU");
         }
 
@@ -556,6 +530,8 @@ namespace DynamicDevices.DiskWriter
         private void ChangeLanguage(string lang)
         {
             CurrentLocale = new CultureInfo(lang);
+            Thread.CurrentThread.CurrentUICulture = CurrentLocale;
+
             var resources = new ComponentResourceManager(typeof (MainForm));
             foreach (Control c in Controls)
             {
@@ -590,5 +566,19 @@ namespace DynamicDevices.DiskWriter
             ctrl.ResumeLayout(false);
         }
 
+        private void ReadRegistry()
+        {
+            const string registryPath = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Dynamic Devices Ltd\\DiskImager";
+
+            var file = (string)Registry.GetValue(registryPath, "FileName", "");
+            if (File.Exists(file))
+                textBoxFileName.Text = file;
+
+            var lang = (string)Registry.GetValue(registryPath, "Language", "en-US");
+            if (lang != "en-US")
+            {
+                ChangeLanguage(lang);
+            }
+        }
     }
 }

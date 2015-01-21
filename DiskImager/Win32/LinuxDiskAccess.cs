@@ -37,6 +37,11 @@ namespace DynamicDevices.DiskWriter.Win32
             throw new NotImplementedException();
         }
 
+        public bool UnmountDrive()
+        {
+            throw new NotImplementedException();
+        }
+
         public int Read(byte[] buffer, int readMaxLength, out int readBytes)
         {
             throw new NotImplementedException();

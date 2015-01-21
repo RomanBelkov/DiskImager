@@ -32,7 +32,6 @@
             this.textBoxFileName = new System.Windows.Forms.TextBox();
             this.buttonRead = new System.Windows.Forms.Button();
             this.buttonWrite = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
             this.buttonChooseFile = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -52,10 +51,12 @@
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxTruncation = new System.Windows.Forms.GroupBox();
+            this.checkBoxUnmount = new System.Windows.Forms.CheckBox();
             this.checkBoxUseMBR = new System.Windows.Forms.CheckBox();
             this.checkedListBoxDrives = new System.Windows.Forms.CheckedListBox();
             this.flowLayoutPanelProgressBars = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanelProgressLabels = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.groupBoxCompression.SuspendLayout();
             this.menuStripMain.SuspendLayout();
@@ -81,13 +82,6 @@
             this.buttonWrite.Name = "buttonWrite";
             this.buttonWrite.UseVisualStyleBackColor = true;
             this.buttonWrite.Click += new System.EventHandler(this.ButtonWriteClick);
-            // 
-            // buttonExit
-            // 
-            resources.ApplyResources(this.buttonExit, "buttonExit");
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.ButtonExitClick);
             // 
             // buttonChooseFile
             // 
@@ -216,9 +210,16 @@
             // groupBoxTruncation
             // 
             resources.ApplyResources(this.groupBoxTruncation, "groupBoxTruncation");
+            this.groupBoxTruncation.Controls.Add(this.checkBoxUnmount);
             this.groupBoxTruncation.Controls.Add(this.checkBoxUseMBR);
             this.groupBoxTruncation.Name = "groupBoxTruncation";
             this.groupBoxTruncation.TabStop = false;
+            // 
+            // checkBoxUnmount
+            // 
+            resources.ApplyResources(this.checkBoxUnmount, "checkBoxUnmount");
+            this.checkBoxUnmount.Name = "checkBoxUnmount";
+            this.checkBoxUnmount.UseVisualStyleBackColor = true;
             // 
             // checkBoxUseMBR
             // 
@@ -245,10 +246,16 @@
             this.flowLayoutPanelProgressLabels.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanelProgressLabels.Name = "flowLayoutPanelProgressLabels";
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanelProgressLabels);
             this.Controls.Add(this.flowLayoutPanelProgressBars);
             this.Controls.Add(this.checkedListBoxDrives);
@@ -260,7 +267,6 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStripMain);
             this.Controls.Add(this.buttonChooseFile);
-            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonWrite);
             this.Controls.Add(this.buttonRead);
             this.Controls.Add(this.textBoxFileName);
@@ -288,7 +294,6 @@
         private System.Windows.Forms.TextBox textBoxFileName;
         private System.Windows.Forms.Button buttonRead;
         private System.Windows.Forms.Button buttonWrite;
-        private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonChooseFile;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
@@ -312,6 +317,8 @@
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBoxUnmount;
+        private System.Windows.Forms.Label label1;
     }
 }
 

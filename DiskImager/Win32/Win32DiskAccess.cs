@@ -118,6 +118,21 @@ namespace DynamicDevices.DiskWriter.Win32
             }
         }
 
+        public bool UnmountDrive()
+        {
+            int intOut;
+
+            var success = NativeMethods.DeviceIoControl(_partitionHandle, NativeMethods.IOCTL_STORAGE_EJECT_MEDIA, null, 0, null, 0, out intOut, IntPtr.Zero);
+            if (!success)
+            {
+                LogMsg(@"Error dismounting volume: " + Marshal.GetHRForLastWin32Error());
+                NativeMethods.DeviceIoControl(_partitionHandle, NativeMethods.FSCTL_UNLOCK_VOLUME, null, 0, null, 0, out intOut, IntPtr.Zero);
+                _partitionHandle.Dispose();
+                return false;
+            }
+            return true;
+        }
+
         public int Read(byte[] buffer, int readMaxLength, out int readBytes)
         {
             readBytes = 0;

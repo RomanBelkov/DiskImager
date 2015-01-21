@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -116,8 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonRead.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 190</value>
+  </data>
   <data name="buttonRead.Text" xml:space="preserve">
     <value>Чтение</value>
+  </data>
+  <data name="buttonWrite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>527, 190</value>
   </data>
   <data name="buttonWrite.Text" xml:space="preserve">
     <value>Запись</value>
@@ -125,7 +133,9 @@
   <data name="buttonExit.Text" xml:space="preserve">
     <value>Выход</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="saveFileDialog1.Filter" xml:space="preserve">
+    <value>Образы файлов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Сжатые файлы (*.zip,*.gz,*tgz)|*.zip;*.gz;*.tgz|Все файлы (*.*)|*.*</value>
+  </data>
   <data name="labelFileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 13</value>
   </data>
@@ -138,20 +148,35 @@
   <data name="labelDriveTitle.Text" xml:space="preserve">
     <value>Диски</value>
   </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>621, 190</value>
+  </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Отмена</value>
   </data>
   <data name="groupBoxCompression.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 132</value>
+    <value>429, 118</value>
   </data>
   <data name="groupBoxCompression.Text" xml:space="preserve">
     <value>Сжатие</value>
+  </data>
+  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Опции</value>
   </data>
   <data name="displayAllDrivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 22</value>
   </data>
   <data name="displayAllDrivesToolStripMenuItem.Text" xml:space="preserve">
     <value>Показать все диски ***ОПАСНО***</value>
+  </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 22</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Язык</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 22</value>
@@ -165,61 +190,28 @@
   <data name="russianToolStripMenuItem.Text" xml:space="preserve">
     <value>Русский</value>
   </data>
-  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 22</value>
-  </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Язык</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Опции</value>
-  </data>
-  <data name="checkBoxUseMBR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
-  </data>
-  <data name="checkBoxUseMBR.Text" xml:space="preserve">
-    <value>Использовать MBR</value>
-  </data>
-  <data name="groupBoxTruncation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 132</value>
-  </data>
   <data name="groupBoxTruncation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 50</value>
+    <value>267, 78</value>
   </data>
   <data name="groupBoxTruncation.Text" xml:space="preserve">
     <value>Образ логических разделов</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Disk Imager</value>
+  <data name="checkBoxUnmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 17</value>
   </data>
-  <data name="buttonChooseFile.Text" xml:space="preserve">
-    <value>...</value>
+  <data name="checkBoxUnmount.Text" xml:space="preserve">
+    <value>Размонтировать диски после записи</value>
   </data>
-  <data name="menuStripMain.Text" xml:space="preserve">
-    <value>menuStrip1</value>
+  <data name="checkBoxUseMBR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
   </data>
-  <data name="radioButtonCompGz.Text" xml:space="preserve">
-    <value>GZ</value>
+  <data name="checkBoxUseMBR.Text" xml:space="preserve">
+    <value>Использовать MBR образа (чтение)</value>
   </data>
-  <data name="radioButtonCompNone.Text" xml:space="preserve">
-    <value>NONE</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
   </data>
-  <data name="radioButtonCompTgz.Text" xml:space="preserve">
-    <value>TGZ</value>
-  </data>
-  <data name="radioButtonCompZip.Text" xml:space="preserve">
-    <value>ZIP</value>
-  </data>
-  <data name="saveFileDialog1.Filter" xml:space="preserve">
-    <value>Образы файлов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Сжатые файлы (*.zip,*.gz,*tgz)|*.zip;*.gz;*.tgz|Все файлы (*.*)|*.*</value>
-  </data>
-  <data name="statusStrip1.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
-    <value>toolStripStatusLabel1</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Прогресс</value>
   </data>
 </root>
