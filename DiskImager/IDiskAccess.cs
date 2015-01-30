@@ -1,6 +1,7 @@
 ﻿/**
  *  DiskImager - a tool for writing / reading images on SD cards
  *
+ *  Copyright 2015 by Roman Belkov <romanbelkov@gmail.com>
  *  Copyright 2013, 2014 by Alex J. Lennon <ajlennon@dynamicdevices.co.uk>
  *
  *  Licensed under GNU General Public License 3.0 or later. 
