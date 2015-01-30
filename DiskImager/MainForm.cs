@@ -48,6 +48,7 @@ namespace DynamicDevices.DiskWriter
         {
             InitializeComponent();
 
+            CreateRegistry();
             ChangeLanguage("en-US");
 
             checkBoxUseMBR.Checked  = true;
@@ -566,15 +567,22 @@ namespace DynamicDevices.DiskWriter
             ctrl.ResumeLayout(false);
         }
 
+        private const string RegistryPath = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Dynamic Devices Ltd\\DiskImager";
+
+        private static void CreateRegistry()
+        {
+            if ((string) Registry.GetValue(RegistryPath, "Language", "") != null) return;
+            Registry.SetValue(RegistryPath, "FileName", "");
+            Registry.SetValue(RegistryPath, "Language", "en-US");
+        }
+
         private void ReadRegistry()
         {
-            const string registryPath = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Dynamic Devices Ltd\\DiskImager";
-
-            var file = (string)Registry.GetValue(registryPath, "FileName", "");
+            var file = (string)Registry.GetValue(RegistryPath, "FileName", "");
             if (File.Exists(file))
                 textBoxFileName.Text = file;
 
-            var lang = (string)Registry.GetValue(registryPath, "Language", "en-US");
+            var lang = (string)Registry.GetValue(RegistryPath, "Language", "en-US");
             if (lang != "en-US")
             {
                 ChangeLanguage(lang);
