@@ -40,6 +40,7 @@
             this.labelDriveTitle = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.groupBoxCompression = new System.Windows.Forms.GroupBox();
+            this.radioButtonCompXZ = new System.Windows.Forms.RadioButton();
             this.radioButtonCompNone = new System.Windows.Forms.RadioButton();
             this.radioButtonCompTgz = new System.Windows.Forms.RadioButton();
             this.radioButtonCompGz = new System.Windows.Forms.RadioButton();
@@ -128,12 +129,21 @@
             // groupBoxCompression
             // 
             resources.ApplyResources(this.groupBoxCompression, "groupBoxCompression");
+            this.groupBoxCompression.Controls.Add(this.radioButtonCompXZ);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompNone);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompTgz);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompGz);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompZip);
             this.groupBoxCompression.Name = "groupBoxCompression";
             this.groupBoxCompression.TabStop = false;
+            // 
+            // radioButtonCompXZ
+            // 
+            resources.ApplyResources(this.radioButtonCompXZ, "radioButtonCompXZ");
+            this.radioButtonCompXZ.Name = "radioButtonCompXZ";
+            this.radioButtonCompXZ.TabStop = true;
+            this.radioButtonCompXZ.UseVisualStyleBackColor = true;
+            this.radioButtonCompXZ.CheckedChanged += new System.EventHandler(this.radioButtonCompXZ_CheckedChanged);
             // 
             // radioButtonCompNone
             // 
@@ -319,6 +329,7 @@
         private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBoxUnmount;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButtonCompXZ;
     }
 }
 

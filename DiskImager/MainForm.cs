@@ -266,6 +266,11 @@ namespace DynamicDevices.DiskWriter
             UpdateFileNameText();
         }
 
+        private void radioButtonCompXZ_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateFileNameText();
+        }
+
         private void RadioButtonCompNoneCheckedChanged(object sender, EventArgs e)
         {
             UpdateFileNameText();
@@ -285,6 +290,7 @@ namespace DynamicDevices.DiskWriter
             text = text.Replace(".gzip", "");
             text = text.Replace(".gz", "");
             text = text.Replace(".zip", "");
+            text = text.Replace(".xz", "");
 
             if (radioButtonCompNone.Checked)
             {
@@ -297,10 +303,13 @@ namespace DynamicDevices.DiskWriter
             {
                 text += ".tgz";
                 textBoxFileName.Text = text;
-            }
-            else if (radioButtonCompGz.Checked)
+            } else if (radioButtonCompGz.Checked)
             {
                 text += ".gz";
+                textBoxFileName.Text = text;
+            } else if (radioButtonCompXZ.Checked)
+            {
+                text += ".xz";
                 textBoxFileName.Text = text;
             }
         }
@@ -373,6 +382,8 @@ namespace DynamicDevices.DiskWriter
                 radioButtonCompZip.Checked = true;
             else if (textBoxFileName.Text.ToLower().EndsWith(".img") || textBoxFileName.Text.ToLower().EndsWith(".bin") || textBoxFileName.Text.ToLower().EndsWith(".sdcard"))
                 radioButtonCompNone.Checked = true;
+            else if (textBoxFileName.Text.ToLower().EndsWith(".xz"))
+                radioButtonCompXZ.Checked = true;
 
             if (radioButtonCompNone.Checked)
                 _eCompType = EnumCompressionType.None;
@@ -382,6 +393,8 @@ namespace DynamicDevices.DiskWriter
                 _eCompType = EnumCompressionType.Gzip;
             else if (radioButtonCompZip.Checked)
                 _eCompType = EnumCompressionType.Zip;
+            else if (radioButtonCompXZ.Checked)
+                _eCompType = EnumCompressionType.XZ;
         }
 
         private void DisplayAllDrivesToolStripMenuItemCheckedChanged(object sender, EventArgs e)

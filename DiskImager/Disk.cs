@@ -18,6 +18,7 @@ using DynamicDevices.DiskWriter.Properties;
 using ICSharpCode.SharpZipLib.GZip;
 using ICSharpCode.SharpZipLib.Tar;
 using ICSharpCode.SharpZipLib.Zip;
+using XZ.NET;
 
 namespace DynamicDevices.DiskWriter
 {
@@ -112,7 +113,6 @@ namespace DynamicDevices.DiskWriter
                 LogMsg(Resources.Disk_WriteDrive_Failed_to_lock_drive);
                 return false;
             }            
-            
 
             //
             // Get drive size 
@@ -152,67 +152,70 @@ namespace DynamicDevices.DiskWriter
                 switch (eCompType)
                 {
                     case EnumCompressionType.Zip:
-                        {
-                            var zipFile = new ZipFile(basefs);
+                     
+                        var zipFile = new ZipFile(basefs);
                 
-                            var ze = (from ZipEntry zipEntry in zipFile
-                                          where zipEntry.IsFile
-                                          select zipEntry).FirstOrDefault();
+                        var ze = (from ZipEntry zipEntry in zipFile
+                                        where zipEntry.IsFile
+                                        select zipEntry).FirstOrDefault();
 
-                            if(ze == null)
-                            {
-                                LogMsg(Resources.Disk_WriteDrive_Error_reading_zip_input_stream);
-                                goto readfail2;                                
-                            }
-
-                            var zis = zipFile.GetInputStream(ze);
-
-                            uncompressedlength = ze.Size;
-
-                            fs = zis;
+                        if(ze == null)
+                        {
+                            LogMsg(Resources.Disk_WriteDrive_Error_reading_zip_input_stream);
+                            goto readfail2;                                
                         }
+
+                        var zis = zipFile.GetInputStream(ze);
+
+                        uncompressedlength = ze.Size;
+                        fs = zis;
+                     
                         break;
 
                     case EnumCompressionType.Gzip:
-                        {
-                            var gzis = new GZipInputStream(basefs) {IsStreamOwner = true};
+                     
+                        var gzis = new GZipInputStream(basefs) {IsStreamOwner = true};
 
-                            uncompressedlength = gzis.Length;
-
-                            fs = gzis;
-                        }
+                        uncompressedlength = gzis.Length;
+                        fs = gzis;
+                     
                         break;
 
                     case EnumCompressionType.Targzip:
+                     
+                        var gzos = new GZipInputStream(basefs) {IsStreamOwner = true};
+                        var tis = new TarInputStream(gzos);
+
+                        TarEntry tarEntry;
+                        do
                         {
-                            var gzos = new GZipInputStream(basefs) {IsStreamOwner = true};
+                            tarEntry = tis.GetNextEntry();
+                        } while (tarEntry.IsDirectory);
 
-                            var tis = new TarInputStream(gzos);
+                        uncompressedlength = tarEntry.Size;
+                        fs = tis;
+                     
+                        break;
 
-                            TarEntry tarEntry;
-                            do
-                            {
-                                tarEntry = tis.GetNextEntry();
-                            } while (tarEntry.IsDirectory);
+                    case EnumCompressionType.XZ:
+                     
+                        var xzs = new XZInputStream(basefs);
+                        
+                        uncompressedlength = xzs.Length;
+                        fs = xzs;
 
-                            uncompressedlength = tarEntry.Size;
-
-                            fs = tis;
-                        }
                         break;
 
                     default:
 
                         // No compression - direct to file stream
                         fs = basefs;
-
                         uncompressedlength = fs.Length;
 
                         break;
                 }
 
                 var bufferOffset = 0;
-
                 using (var br = new BinaryReader(fs))
                 {
                     while (offset < uncompressedlength && !IsCancelling)
@@ -282,6 +285,25 @@ namespace DynamicDevices.DiskWriter
                                                      (uncompressedlength / (1024 * 1024) + " MB, " +
                                                       string.Format("{0:F}", (bytesPerSec / (1024 * 1024))) + @" MB/sec," +  Resources.Disk_WriteDrive_Elapsed_time__ + tsElapsed.ToString(@"dd\.hh\:mm\:ss")));
                     }
+                }
+
+                if (fs is ZipOutputStream)
+                {
+                    ((ZipOutputStream)fs).CloseEntry();
+                    ((ZipOutputStream)fs).Close();
+                }
+                if (fs is TarOutputStream)
+                {
+                    ((TarOutputStream)fs).CloseEntry();
+                    fs.Close();
+                }
+                if (fs is GZipOutputStream)
+                {
+                    fs.Close();
+                }
+                if (fs is XZOutputStream)
+                {
+                    fs.Close();
                 }
             }
             errored = false;
@@ -370,7 +392,6 @@ namespace DynamicDevices.DiskWriter
             var buffer = new byte[Globals.MaxBufferSize];
             var offset = 0L;
 
-
             using(var basefs = (Stream)new FileStream(fileName, FileMode.Create, FileAccess.Write))
             {
                 Stream fs;
@@ -378,57 +399,63 @@ namespace DynamicDevices.DiskWriter
                 switch (eCompType)
                 {
                     case EnumCompressionType.Zip:
-                        {
-                            var zfs = new ZipOutputStream(basefs);
+                        var zfs = new ZipOutputStream(basefs);
 
-                            // Default to middle of the range compression
-                            zfs.SetLevel(Globals.CompressionLevel);
+                        // Default to middle of the range compression
+                        zfs.SetLevel(Globals.CompressionLevel);
 
-                            var fi = new FileInfo(fileName);
-                            var entryName = fi.Name;
-                            entryName = entryName.ToLower().Replace(".zip", "");
-                            entryName = ZipEntry.CleanName(entryName);
-                            var zipEntry = new ZipEntry(entryName) {DateTime = fi.LastWriteTime};
-                            zfs.IsStreamOwner = true;
+                        var fi = new FileInfo(fileName);
+                        var entryName = fi.Name;
+                        entryName = entryName.ToLower().Replace(".zip", "");
+                        entryName = ZipEntry.CleanName(entryName);
+                        var zipEntry = new ZipEntry(entryName) {DateTime = fi.LastWriteTime};
+                        zfs.IsStreamOwner = true;
 
-                            // Todo: Consider whether size needs setting for older utils ?
+                        // Todo: Consider whether size needs setting for older utils ?
 
-                            zfs.PutNextEntry(zipEntry);
+                        zfs.PutNextEntry(zipEntry);
 
-                            fs = zfs;
-                        }
+                        fs = zfs;
+
                         break;
 
                     case EnumCompressionType.Gzip:
-                        {
-                            var gzos = new GZipOutputStream(basefs);
-                            gzos.SetLevel(Globals.CompressionLevel);
-                            gzos.IsStreamOwner = true;
+                        
+                        var gzis = new GZipOutputStream(basefs);
+                        gzis.SetLevel(Globals.CompressionLevel);
+                        gzis.IsStreamOwner = true;
 
-                            fs = gzos;
-                        }
+                        fs = gzis;
+                        
                         break;
 
                     case EnumCompressionType.Targzip:
-                        {
-                            var gzos = new GZipOutputStream(basefs);
-                            gzos.SetLevel(Globals.CompressionLevel);
-                            gzos.IsStreamOwner = true;
+                        
+                        var gzos = new GZipOutputStream(basefs);
+                        gzos.SetLevel(Globals.CompressionLevel);
+                        gzos.IsStreamOwner = true;
 
-                            var tos = new TarOutputStream(gzos);
+                        var tos = new TarOutputStream(gzos);
 
-                            fs = tos;
-                        }
+                        fs = tos;
+                        
+                        break;
+
+                    case EnumCompressionType.XZ:
+
+                        var xzs = new XZOutputStream(basefs);
+                        fs = xzs;
+
                         break;
 
                     default:
 
                         // No compression - direct to file stream
                         fs = basefs;
+
                         break;
                 }
 
-                
                     while (offset < readSize && !IsCancelling)
                     {
                         // NOTE: If we provide a buffer that extends past the end of the physical device ReadFile() doesn't
@@ -511,7 +538,6 @@ namespace DynamicDevices.DiskWriter
 
                     }
                 
-                    // Todo: Do we need this?
                     if (fs is ZipOutputStream)
                     {
                         ((ZipOutputStream)fs).CloseEntry();
@@ -520,14 +546,16 @@ namespace DynamicDevices.DiskWriter
                     if (fs is TarOutputStream)
                     {
                         ((TarOutputStream) fs).CloseEntry();
-                        ((TarOutputStream) fs).Close();
+                        fs.Close();
                     }
                     if (fs is GZipOutputStream)
                     {
-   //                    ((GZipOutputStream) fs).Finish();
-                        ((GZipOutputStream) fs).Close();
+                        fs.Close();
                     }
-
+                    if (fs is XZOutputStream)
+                    {
+                        fs.Close();
+                    }
             }
 
         readfail1:

@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_4C9E153BB206498EB3F99948F60DD2E3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6E9AF8EC5D4F379F4D34C8099B9F1E44"
+        "OwnerKey" = "8:_8FDF365DCE9B4F70A60EF2BB1651CCBF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8FDF365DCE9B4F70A60EF2BB1651CCBF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -29,6 +41,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_8FDF365DCE9B4F70A60EF2BB1651CCBF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6E9AF8EC5D4F379F4D34C8099B9F1E44"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -142,6 +160,57 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4C9E153BB206498EB3F99948F60DD2E3"
+            {
+            "SourcePath" = "8:..\\XZ.NET\\liblzma.dll"
+            "TargetName" = "8:liblzma.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6E9AF8EC5D4F379F4D34C8099B9F1E44"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:XZ.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_6E9AF8EC5D4F379F4D34C8099B9F1E44"
+                    {
+                    "Name" = "8:XZ.NET.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:XZ.NET.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B1090C5A5662721B31DE535DD9FE3833"
             {
             "AssemblyRegister" = "3:1"

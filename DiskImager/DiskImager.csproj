@@ -161,6 +161,10 @@
       <Project>{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}</Project>
       <Name>ICSharpCode.SharpZLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XZ.NET\XZ.NET.csproj">
+      <Project>{2a389b68-70dc-4853-81ae-56484f32e94d}</Project>
+      <Name>XZ.NET</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

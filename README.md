@@ -9,6 +9,8 @@ Some rights reserved. See LICENSE, AUTHORS.
 The current release can be downloaded [here](https://github.com/RomanBelkov/DiskImager/releases)
 or [here (old link)](http://www.dynamicdevices.co.uk/downloads/DiskImager.Installer.msi)
 
+Utility was tested on Windows 7 and Windows 8.1 Pro.
+
 (Please feed back any platform testing you do, or any issues you encounter. Thanks.)
 
 ## Description ##
@@ -16,9 +18,11 @@ This utility is a C#.NET implementation of Win32DiskImager with a couple of feat
 
 - writing images to a number of SD cards at once
 
-- reads/writes images to/from compressed file formats: ZIP, TGZ, GZ
+- reads/writes images to/from compressed file formats: ZIP, TGZ, GZ, XZ
 
 - remembers the last file you read/wrote 
+
+- unmounts drives after write
 
 - provides more file filters within file dialog for typical image files (.img, .bin, .sdcard)
 
@@ -29,6 +33,10 @@ This utility is a C#.NET implementation of Win32DiskImager with a couple of feat
 Credits: Inspired by the excellent Win32DiskImager.
 
 ## ChangeLog ##
+
+1.3.0 19/02/2015 RB Added XZ support
+
+1.2.2 21/01/2015 RB Added 'Remove drives after write' and drew new GUI
 
 1.2.1 14/01/15 RB Added Russian localization and tweaked GUI a bit.
 
