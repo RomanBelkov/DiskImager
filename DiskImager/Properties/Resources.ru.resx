@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -138,7 +139,7 @@
     <value>Ошибка записи</value>
   </data>
   <data name="MainForm_MainForm_Image_Files__Choose" xml:space="preserve">
-    <value>Образы файлов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Сжатые файлы (*.zip,*.gz,*tgz)|*.zip;*.gz;*.tgz|Все файлы (*.*)|*.*</value>
+    <value>Образы файлов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Сжатые файлы (*.zip,*.gz,*.tgz, *.xz)|*.zip;*.gz;*.tgz; *.xz|Все файлы (*.*)|*.*</value>
   </data>
   <data name="MainForm_MainForm_Initialised__Licensed_under_GPLv3__Use_at_own_risk_" xml:space="preserve">
     <value>Программа лицензирована GNU GPL v3. Авторы не несут ответственность за ущерб!</value>

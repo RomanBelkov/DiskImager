@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,7 +118,7 @@
     <value>Initialised. Licensed under GPLv3. Use at own risk!</value>
   </data>
   <data name="MainForm_MainForm_Image_Files__Choose" xml:space="preserve">
-    <value>Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Compressed Files (*.zip,*.gz,*tgz)|*.zip;*.gz;*.tgz|All files (*.*)|*.*</value>
+    <value>Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Compressed Files (*.zip,*.gz,*.tgz, *.xz)|*.zip;*.gz;*.tgz; *.xz|All files (*.*)|*.*</value>
   </data>
   <data name="MainForm_ButtonReadClick_You_can_read_from_only_one_drive_at_a_time" xml:space="preserve">
     <value>You can read from only one drive at a time. Please select only one drive from drive list.</value>

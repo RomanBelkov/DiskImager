@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.textBoxFileName = new System.Windows.Forms.TextBox();
             this.buttonRead = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@
             this.flowLayoutPanelProgressBars = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanelProgressLabels = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip1.SuspendLayout();
             this.groupBoxCompression.SuspendLayout();
             this.menuStripMain.SuspendLayout();
@@ -68,12 +70,14 @@
             // 
             resources.ApplyResources(this.textBoxFileName, "textBoxFileName");
             this.textBoxFileName.Name = "textBoxFileName";
+            this.toolTip.SetToolTip(this.textBoxFileName, resources.GetString("textBoxFileName.ToolTip"));
             this.textBoxFileName.TextChanged += new System.EventHandler(this.TextBoxFileNameTextChanged);
             // 
             // buttonRead
             // 
             resources.ApplyResources(this.buttonRead, "buttonRead");
             this.buttonRead.Name = "buttonRead";
+            this.toolTip.SetToolTip(this.buttonRead, resources.GetString("buttonRead.ToolTip"));
             this.buttonRead.UseVisualStyleBackColor = true;
             this.buttonRead.Click += new System.EventHandler(this.ButtonReadClick);
             // 
@@ -81,6 +85,7 @@
             // 
             resources.ApplyResources(this.buttonWrite, "buttonWrite");
             this.buttonWrite.Name = "buttonWrite";
+            this.toolTip.SetToolTip(this.buttonWrite, resources.GetString("buttonWrite.ToolTip"));
             this.buttonWrite.UseVisualStyleBackColor = true;
             this.buttonWrite.Click += new System.EventHandler(this.ButtonWriteClick);
             // 
@@ -88,6 +93,7 @@
             // 
             resources.ApplyResources(this.buttonChooseFile, "buttonChooseFile");
             this.buttonChooseFile.Name = "buttonChooseFile";
+            this.toolTip.SetToolTip(this.buttonChooseFile, resources.GetString("buttonChooseFile.ToolTip"));
             this.buttonChooseFile.UseVisualStyleBackColor = true;
             this.buttonChooseFile.Click += new System.EventHandler(this.ButtonChooseFileClick);
             // 
@@ -97,6 +103,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
             this.statusStrip1.Name = "statusStrip1";
+            this.toolTip.SetToolTip(this.statusStrip1, resources.GetString("statusStrip1.ToolTip"));
             // 
             // toolStripStatusLabel1
             // 
@@ -113,16 +120,19 @@
             // 
             resources.ApplyResources(this.labelFileName, "labelFileName");
             this.labelFileName.Name = "labelFileName";
+            this.toolTip.SetToolTip(this.labelFileName, resources.GetString("labelFileName.ToolTip"));
             // 
             // labelDriveTitle
             // 
             resources.ApplyResources(this.labelDriveTitle, "labelDriveTitle");
             this.labelDriveTitle.Name = "labelDriveTitle";
+            this.toolTip.SetToolTip(this.labelDriveTitle, resources.GetString("labelDriveTitle.ToolTip"));
             // 
             // buttonCancel
             // 
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.Name = "buttonCancel";
+            this.toolTip.SetToolTip(this.buttonCancel, resources.GetString("buttonCancel.ToolTip"));
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancelClick);
             // 
@@ -136,12 +146,14 @@
             this.groupBoxCompression.Controls.Add(this.radioButtonCompZip);
             this.groupBoxCompression.Name = "groupBoxCompression";
             this.groupBoxCompression.TabStop = false;
+            this.toolTip.SetToolTip(this.groupBoxCompression, resources.GetString("groupBoxCompression.ToolTip"));
             // 
             // radioButtonCompXZ
             // 
             resources.ApplyResources(this.radioButtonCompXZ, "radioButtonCompXZ");
             this.radioButtonCompXZ.Name = "radioButtonCompXZ";
             this.radioButtonCompXZ.TabStop = true;
+            this.toolTip.SetToolTip(this.radioButtonCompXZ, resources.GetString("radioButtonCompXZ.ToolTip"));
             this.radioButtonCompXZ.UseVisualStyleBackColor = true;
             this.radioButtonCompXZ.CheckedChanged += new System.EventHandler(this.radioButtonCompXZ_CheckedChanged);
             // 
@@ -151,6 +163,7 @@
             this.radioButtonCompNone.Checked = true;
             this.radioButtonCompNone.Name = "radioButtonCompNone";
             this.radioButtonCompNone.TabStop = true;
+            this.toolTip.SetToolTip(this.radioButtonCompNone, resources.GetString("radioButtonCompNone.ToolTip"));
             this.radioButtonCompNone.UseVisualStyleBackColor = true;
             this.radioButtonCompNone.CheckedChanged += new System.EventHandler(this.RadioButtonCompNoneCheckedChanged);
             // 
@@ -158,6 +171,7 @@
             // 
             resources.ApplyResources(this.radioButtonCompTgz, "radioButtonCompTgz");
             this.radioButtonCompTgz.Name = "radioButtonCompTgz";
+            this.toolTip.SetToolTip(this.radioButtonCompTgz, resources.GetString("radioButtonCompTgz.ToolTip"));
             this.radioButtonCompTgz.UseVisualStyleBackColor = true;
             this.radioButtonCompTgz.CheckedChanged += new System.EventHandler(this.RadioButtonCompTgzCheckedChanged);
             // 
@@ -165,6 +179,7 @@
             // 
             resources.ApplyResources(this.radioButtonCompGz, "radioButtonCompGz");
             this.radioButtonCompGz.Name = "radioButtonCompGz";
+            this.toolTip.SetToolTip(this.radioButtonCompGz, resources.GetString("radioButtonCompGz.ToolTip"));
             this.radioButtonCompGz.UseVisualStyleBackColor = true;
             this.radioButtonCompGz.CheckedChanged += new System.EventHandler(this.RadioButtonCompGzCheckedChanged);
             // 
@@ -172,6 +187,7 @@
             // 
             resources.ApplyResources(this.radioButtonCompZip, "radioButtonCompZip");
             this.radioButtonCompZip.Name = "radioButtonCompZip";
+            this.toolTip.SetToolTip(this.radioButtonCompZip, resources.GetString("radioButtonCompZip.ToolTip"));
             this.radioButtonCompZip.UseVisualStyleBackColor = true;
             this.radioButtonCompZip.CheckedChanged += new System.EventHandler(this.RadioButtonCompZipCheckedChanged);
             // 
@@ -181,6 +197,7 @@
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem});
             this.menuStripMain.Name = "menuStripMain";
+            this.toolTip.SetToolTip(this.menuStripMain, resources.GetString("menuStripMain.ToolTip"));
             // 
             // optionsToolStripMenuItem
             // 
@@ -224,17 +241,20 @@
             this.groupBoxTruncation.Controls.Add(this.checkBoxUseMBR);
             this.groupBoxTruncation.Name = "groupBoxTruncation";
             this.groupBoxTruncation.TabStop = false;
+            this.toolTip.SetToolTip(this.groupBoxTruncation, resources.GetString("groupBoxTruncation.ToolTip"));
             // 
             // checkBoxUnmount
             // 
             resources.ApplyResources(this.checkBoxUnmount, "checkBoxUnmount");
             this.checkBoxUnmount.Name = "checkBoxUnmount";
+            this.toolTip.SetToolTip(this.checkBoxUnmount, resources.GetString("checkBoxUnmount.ToolTip"));
             this.checkBoxUnmount.UseVisualStyleBackColor = true;
             // 
             // checkBoxUseMBR
             // 
             resources.ApplyResources(this.checkBoxUseMBR, "checkBoxUseMBR");
             this.checkBoxUseMBR.Name = "checkBoxUseMBR";
+            this.toolTip.SetToolTip(this.checkBoxUseMBR, resources.GetString("checkBoxUseMBR.ToolTip"));
             this.checkBoxUseMBR.UseVisualStyleBackColor = true;
             // 
             // checkedListBoxDrives
@@ -243,23 +263,33 @@
             this.checkedListBoxDrives.FormattingEnabled = true;
             this.checkedListBoxDrives.Name = "checkedListBoxDrives";
             this.checkedListBoxDrives.Sorted = true;
+            this.toolTip.SetToolTip(this.checkedListBoxDrives, resources.GetString("checkedListBoxDrives.ToolTip"));
             // 
             // flowLayoutPanelProgressBars
             // 
             resources.ApplyResources(this.flowLayoutPanelProgressBars, "flowLayoutPanelProgressBars");
             this.flowLayoutPanelProgressBars.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanelProgressBars.Name = "flowLayoutPanelProgressBars";
+            this.toolTip.SetToolTip(this.flowLayoutPanelProgressBars, resources.GetString("flowLayoutPanelProgressBars.ToolTip"));
             // 
             // flowLayoutPanelProgressLabels
             // 
             resources.ApplyResources(this.flowLayoutPanelProgressLabels, "flowLayoutPanelProgressLabels");
             this.flowLayoutPanelProgressLabels.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanelProgressLabels.Name = "flowLayoutPanelProgressLabels";
+            this.toolTip.SetToolTip(this.flowLayoutPanelProgressLabels, resources.GetString("flowLayoutPanelProgressLabels.ToolTip"));
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            this.toolTip.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
+            // 
+            // toolTip
+            // 
+            this.toolTip.AutoPopDelay = 15000;
+            this.toolTip.InitialDelay = 500;
+            this.toolTip.ReshowDelay = 100;
             // 
             // MainForm
             // 
@@ -285,6 +315,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -330,6 +361,7 @@
         private System.Windows.Forms.CheckBox checkBoxUnmount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton radioButtonCompXZ;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

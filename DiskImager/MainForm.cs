@@ -530,6 +530,8 @@ namespace DynamicDevices.DiskWriter
 
         #endregion
 
+        #region Localization
+
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeLanguage("en-US");
@@ -554,6 +556,8 @@ namespace DynamicDevices.DiskWriter
             }
             
             ChangeMenuStripLanguage(menuStripMain.Items, resources);
+            ChangeToolTipLanguage(resources);
+
             toolStripStatusLabel1.Text = Resources.MainForm_MainForm_Initialised__Licensed_under_GPLv3__Use_at_own_risk_;
             saveFileDialog1.Filter = Resources.MainForm_MainForm_Image_Files__Choose;
         }
@@ -570,6 +574,15 @@ namespace DynamicDevices.DiskWriter
             }
         }
 
+        private void ChangeToolTipLanguage(ComponentResourceManager resources)
+        {
+            toolTip.SetToolTip(buttonChooseFile, resources.GetString("buttonChooseFile.ToolTip"));
+            toolTip.SetToolTip(groupBoxCompression, resources.GetString("groupBoxCompression.ToolTip"));
+            toolTip.SetToolTip(checkedListBoxDrives, resources.GetString("checkedListBoxDrives.ToolTip"));
+            toolTip.SetToolTip(checkBoxUnmount, resources.GetString("checkBoxUnmount.ToolTip"));
+            toolTip.SetToolTip(checkBoxUseMBR, resources.GetString("checkBoxUseMBR.ToolTip"));
+        }
+
         //refresh all the sub-controls of the form recursively
         private void RefreshFormResources(Control ctrl, ComponentResourceManager res)
         {
@@ -579,6 +592,10 @@ namespace DynamicDevices.DiskWriter
                 RefreshFormResources(c, res); // recursion
             ctrl.ResumeLayout(false);
         }
+
+        #endregion
+
+        #region Registry
 
         private const string RegistryPath = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Dynamic Devices Ltd\\DiskImager";
 
@@ -601,5 +618,7 @@ namespace DynamicDevices.DiskWriter
                 ChangeLanguage(lang);
             }
         }
+
+        #endregion
     }
 }

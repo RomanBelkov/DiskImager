@@ -313,7 +313,7 @@ namespace DynamicDevices.DiskWriter.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Compressed Files (*.zip,*.gz,*tgz)|*.zip;*.gz;*.tgz|All files (*.*)|*.*.
+        ///   Looks up a localized string similar to Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Compressed Files (*.zip,*.gz,*.tgz, *.xz)|*.zip;*.gz;*.tgz; *.xz|All files (*.*)|*.*.
         /// </summary>
         internal static string MainForm_MainForm_Image_Files__Choose {
             get {
