@@ -130,6 +130,9 @@
   <data name="buttonWrite.Text" xml:space="preserve">
     <value>Запись</value>
   </data>
+  <data name="buttonChooseFile.ToolTip" xml:space="preserve">
+    <value>Открыть диалог выбора файла</value>
+  </data>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
     <value>Образы файлов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Сжатые файлы (*.zip,*.gz,*tgz)|*.zip;*.gz;*.tgz|Все файлы (*.*)|*.*</value>
   </data>
@@ -157,23 +160,19 @@
   <data name="groupBoxCompression.Text" xml:space="preserve">
     <value>Сжатие</value>
   </data>
-  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Опции</value>
+  <data name="groupBoxCompression.ToolTip" xml:space="preserve">
+    <value>Выбрать метод сжатия образа.
+Для записи на диск не надо указывать формат, утилита сама распознает формат
+архива/образа.
+Для чтения с диска можно указать любой желаемый формат.
+
+СОВЕТ: Если вы читаете с диска и не знаете, что выбрать, используйте XZ</value>
   </data>
   <data name="displayAllDrivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 22</value>
   </data>
   <data name="displayAllDrivesToolStripMenuItem.Text" xml:space="preserve">
     <value>Показать все диски ***ОПАСНО***</value>
-  </data>
-  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 22</value>
-  </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Язык</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 22</value>
@@ -187,11 +186,17 @@
   <data name="russianToolStripMenuItem.Text" xml:space="preserve">
     <value>Русский</value>
   </data>
-  <data name="groupBoxTruncation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 78</value>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 22</value>
   </data>
-  <data name="groupBoxTruncation.Text" xml:space="preserve">
-    <value>Образ логических разделов</value>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Опции</value>
   </data>
   <data name="checkBoxUnmount.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 17</value>
@@ -219,6 +224,12 @@
 
 СОВЕТ: Если не знаете, зачем это, оставьте отмеченным.</value>
   </data>
+  <data name="groupBoxTruncation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 78</value>
+  </data>
+  <data name="groupBoxTruncation.Text" xml:space="preserve">
+    <value>Образ логических разделов</value>
+  </data>
   <data name="checkedListBoxDrives.ToolTip" xml:space="preserve">
     <value>Список дисков, подмонтированных системой.
 По умолчанию показывает внешние диски, но можно
@@ -229,16 +240,5 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Прогресс</value>
-  </data>
-  <data name="buttonChooseFile.ToolTip" xml:space="preserve">
-    <value>Открыть диалог выбора файла</value>
-  </data>
-  <data name="groupBoxCompression.ToolTip" xml:space="preserve">
-    <value>Выбрать метод сжатия образа.
-Для записи на диск не надо указывать формат, утилита сама распознает формат
-архива/образа.
-Для чтения с диска можно указать любой желаемый формат.
-
-СОВЕТ: Если вы читаете с диска и не знаете, что выбрать, используйте XZ</value>
   </data>
 </root>

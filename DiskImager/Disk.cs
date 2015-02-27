@@ -291,24 +291,21 @@ namespace DynamicDevices.DiskWriter
                 {
                     ((ZipOutputStream)fs).CloseEntry();
                     ((ZipOutputStream)fs).Close();
-                }
-                if (fs is TarOutputStream)
+                } else if (fs is TarOutputStream)
                 {
                     ((TarOutputStream)fs).CloseEntry();
                     fs.Close();
-                }
-                if (fs is GZipOutputStream)
+                } else if (fs is GZipOutputStream)
                 {
                     fs.Close();
-                }
-                if (fs is XZOutputStream)
+                } else if (fs is XZOutputStream)
                 {
                     fs.Close();
                 }
             }
             errored = false;
 
-            if (removeAfter)
+            if (removeAfter && !IsCancelling)
                 _diskAccess.UnmountDrive();
 
         readfail1:
@@ -542,17 +539,14 @@ namespace DynamicDevices.DiskWriter
                     {
                         ((ZipOutputStream)fs).CloseEntry();
                         ((ZipOutputStream)fs).Close();
-                    }
-                    if (fs is TarOutputStream)
+                    } else if (fs is TarOutputStream)
                     {
                         ((TarOutputStream) fs).CloseEntry();
                         fs.Close();
-                    }
-                    if (fs is GZipOutputStream)
+                    } else if (fs is GZipOutputStream)
                     {
                         fs.Close();
-                    }
-                    if (fs is XZOutputStream)
+                    } else if (fs is XZOutputStream)
                     {
                         fs.Close();
                     }

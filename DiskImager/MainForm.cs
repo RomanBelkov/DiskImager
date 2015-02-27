@@ -120,7 +120,8 @@ namespace DynamicDevices.DiskWriter
             var drive = (string)checkedListBoxDrives.CheckedItems[0];
 
             ClearLayoutPanels();
-            GetPathIfEmpty();
+            if (GetPathIfEmpty() == false)
+                return;
 
             DisableButtons(true);
 
@@ -134,6 +135,9 @@ namespace DynamicDevices.DiskWriter
 
                 Thread.CurrentThread.CurrentUICulture = CurrentLocale;
                 SendProgressToUI(disk);
+
+                DiskAccesses.Add(diskAccess);
+                _disks.Add(disk);
 
                 var res = false;
                 try
@@ -177,7 +181,8 @@ namespace DynamicDevices.DiskWriter
             }
 
             ClearLayoutPanels();
-            GetPathIfEmpty();
+            if (GetPathIfEmpty() == false) 
+                return;
 
             DisableButtons(true);
 
@@ -317,15 +322,24 @@ namespace DynamicDevices.DiskWriter
         /// <summary>
         /// Select the file for read / write and setup defaults for whether we're using compression based on extension
         /// </summary>
-        private void ChooseFile()
+        private bool ChooseFile()
         {
             var dr = saveFileDialog1.ShowDialog();
 
             if (dr != DialogResult.OK)
-                return;
+                return false;
             
             textBoxFileName.Text = saveFileDialog1.FileName;
-                TextBoxFileNameTextChanged(this, null);
+            TextBoxFileNameTextChanged(this, null);
+            return true;
+        }
+
+        /// <summary>
+        /// Before writing / reading we should check that FileName is not empty
+        /// </summary>
+        private bool GetPathIfEmpty()
+        {
+            return !string.IsNullOrEmpty(textBoxFileName.Text) || ChooseFile();
         }
 
         /// <summary>
@@ -344,15 +358,6 @@ namespace DynamicDevices.DiskWriter
                 disk.OnProgress +=
                     (o, progressPercentage) => Invoke((MethodInvoker) delegate { progressBar.Value = progressPercentage; });
             });
-        }
-
-        /// <summary>
-        /// Before writing / reading we should check that FileName is not empty
-        /// </summary>
-        private void GetPathIfEmpty()
-        {
-            if (string.IsNullOrEmpty(textBoxFileName.Text))
-                ChooseFile();
         }
 
         /// <summary>
