@@ -57,20 +57,49 @@ namespace XZ.NET
 
         public LzmaCheck check;
 
-        readonly int reserved_enum1;
-        readonly int reserved_enum2;
-        readonly int reserved_enum3;
-        readonly int reserved_enum4;
-        readonly char reserved_bool1;
-        readonly char reserved_bool2;
-        readonly char reserved_bool3;
-        readonly char reserved_bool4;
-        readonly char reserved_bool5;
-        readonly char reserved_bool6;
-        readonly char reserved_bool7;
-        readonly char reserved_bool8;
-        readonly UInt32 reserved_int1;
-        readonly UInt32 reserved_int2;
+        private readonly int reserved_enum1;
+        private readonly int reserved_enum2;
+        private readonly int reserved_enum3;
+        private readonly int reserved_enum4;
+        private readonly char reserved_bool1;
+        private readonly char reserved_bool2;
+        private readonly char reserved_bool3;
+        private readonly char reserved_bool4;
+        private readonly char reserved_bool5;
+        private readonly char reserved_bool6;
+        private readonly char reserved_bool7;
+        private readonly char reserved_bool8;
+        private readonly UInt32 reserved_int1;
+        private readonly UInt32 reserved_int2;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct LzmaMT
+    {
+        public UInt32 flags;
+        public UInt32 threads;
+        public UInt64 block_size;
+        public UInt32 timeout;
+        public UInt32 preset;
+        public IntPtr filters;
+        //public LzmaFilter filters;
+        public LzmaCheck check;
+
+        private readonly int reserved_enum1;
+        private readonly int reserved_enum2;
+        private readonly int reserved_enum3;
+        private readonly int reserved_int1;
+        private readonly int reserved_int2;
+        private readonly int reserved_int3;
+        private readonly int reserved_int4;
+        private readonly UInt64 reserved_int5;
+        private readonly UInt64 reserved_int6;
+        private readonly UInt64 reserved_int7;
+        private readonly UInt64 reserved_int8;
+        private readonly IntPtr reserved_ptr1;
+        private readonly IntPtr reserved_ptr2;
+        private readonly IntPtr reserved_ptr3;
+        private readonly IntPtr reserved_ptr4;
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -125,6 +154,7 @@ namespace XZ.NET
         internal static extern void lzma_end(ref LzmaStream stream);
 
         [DllImport("liblzma.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        internal static extern LzmaReturn lzma_easy_encoder(ref LzmaStream stream, int preset, LzmaCheck check);
+        internal static extern LzmaReturn lzma_stream_encoder_mt(ref LzmaStream stream, ref LzmaMT mt);
+
     }
 }

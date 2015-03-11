@@ -11,7 +11,6 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 
@@ -19,11 +18,12 @@ namespace XZ.NET
 {
     public class XZOutputStream : Stream
     {
-        private readonly List<byte> _mInternalBuffer = new List<byte>();
         private LzmaStream _lzmaStream;
         private readonly Stream _mInnerStream;
         private readonly IntPtr _inbuf;
         private readonly IntPtr _outbuf;
+
+        private const int MaxThreads = 8;
 
         // This is a default compression preset & since
         // the output does not benefit a lot from changing 
@@ -38,7 +38,22 @@ namespace XZ.NET
         {
             _mInnerStream = s;
 
-            var ret = Native.lzma_easy_encoder(ref _lzmaStream, Preset, LzmaCheck.LzmaCheckCrc64);
+            var mt = new LzmaMT()
+            {
+                flags = 0,
+                block_size = 0,
+                timeout = 0,
+                preset = Preset,
+                filters = IntPtr.Zero,
+                check = LzmaCheck.LzmaCheckCrc64,
+                threads = (uint)Environment.ProcessorCount
+            };
+
+            if (mt.threads > MaxThreads)
+                mt.threads = MaxThreads;
+
+            var ret = Native.lzma_stream_encoder_mt(ref _lzmaStream, ref mt);
+            //var ret = Native.lzma_easy_encoder(ref _lzmaStream, Preset, LzmaCheck.LzmaCheckCrc64);
 
             _inbuf = Marshal.AllocHGlobal(BufSize);
             _outbuf = Marshal.AllocHGlobal(BufSize);
@@ -68,17 +83,17 @@ namespace XZ.NET
 
         public override void Flush()
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public override long Seek(long offset, SeekOrigin origin)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public override void SetLength(long value)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public override int Read(byte[] buffer, int offset, int count)
@@ -88,9 +103,6 @@ namespace XZ.NET
 
         public override void Write(byte[] buffer, int offset, int count)
         {
-            var action = LzmaAction.LzmaRun;
-
-            var writeBuf = new byte[BufSize];
             var outManagedBuf = new byte[BufSize];
 
             if (_lzmaStream.avail_in == 0)
@@ -98,18 +110,17 @@ namespace XZ.NET
                 _lzmaStream.avail_in = (uint)count;
                 Marshal.Copy(buffer, 0, _inbuf, (int)_lzmaStream.avail_in);
                 _lzmaStream.next_in = _inbuf;
-
             }
 
-            LzmaReturn ret = LzmaReturn.LzmaOK;
+            var ret = LzmaReturn.LzmaOK;
 
             while (_lzmaStream.avail_in > 0)
             {
-                ret = Native.lzma_code(ref _lzmaStream, action);
+                ret = Native.lzma_code(ref _lzmaStream, LzmaAction.LzmaRun);
 
                 if (_lzmaStream.avail_out == 0 || ret == LzmaReturn.LzmaStreamEnd)
                 {
-                    var writeSize = BufSize - (int) _lzmaStream.avail_out;
+                    var writeSize = BufSize - (int)_lzmaStream.avail_out;
                     Marshal.Copy(_outbuf, outManagedBuf, 0, writeSize);
 
                     _mInnerStream.Write(outManagedBuf, 0, writeSize);
@@ -142,28 +153,28 @@ namespace XZ.NET
 
         public override bool CanRead
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
         public override bool CanSeek
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
         public override bool CanWrite
         {
-            get { throw new NotImplementedException(); }
+            get { return true; }
         }
 
         public override long Length
         {
-            get { throw new NotImplementedException(); }
+            get { throw new NotSupportedException(); }
         }
 
         public override long Position
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { throw new NotSupportedException(); }
+            set { throw new NotSupportedException(); }
         }
 
         public override void Close()
@@ -173,14 +184,14 @@ namespace XZ.NET
 
         protected override void Dispose(bool disposing)
         {
-            _lzmaStream.avail_in = 0; //todo check if needed
+            _lzmaStream.avail_in = 0; //check if needed
 
             var ret = Native.lzma_code(ref _lzmaStream, LzmaAction.LzmaFinish);
             var outManagedBuf = new byte[BufSize];
 
             if (_lzmaStream.avail_out == 0 || ret == LzmaReturn.LzmaStreamEnd)
             {
-                var writeSize = BufSize - (int) _lzmaStream.avail_out;
+                var writeSize = BufSize - (int)_lzmaStream.avail_out;
                 Marshal.Copy(_outbuf, outManagedBuf, 0, writeSize);
 
                 _mInnerStream.Write(outManagedBuf, 0, writeSize);
