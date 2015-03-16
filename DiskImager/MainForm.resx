@@ -161,7 +161,7 @@
   <data name="checkBoxUnmount.ToolTip" xml:space="preserve">
     <value>If enabled, utility will try to unmount drives that were 
 used for 'Write' operation.
-If disabled, you will have to remove drives yourself.
+If disabled, you will have to unmount drives yourself.
 
 HINT: If you do not know what to do, leave this property
 checked</value>

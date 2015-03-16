@@ -34,6 +34,8 @@ Credits: Inspired by the excellent Win32DiskImager.
 
 ## ChangeLog ##
 
+1.3.1 16/03/2015 RB Added MultiThreaded XZ compression & helping tooltips
+
 1.3.0 19/02/2015 RB Added XZ support
 
 1.2.2 21/01/2015 RB Added 'Remove drives after write' and drew new GUI
