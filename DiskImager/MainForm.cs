@@ -54,7 +54,7 @@ namespace DynamicDevices.DiskWriter
             checkBoxUseMBR.Checked  = true;
             checkBoxUnmount.Checked = true;
 
-            MessageBoxEx.Owner = Handle;
+            //MessageBoxEx.Owner = Handle;
 
             toolStripStatusLabel1.Text = Resources.MainForm_MainForm_Initialised__Licensed_under_GPLv3__Use_at_own_risk_;
 
@@ -146,15 +146,18 @@ namespace DynamicDevices.DiskWriter
                 }
                 catch (Exception ex)
                 {
-                    toolStripStatusLabel1.Text = ex.Message;
+                    Invoke(new Action(() => MessageBox.Show(ex.Message, @"Exception at ReadDrive", MessageBoxButtons.OK, MessageBoxIcon.Error)));
                 }
+
                 if (!res && !disk.IsCancelling)
                 {
-                    MessageBoxEx.Show(Resources.MainForm_ButtonReadClick_Problem_with_reading_from_disk_, Resources.MainForm_ButtonReadClick_Read_Error,
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Invoke(new Action ( () => MessageBox.Show(Resources.MainForm_ButtonReadClick_Problem_with_reading_from_disk_, Resources.MainForm_ButtonReadClick_Read_Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error)));
                 }
 
                 Invoke((MethodInvoker) EnableButtons);
+                if (res)
+                    Invoke((MethodInvoker) EndInfo);
             });
         }
 
@@ -184,6 +187,12 @@ namespace DynamicDevices.DiskWriter
             if (GetPathIfEmpty() == false) 
                 return;
 
+            if (!File.Exists(textBoxFileName.Text))
+            {
+                MessageBox.Show(Resources.MainForm_ButtonWriteClick_File_does_not_exist_, Resources.MainForm_ButtonWriteClick_I_O_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             DisableButtons(true);
 
             Task.Factory.StartNew(() =>
@@ -209,21 +218,27 @@ namespace DynamicDevices.DiskWriter
                     }
                     catch (Exception ex)
                     {
-                        toolStripStatusLabel1.Text = ex.Message;
+                        Invoke(new Action( () => MessageBox.Show(ex.Message, @"Exception at WriteDrive", MessageBoxButtons.OK, MessageBoxIcon.Error)));
                     }
+
                     if (!res && !disk.IsCancelling)
                     {
-                        MessageBoxEx.Show(Resources.MainForm_ButtonWriteClick_Problem_writing_to_disk__Is_it_write_protected_, Resources.MainForm_ButtonWriteClick_Write_Error,
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Invoke(new Action ( () => MessageBox.Show(Resources.MainForm_ButtonWriteClick_Problem_writing_to_disk__Is_it_write_protected_, Resources.MainForm_ButtonWriteClick_Write_Error,
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)));
                     }
 
                 })).ToArray();
 
                 Task.WaitAll(tasks);
-
-                Invoke((MethodInvoker) EnableButtons);
+                Invoke((MethodInvoker)EndInfo);
+                Invoke((MethodInvoker)EnableButtons);
             });
-            
+        }
+
+        private static void EndInfo()
+        {
+            System.Media.SystemSounds.Beep.Play();
+            MessageBox.Show(Resources.MainForm_ButtonWriteClick_All_drives_are_ready, Resources.MainForm_ButtonWriteClick_All_done, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>

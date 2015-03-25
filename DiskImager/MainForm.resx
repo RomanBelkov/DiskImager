@@ -118,107 +118,372 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonChooseFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 20</value>
+  <data name="textBoxFileName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
+  </data>
+  <data name="textBoxFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>366, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonChooseFile.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="textBoxFileName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;buttonRead.Name" xml:space="preserve">
-    <value>buttonRead</value>
+  <data name="&gt;&gt;textBoxFileName.Name" xml:space="preserve">
+    <value>textBoxFileName</value>
   </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Language</value>
+  <data name="&gt;&gt;textBoxFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButtonCompZip.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;textBoxFileName.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;languageToolStripMenuItem.Name" xml:space="preserve">
-    <value>languageToolStripMenuItem</value>
+  <data name="&gt;&gt;textBoxFileName.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
-  <data name="labelFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
+  <data name="buttonRead.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 180</value>
+  </data>
+  <data name="buttonRead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonRead.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="buttonRead.Text" xml:space="preserve">
     <value>Read</value>
   </data>
-  <data name="labelDriveTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 13</value>
+  <data name="&gt;&gt;buttonRead.Name" xml:space="preserve">
+    <value>buttonRead</value>
   </data>
-  <data name="checkBoxUnmount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 17</value>
+  <data name="&gt;&gt;buttonRead.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBoxUnmount.Name" xml:space="preserve">
-    <value>checkBoxUnmount</value>
-  </data>
-  <data name="displayAllDrivesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Display All Drives  *** DANGEROUS ***</value>
-  </data>
-  <data name="&gt;&gt;checkBoxUnmount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="checkBoxUnmount.ToolTip" xml:space="preserve">
-    <value>If enabled, utility will try to unmount drives that were 
-used for 'Write' operation.
-If disabled, you will have to unmount drives yourself.
-
-HINT: If you do not know what to do, leave this property
-checked</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelProgressBars.Name" xml:space="preserve">
-    <value>flowLayoutPanelProgressBars</value>
-  </data>
-  <data name="&gt;&gt;labelFileName.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonRead.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="buttonRead.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;buttonRead.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
-  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
-    <value>buttonCancel</value>
+  <data name="buttonWrite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>528, 180</value>
   </data>
-  <data name="&gt;&gt;groupBoxTruncation.Name" xml:space="preserve">
-    <value>groupBoxTruncation</value>
+  <data name="buttonWrite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="buttonWrite.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="checkedListBoxDrives.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="buttonWrite.Text" xml:space="preserve">
+    <value>Write</value>
   </data>
-  <data name="checkBoxUseMBR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 17</value>
+  <data name="&gt;&gt;buttonWrite.Name" xml:space="preserve">
+    <value>buttonWrite</value>
   </data>
-  <data name="&gt;&gt;russianToolStripMenuItem.Name" xml:space="preserve">
-    <value>russianToolStripMenuItem</value>
+  <data name="&gt;&gt;buttonWrite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="flowLayoutPanelProgressLabels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 219</value>
+  <data name="&gt;&gt;buttonWrite.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="flowLayoutPanelProgressBars.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 89</value>
+  <data name="&gt;&gt;buttonWrite.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="buttonChooseFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 49</value>
+  </data>
+  <data name="buttonChooseFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="buttonChooseFile.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="buttonChooseFile.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>544, 17</value>
+  </metadata>
+  <data name="buttonChooseFile.ToolTip" xml:space="preserve">
+    <value>Opens file selection dialog</value>
   </data>
   <data name="&gt;&gt;buttonChooseFile.Name" xml:space="preserve">
     <value>buttonChooseFile</value>
   </data>
-  <data name="checkBoxUnmount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 45</value>
+  <data name="&gt;&gt;buttonChooseFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="menuStripMain.Text" xml:space="preserve">
-    <value>menuStrip1</value>
+  <data name="&gt;&gt;buttonChooseFile.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flowLayoutPanelProgressBars.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>TopDown</value>
+  <data name="&gt;&gt;buttonChooseFile.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
-  <data name="checkedListBoxDrives.ToolTip" xml:space="preserve">
-    <value>This is a table with all your drives mounted on the system.
-By default it shows only removable drives, but you can 
-change this in 'Options -&gt; Display all drives'</value>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 356</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>708, 22</value>
+  </data>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>273, 17</value>
+  </metadata>
+  <data name="saveFileDialog1.Filter" xml:space="preserve">
+    <value>Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|XZ archives (*.xz)|*.xz|ZIP archives (*.zip)|*.zip|GZ archives (*.gz,*.tgz)|*.gz;*.tgz|All files (*.*)|*.*</value>
+  </data>
+  <data name="labelFileName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelFileName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 34</value>
+  </data>
+  <data name="labelFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="labelFileName.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="labelFileName.Text" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="&gt;&gt;labelFileName.Name" xml:space="preserve">
+    <value>labelFileName</value>
+  </data>
+  <data name="&gt;&gt;labelFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFileName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelFileName.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="labelDriveTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelDriveTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 73</value>
+  </data>
+  <data name="labelDriveTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 13</value>
+  </data>
+  <data name="labelDriveTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="labelDriveTitle.Text" xml:space="preserve">
+    <value>Removable Drives</value>
+  </data>
+  <data name="&gt;&gt;labelDriveTitle.Name" xml:space="preserve">
+    <value>labelDriveTitle</value>
+  </data>
+  <data name="&gt;&gt;labelDriveTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelDriveTitle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelDriveTitle.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonCancel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>621, 180</value>
+  </data>
+  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
+    <value>buttonCancel</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="radioButtonCompXZ.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonCompXZ.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 19</value>
+  </data>
+  <data name="radioButtonCompXZ.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 17</value>
+  </data>
+  <data name="radioButtonCompXZ.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="radioButtonCompXZ.Text" xml:space="preserve">
+    <value>XZ</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompXZ.Name" xml:space="preserve">
+    <value>radioButtonCompXZ</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompXZ.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompXZ.Parent" xml:space="preserve">
+    <value>groupBoxCompression</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompXZ.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radioButtonCompNone.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonCompNone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>198, 19</value>
+  </data>
+  <data name="radioButtonCompNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
   </data>
   <data name="radioButtonCompNone.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="radioButtonCompNone.Text" xml:space="preserve">
+    <value>NONE</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompNone.Name" xml:space="preserve">
+    <value>radioButtonCompNone</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompNone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompNone.Parent" xml:space="preserve">
+    <value>groupBoxCompression</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompNone.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="radioButtonCompTgz.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonCompTgz.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 19</value>
+  </data>
+  <data name="radioButtonCompTgz.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="radioButtonCompTgz.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="radioButtonCompTgz.Text" xml:space="preserve">
+    <value>TGZ</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompTgz.Name" xml:space="preserve">
+    <value>radioButtonCompTgz</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompTgz.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompTgz.Parent" xml:space="preserve">
+    <value>groupBoxCompression</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompTgz.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="radioButtonCompGz.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonCompGz.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 19</value>
+  </data>
+  <data name="radioButtonCompGz.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 17</value>
+  </data>
+  <data name="radioButtonCompGz.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radioButtonCompGz.Text" xml:space="preserve">
+    <value>GZ</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompGz.Name" xml:space="preserve">
+    <value>radioButtonCompGz</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompGz.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompGz.Parent" xml:space="preserve">
+    <value>groupBoxCompression</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompGz.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="radioButtonCompZip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonCompZip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="radioButtonCompZip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 17</value>
+  </data>
+  <data name="radioButtonCompZip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="radioButtonCompZip.Text" xml:space="preserve">
+    <value>ZIP</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompZip.Name" xml:space="preserve">
+    <value>radioButtonCompZip</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompZip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompZip.Parent" xml:space="preserve">
+    <value>groupBoxCompression</value>
+  </data>
+  <data name="&gt;&gt;radioButtonCompZip.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="groupBoxCompression.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 124</value>
+  </data>
+  <data name="groupBoxCompression.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 45</value>
+  </data>
+  <data name="groupBoxCompression.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="groupBoxCompression.Text" xml:space="preserve">
+    <value>Compression</value>
   </data>
   <data name="groupBoxCompression.ToolTip" xml:space="preserve">
     <value>Here you can choose a compression method for your image. 
@@ -230,287 +495,124 @@ For 'Read' operation you can use any format you like.
 HINT: If you are trying to perform 'Read' &amp; do not know what to do, 
 select XZ as it gives most satisfying results</value>
   </data>
-  <data name="&gt;&gt;buttonChooseFile.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="flowLayoutPanelProgressBars.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="radioButtonCompZip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="labelDriveTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompTgz.Name" xml:space="preserve">
-    <value>radioButtonCompTgz</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Disk Imager</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompNone.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="radioButtonCompNone.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="radioButtonCompGz.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 19</value>
-  </data>
-  <data name="&gt;&gt;checkBoxUseMBR.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="statusStrip1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="radioButtonCompNone.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxFileName.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;menuStripMain.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;toolTipCompression.Name" xml:space="preserve">
-    <value>toolTipCompression</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Options</value>
-  </data>
-  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
-    <value>toolTip</value>
-  </data>
-  <data name="&gt;&gt;toolTipMBR.Name" xml:space="preserve">
-    <value>toolTipMBR</value>
-  </data>
-  <data name="textBoxFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>366, 20</value>
-  </data>
-  <data name="radioButtonCompTgz.Text" xml:space="preserve">
-    <value>TGZ</value>
-  </data>
-  <data name="buttonChooseFile.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;checkBoxUseMBR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;checkBoxUseMBR.Parent" xml:space="preserve">
-    <value>groupBoxTruncation</value>
-  </data>
-  <data name="&gt;&gt;buttonChooseFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
-    <value>saveFileDialog1</value>
-  </data>
-  <data name="&gt;&gt;toolTipUnmount.Name" xml:space="preserve">
-    <value>toolTipUnmount</value>
-  </data>
-  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 22</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;groupBoxTruncation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonRead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>429, 180</value>
-  </data>
-  <data name="groupBoxCompression.Location" type="System.Drawing.Point, System.Drawing">
-    <value>429, 124</value>
-  </data>
-  <data name="groupBoxTruncation.Text" xml:space="preserve">
-    <value>Misc.</value>
-  </data>
-  <data name="&gt;&gt;labelDriveTitle.Name" xml:space="preserve">
-    <value>labelDriveTitle</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompNone.Name" xml:space="preserve">
-    <value>radioButtonCompNone</value>
-  </data>
-  <data name="groupBoxTruncation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>429, 34</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelProgressBars.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;buttonRead.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="checkBoxUseMBR.Text" xml:space="preserve">
-    <value>Use MBR partition sizes (read)</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
-    <value>toolStripStatusLabel1</value>
-  </data>
-  <data name="&gt;&gt;labelDriveTitle.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="flowLayoutPanelProgressLabels.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="flowLayoutPanelProgressLabels.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>TopDown</value>
-  </data>
-  <data name="&gt;&gt;labelFileName.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;optionsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkedListBoxDrives.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="labelFileName.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;displayAllDrivesToolStripMenuItem.Name" xml:space="preserve">
-    <value>displayAllDrivesToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;displayAllDrivesToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonWrite.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompTgz.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupBoxCompression.Name" xml:space="preserve">
     <value>groupBoxCompression</value>
-  </data>
-  <data name="statusStrip1.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="radioButtonCompZip.Text" xml:space="preserve">
-    <value>ZIP</value>
-  </data>
-  <data name="&gt;&gt;buttonWrite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="radioButtonCompGz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 17</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelProgressBars.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="radioButtonCompTgz.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 19</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 73</value>
-  </data>
-  <data name="saveFileDialog1.Filter" xml:space="preserve">
-    <value>Image Files (*.img)|*.img|Binary files (*.bin)|*.bin|All files (*.*)|*.*</value>
-  </data>
-  <data name="&gt;&gt;textBoxFileName.Name" xml:space="preserve">
-    <value>textBoxFileName</value>
-  </data>
-  <data name="radioButtonCompTgz.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;toolTipCompression.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainForm</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>708, 378</value>
-  </data>
-  <data name="flowLayoutPanelProgressBars.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;toolTipDrives.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="radioButtonCompXZ.Text" xml:space="preserve">
-    <value>XZ</value>
-  </data>
-  <data name="radioButtonCompNone.Text" xml:space="preserve">
-    <value>NONE</value>
-  </data>
-  <data name="menuStripMain.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="radioButtonCompTgz.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="textBoxFileName.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;russianToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxCompression.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 34</value>
+  <data name="&gt;&gt;groupBoxCompression.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="textBoxFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 50</value>
+  <data name="&gt;&gt;groupBoxCompression.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="radioButtonCompXZ.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 19</value>
+  <metadata name="menuStripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>409, 17</value>
+  </metadata>
+  <data name="displayAllDrivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 22</value>
   </data>
-  <data name="buttonWrite.Text" xml:space="preserve">
-    <value>Write</value>
+  <data name="displayAllDrivesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Display All Drives  *** DANGEROUS ***</value>
+  </data>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 22</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 22</value>
+  </data>
+  <data name="russianToolStripMenuItem.Text" xml:space="preserve">
+    <value>Russian</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>275, 22</value>
   </data>
-  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 356</value>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Language</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
   </data>
-  <data name="&gt;&gt;radioButtonCompNone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="menuStripMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStripMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>708, 24</value>
+  </data>
+  <data name="menuStripMain.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="menuStripMain.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStripMain.Name" xml:space="preserve">
+    <value>menuStripMain</value>
+  </data>
+  <data name="&gt;&gt;menuStripMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStripMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStripMain.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="checkBoxUnmount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxUnmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 45</value>
+  </data>
+  <data name="checkBoxUnmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 17</value>
+  </data>
+  <data name="checkBoxUnmount.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxUnmount.Text" xml:space="preserve">
+    <value>Unmount drives after write</value>
+  </data>
+  <data name="checkBoxUnmount.ToolTip" xml:space="preserve">
+    <value>If enabled, utility will try to unmount drives that were 
+used for 'Write' operation.
+If disabled, you will have to unmount drives yourself.
+
+HINT: If you do not know what to do, leave this property
+checked</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUnmount.Name" xml:space="preserve">
+    <value>checkBoxUnmount</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUnmount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUnmount.Parent" xml:space="preserve">
+    <value>groupBoxTruncation</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUnmount.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="checkBoxUseMBR.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>621, 180</value>
+  <data name="checkBoxUseMBR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
   </data>
-  <data name="&gt;&gt;optionsToolStripMenuItem.Name" xml:space="preserve">
-    <value>optionsToolStripMenuItem</value>
+  <data name="checkBoxUseMBR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 17</value>
+  </data>
+  <data name="checkBoxUseMBR.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxUseMBR.Text" xml:space="preserve">
+    <value>Use MBR partition sizes (read)</value>
   </data>
   <data name="checkBoxUseMBR.ToolTip" xml:space="preserve">
     <value>If enabled, during 'Read' utility will lok into MBR table
@@ -522,403 +624,211 @@ size with disk capacity.
 HINT: If you do not know what to do, leave this property
 checked</value>
   </data>
-  <data name="checkBoxUnmount.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;checkBoxUseMBR.Name" xml:space="preserve">
+    <value>checkBoxUseMBR</value>
   </data>
-  <data name="radioButtonCompTgz.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;checkBoxUseMBR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkedListBoxDrives.Name" xml:space="preserve">
-    <value>checkedListBoxDrives</value>
-  </data>
-  <data name="buttonWrite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="radioButtonCompZip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;buttonRead.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonWrite.Name" xml:space="preserve">
-    <value>buttonWrite</value>
-  </data>
-  <data name="radioButtonCompGz.Text" xml:space="preserve">
-    <value>GZ</value>
-  </data>
-  <data name="groupBoxTruncation.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBoxCompression.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 45</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelProgressBars.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBoxCompression.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompXZ.Name" xml:space="preserve">
-    <value>radioButtonCompXZ</value>
-  </data>
-  <data name="checkBoxUseMBR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 20</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompGz.Parent" xml:space="preserve">
-    <value>groupBoxCompression</value>
-  </data>
-  <data name="radioButtonCompXZ.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 17</value>
-  </data>
-  <data name="checkedListBoxDrives.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 124</value>
-  </data>
-  <data name="buttonCancel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;radioButtonCompXZ.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonChooseFile.ToolTip" xml:space="preserve">
-    <value>Opens file selection dialog</value>
-  </data>
-  <data name="&gt;&gt;labelDriveTitle.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="groupBoxCompression.Text" xml:space="preserve">
-    <value>Compression</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCompression.Name" xml:space="preserve">
-    <value>groupBoxCompression</value>
-  </data>
-  <data name="&gt;&gt;textBoxFileName.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="buttonWrite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 180</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;textBoxFileName.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;groupBoxTruncation.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;toolTipDrives.Name" xml:space="preserve">
-    <value>toolTipDrives</value>
-  </data>
-  <data name="menuStripMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="menuStripMain.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;englishToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelProgressLabels.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelProgressLabels.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonWrite.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;groupBoxCompression.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="checkedListBoxDrives.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 89</value>
-  </data>
-  <data name="&gt;&gt;labelFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompZip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelDriveTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="russianToolStripMenuItem.Text" xml:space="preserve">
-    <value>Russian</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCompression.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;labelFileName.Name" xml:space="preserve">
-    <value>labelFileName</value>
-  </data>
-  <data name="&gt;&gt;menuStripMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonRead.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="displayAllDrivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 22</value>
-  </data>
-  <data name="radioButtonCompXZ.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;checkBoxUnmount.Parent" xml:space="preserve">
+  <data name="&gt;&gt;checkBoxUseMBR.Parent" xml:space="preserve">
     <value>groupBoxTruncation</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonWrite.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="labelFileName.Text" xml:space="preserve">
-    <value>File Name</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompGz.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
-  </data>
-  <data name="checkBoxUnmount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonCancel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompTgz.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompTgz.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStripMain.Name" xml:space="preserve">
-    <value>menuStripMain</value>
-  </data>
-  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="labelDriveTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 73</value>
-  </data>
-  <data name="menuStripMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>708, 24</value>
-  </data>
-  <data name="&gt;&gt;groupBoxTruncation.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="radioButtonCompNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 17</value>
-  </data>
-  <data name="radioButtonCompGz.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;checkBoxUseMBR.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="radioButtonCompNone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 19</value>
-  </data>
-  <data name="&gt;&gt;checkBoxUnmount.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBoxTruncation.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompZip.Parent" xml:space="preserve">
-    <value>groupBoxCompression</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelProgressLabels.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>708, 22</value>
-  </data>
-  <data name="&gt;&gt;menuStripMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Progress</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="radioButtonCompTgz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 17</value>
-  </data>
-  <data name="radioButtonCompXZ.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelDriveTitle.Text" xml:space="preserve">
-    <value>Removable Drives</value>
-  </data>
-  <data name="buttonRead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="radioButtonCompXZ.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="buttonWrite.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="groupBoxTruncation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 34</value>
   </data>
   <data name="groupBoxTruncation.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 75</value>
   </data>
-  <data name="labelDriveTitle.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelProgressLabels.Name" xml:space="preserve">
-    <value>flowLayoutPanelProgressLabels</value>
-  </data>
-  <data name="&gt;&gt;buttonChooseFile.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompXZ.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;radioButtonCompNone.Parent" xml:space="preserve">
-    <value>groupBoxCompression</value>
-  </data>
-  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
-    <value>toolStripStatusLabel1</value>
-  </data>
-  <data name="radioButtonCompZip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="labelDriveTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radioButtonCompGz.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBoxUnmount.Text" xml:space="preserve">
-    <value>Unmount drives after write</value>
-  </data>
-  <data name="&gt;&gt;textBoxFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxUseMBR.Name" xml:space="preserve">
-    <value>checkBoxUseMBR</value>
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;radioButtonCompZip.Name" xml:space="preserve">
-    <value>radioButtonCompZip</value>
-  </data>
-  <data name="labelFileName.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;checkedListBoxDrives.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="flowLayoutPanelProgressLabels.Size" type="System.Drawing.Size, System.Drawing">
-    <value>684, 127</value>
-  </data>
-  <data name="&gt;&gt;toolTipMBR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="checkBoxUseMBR.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;buttonRead.ZOrder" xml:space="preserve">
+  <data name="groupBoxTruncation.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;radioButtonCompGz.Name" xml:space="preserve">
-    <value>radioButtonCompGz</value>
+  <data name="groupBoxTruncation.Text" xml:space="preserve">
+    <value>Misc.</value>
   </data>
-  <data name="labelFileName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;groupBoxTruncation.Name" xml:space="preserve">
+    <value>groupBoxTruncation</value>
   </data>
-  <data name="radioButtonCompZip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 17</value>
+  <data name="&gt;&gt;groupBoxTruncation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButtonCompGz.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;groupBoxTruncation.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="radioButtonCompGz.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;groupBoxTruncation.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;radioButtonCompXZ.Parent" xml:space="preserve">
-    <value>groupBoxCompression</value>
+  <data name="checkedListBoxDrives.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 89</value>
   </data>
-  <data name="flowLayoutPanelProgressLabels.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+  <data name="checkedListBoxDrives.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 124</value>
   </data>
-  <data name="radioButtonCompZip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+  <data name="checkedListBoxDrives.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
-  <data name="&gt;&gt;englishToolStripMenuItem.Name" xml:space="preserve">
-    <value>englishToolStripMenuItem</value>
+  <data name="checkedListBoxDrives.ToolTip" xml:space="preserve">
+    <value>This is a table with all your drives mounted on the system.
+By default it shows only removable drives, but you can 
+change this in 'Options -&gt; Display all drives'</value>
   </data>
-  <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 22</value>
-  </data>
-  <data name="&gt;&gt;languageToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolTipUnmount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;checkedListBoxDrives.Name" xml:space="preserve">
+    <value>checkedListBoxDrives</value>
   </data>
   <data name="&gt;&gt;checkedListBoxDrives.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;checkedListBoxDrives.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkedListBoxDrives.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flowLayoutPanelProgressBars.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="flowLayoutPanelProgressBars.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 89</value>
   </data>
   <data name="flowLayoutPanelProgressBars.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 124</value>
   </data>
-  <data name="buttonChooseFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 49</value>
+  <data name="flowLayoutPanelProgressBars.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
-  <metadata name="toolTipUnmount.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>820, 17</value>
-  </metadata>
-  <metadata name="toolTipDrives.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>961, 17</value>
-  </metadata>
+  <data name="&gt;&gt;flowLayoutPanelProgressBars.Name" xml:space="preserve">
+    <value>flowLayoutPanelProgressBars</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelProgressBars.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelProgressBars.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelProgressBars.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flowLayoutPanelProgressLabels.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="flowLayoutPanelProgressLabels.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 219</value>
+  </data>
+  <data name="flowLayoutPanelProgressLabels.Size" type="System.Drawing.Size, System.Drawing">
+    <value>684, 127</value>
+  </data>
+  <data name="flowLayoutPanelProgressLabels.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelProgressLabels.Name" xml:space="preserve">
+    <value>flowLayoutPanelProgressLabels</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelProgressLabels.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelProgressLabels.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelProgressLabels.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 73</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>273, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>56</value>
   </metadata>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolTipCompression.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>544, 17</value>
-  </metadata>
-  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>544, 17</value>
-  </metadata>
-  <metadata name="menuStripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>409, 17</value>
-  </metadata>
-  <metadata name="toolTipMBR.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>705, 17</value>
-  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>708, 378</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Disk Imager</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
+    <value>saveFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optionsToolStripMenuItem.Name" xml:space="preserve">
+    <value>optionsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;optionsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;displayAllDrivesToolStripMenuItem.Name" xml:space="preserve">
+    <value>displayAllDrivesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;displayAllDrivesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;languageToolStripMenuItem.Name" xml:space="preserve">
+    <value>languageToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;languageToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;englishToolStripMenuItem.Name" xml:space="preserve">
+    <value>englishToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;englishToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;russianToolStripMenuItem.Name" xml:space="preserve">
+    <value>russianToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;russianToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
+    <value>toolTip</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

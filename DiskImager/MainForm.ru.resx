@@ -134,7 +134,7 @@
     <value>Открыть диалог выбора файла</value>
   </data>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
-    <value>Образы файлов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Сжатые файлы (*.zip,*.gz,*tgz)|*.zip;*.gz;*.tgz|Все файлы (*.*)|*.*</value>
+    <value>Файлы образов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|XZ архивы (*.xz)|*.xz|ZIP архивы (*.zip)|*.zip|GZ архивы (*.gz,*.tgz)|*.gz;*.tgz|Все файлы (*.*)|*.*</value>
   </data>
   <data name="labelFileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 13</value>

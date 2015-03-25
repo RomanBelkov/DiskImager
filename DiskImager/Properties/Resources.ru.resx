@@ -139,7 +139,7 @@
     <value>Ошибка записи</value>
   </data>
   <data name="MainForm_MainForm_Image_Files__Choose" xml:space="preserve">
-    <value>Образы файлов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Сжатые файлы (*.zip,*.gz,*.tgz, *.xz)|*.zip;*.gz;*.tgz; *.xz|Все файлы (*.*)|*.*</value>
+    <value>Файлы образов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|XZ архивы (*.xz)|*.xz|ZIP архивы (*.zip)|*.zip|GZ архивы (*.gz,*.tgz)|*.gz;*.tgz|Все файлы (*.*)|*.*</value>
   </data>
   <data name="MainForm_MainForm_Initialised__Licensed_under_GPLv3__Use_at_own_risk_" xml:space="preserve">
     <value>Программа лицензирована GNU GPL v3. Авторы не несут ответственность за ущерб!</value>
@@ -206,5 +206,17 @@
   </data>
   <data name="Disk_ReadDrive_All_Done___Read_" xml:space="preserve">
     <value>Прочитано</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_File_does_not_exist_" xml:space="preserve">
+    <value>Файла по введённому пути не существует!</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_I_O_Error" xml:space="preserve">
+    <value>Ошибка ввода/вывода</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_All_done" xml:space="preserve">
+    <value>Готово!</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_All_drives_are_ready" xml:space="preserve">
+    <value>Программа завершила заданные операции</value>
   </data>
 </root>

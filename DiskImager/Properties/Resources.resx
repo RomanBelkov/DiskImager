@@ -118,7 +118,7 @@
     <value>Initialised. Licensed under GPLv3. Use at own risk!</value>
   </data>
   <data name="MainForm_MainForm_Image_Files__Choose" xml:space="preserve">
-    <value>Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Compressed Files (*.zip,*.gz,*.tgz, *.xz)|*.zip;*.gz;*.tgz; *.xz|All files (*.*)|*.*</value>
+    <value>Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|XZ archives (*.xz)|*.xz|ZIP archives (*.zip)|*.zip|GZ archives (*.gz,*.tgz)|*.gz;*.tgz|All files (*.*)|*.*</value>
   </data>
   <data name="MainForm_ButtonReadClick_You_can_read_from_only_one_drive_at_a_time" xml:space="preserve">
     <value>You can read from only one drive at a time. Please select only one drive from drive list.</value>
@@ -203,5 +203,17 @@
   </data>
   <data name="Disk_ReadDrive_All_Done___Read_" xml:space="preserve">
     <value>All Done - Read </value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_File_does_not_exist_" xml:space="preserve">
+    <value>File does not exist!</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_I_O_Error" xml:space="preserve">
+    <value>I/O Error</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_All_drives_are_ready" xml:space="preserve">
+    <value>All drives are ready</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_All_done" xml:space="preserve">
+    <value>All done!</value>
   </data>
 </root>

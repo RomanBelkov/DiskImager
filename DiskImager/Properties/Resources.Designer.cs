@@ -286,11 +286,47 @@ namespace DynamicDevices.DiskWriter.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All done!.
+        /// </summary>
+        internal static string MainForm_ButtonWriteClick_All_done {
+            get {
+                return ResourceManager.GetString("MainForm_ButtonWriteClick_All_done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All drives are ready.
+        /// </summary>
+        internal static string MainForm_ButtonWriteClick_All_drives_are_ready {
+            get {
+                return ResourceManager.GetString("MainForm_ButtonWriteClick_All_drives_are_ready", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to C: is almost certainly your main hard drive. Writing to this will likely destroy your data, and brick your PC. Are you absolutely sure you want to do this?.
         /// </summary>
         internal static string MainForm_ButtonWriteClick_C__is_almost_certainly_your_main_HDD {
             get {
                 return ResourceManager.GetString("MainForm_ButtonWriteClick_C__is_almost_certainly_your_main_HDD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File does not exist!.
+        /// </summary>
+        internal static string MainForm_ButtonWriteClick_File_does_not_exist_ {
+            get {
+                return ResourceManager.GetString("MainForm_ButtonWriteClick_File_does_not_exist_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/O Error.
+        /// </summary>
+        internal static string MainForm_ButtonWriteClick_I_O_Error {
+            get {
+                return ResourceManager.GetString("MainForm_ButtonWriteClick_I_O_Error", resourceCulture);
             }
         }
         
@@ -313,7 +349,7 @@ namespace DynamicDevices.DiskWriter.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|Compressed Files (*.zip,*.gz,*.tgz, *.xz)|*.zip;*.gz;*.tgz; *.xz|All files (*.*)|*.*.
+        ///   Looks up a localized string similar to Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|XZ archives (*.xz)|*.xz|ZIP archives (*.zip)|*.zip|GZ archives (*.gz,*.tgz)|*.gz;*.tgz|All files (*.*)|*.*.
         /// </summary>
         internal static string MainForm_MainForm_Image_Files__Choose {
             get {
