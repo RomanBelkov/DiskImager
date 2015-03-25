@@ -587,55 +587,88 @@ namespace DynamicDevices.DiskWriter
                 _onLogMsg(this, msg);
         }
         
-        private uint ParseMBRForSize(byte[] buffer)
+        private Int64 ParseMBRForSize(byte[] buffer)
         {
+            // The whole situation with restoring struct from bytes is quite confusing
+            // because you have to GCHandle so if You know something for sure
+            // you can fix it
             var pinnedInfos = GCHandle.Alloc(buffer, GCHandleType.Pinned);
             var mbr = (MBR)Marshal.PtrToStructure(pinnedInfos.AddrOfPinnedObject(), typeof(MBR));
             pinnedInfos.Free();
 
-            if (mbr.signature != 0xAA55)
+            // Checking magic bytes here
+            if (mbr.firstBootSignature != 0x55 && mbr.secondBootSignature != 0xAA)
             {
                 LogMsg("Problem: MBR signature is not correct");
                 return 0;
             }
 
-            uint end = 0;
+            // Following part is attempt to determine the size of all partitions 
+            // by last byte of one of them
+            var endOfLastPartition = 0L;
 
-            if(mbr.partition1.type != EnumPartitionType.EMPTY)
+            if(mbr.firstPartition.type != EnumPartitionType.EMPTY)
             {
-                end = (mbr.partition1.sectorsFromMBRToPartition + mbr.partition1.sectorsInPartition)*512;
-            }
-            if (mbr.partition2.type != EnumPartitionType.EMPTY)
-            {
-                end = (mbr.partition2.sectorsFromMBRToPartition + mbr.partition2.sectorsInPartition) * 512;
-            }
-            if (mbr.partition3.type != EnumPartitionType.EMPTY)
-            {
-                end = (mbr.partition3.sectorsFromMBRToPartition + mbr.partition3.sectorsInPartition) * 512;
-            }
-            if (mbr.partition4.type != EnumPartitionType.EMPTY)
-            {
-                end = (mbr.partition4.sectorsFromMBRToPartition + mbr.partition4.sectorsInPartition) * 512;
+                endOfLastPartition = (mbr.firstPartition.sectorsFromMBRToPartition + mbr.firstPartition.sectorsInPartition) * 512;
             }
 
-            return end;
+            if (mbr.secondPartition.type != EnumPartitionType.EMPTY)
+            {
+                var endOfPartition = (mbr.secondPartition.sectorsFromMBRToPartition + mbr.secondPartition.sectorsInPartition) * 512;
+                if (endOfLastPartition < endOfPartition) 
+                {
+                    endOfLastPartition = endOfPartition;
+                }
+            }
+
+            if (mbr.thirdPartition.type != EnumPartitionType.EMPTY)
+            {
+                var endOfPartition = (mbr.thirdPartition.sectorsFromMBRToPartition + mbr.thirdPartition.sectorsInPartition) * 512;
+                if (endOfLastPartition < endOfPartition)
+                {
+                    endOfLastPartition = endOfPartition;
+                }
+            }
+
+            if (mbr.fourthPartition.type != EnumPartitionType.EMPTY)
+            {
+                var endOfPartition = (mbr.fourthPartition.sectorsFromMBRToPartition + mbr.fourthPartition.sectorsInPartition) * 512;
+                if (endOfLastPartition < endOfPartition)
+                {
+                    endOfLastPartition = endOfPartition;
+                }
+            }
+
+            return endOfLastPartition;
         }
 
         #endregion
     }
 
-    [StructLayout(LayoutKind.Sequential, Pack=1)]
+    [StructLayout(LayoutKind.Explicit, Size = 512)]
     struct MBR
     {
+        [FieldOffset(0)]
         [MarshalAs(UnmanagedType.ByValArray,SizeConst=446)]
-        public byte[] bootCode;
+        public byte[] bootstrapCode;
 
-        public PBR partition1;
-        public PBR partition2;
-        public PBR partition3;
-        public PBR partition4;
+        [FieldOffset(446)]
+        public PBR firstPartition;
 
-        public ushort signature;
+        [FieldOffset(462)]
+        public PBR secondPartition;
+
+        [FieldOffset(478)]
+        public PBR thirdPartition;
+
+        [FieldOffset(494)]
+        public PBR fourthPartition;
+
+        [FieldOffset(510)]
+        public byte firstBootSignature;
+
+        [FieldOffset(511)] 
+        public byte secondBootSignature;
     }
 
     enum EnumPartitionState : byte
