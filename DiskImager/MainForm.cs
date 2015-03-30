@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Reflection;
@@ -638,6 +639,11 @@ namespace DynamicDevices.DiskWriter
         }
 
         #endregion
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/RomanBelkov/DiskImager/wiki");
+        }
 
     }
 }

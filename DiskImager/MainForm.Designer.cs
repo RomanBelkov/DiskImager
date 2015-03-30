@@ -70,14 +70,12 @@
             // 
             resources.ApplyResources(this.textBoxFileName, "textBoxFileName");
             this.textBoxFileName.Name = "textBoxFileName";
-            this.toolTip.SetToolTip(this.textBoxFileName, resources.GetString("textBoxFileName.ToolTip"));
             this.textBoxFileName.TextChanged += new System.EventHandler(this.TextBoxFileNameTextChanged);
             // 
             // buttonRead
             // 
             resources.ApplyResources(this.buttonRead, "buttonRead");
             this.buttonRead.Name = "buttonRead";
-            this.toolTip.SetToolTip(this.buttonRead, resources.GetString("buttonRead.ToolTip"));
             this.buttonRead.UseVisualStyleBackColor = true;
             this.buttonRead.Click += new System.EventHandler(this.ButtonReadClick);
             // 
@@ -85,7 +83,6 @@
             // 
             resources.ApplyResources(this.buttonWrite, "buttonWrite");
             this.buttonWrite.Name = "buttonWrite";
-            this.toolTip.SetToolTip(this.buttonWrite, resources.GetString("buttonWrite.ToolTip"));
             this.buttonWrite.UseVisualStyleBackColor = true;
             this.buttonWrite.Click += new System.EventHandler(this.ButtonWriteClick);
             // 
@@ -99,16 +96,15 @@
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
-            this.toolTip.SetToolTip(this.statusStrip1, resources.GetString("statusStrip1.ToolTip"));
             // 
             // toolStripStatusLabel1
             // 
-            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             // 
             // saveFileDialog1
             // 
@@ -120,30 +116,27 @@
             // 
             resources.ApplyResources(this.labelFileName, "labelFileName");
             this.labelFileName.Name = "labelFileName";
-            this.toolTip.SetToolTip(this.labelFileName, resources.GetString("labelFileName.ToolTip"));
             // 
             // labelDriveTitle
             // 
             resources.ApplyResources(this.labelDriveTitle, "labelDriveTitle");
             this.labelDriveTitle.Name = "labelDriveTitle";
-            this.toolTip.SetToolTip(this.labelDriveTitle, resources.GetString("labelDriveTitle.ToolTip"));
             // 
             // buttonCancel
             // 
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.Name = "buttonCancel";
-            this.toolTip.SetToolTip(this.buttonCancel, resources.GetString("buttonCancel.ToolTip"));
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancelClick);
             // 
             // groupBoxCompression
             // 
-            resources.ApplyResources(this.groupBoxCompression, "groupBoxCompression");
             this.groupBoxCompression.Controls.Add(this.radioButtonCompXZ);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompNone);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompTgz);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompGz);
             this.groupBoxCompression.Controls.Add(this.radioButtonCompZip);
+            resources.ApplyResources(this.groupBoxCompression, "groupBoxCompression");
             this.groupBoxCompression.Name = "groupBoxCompression";
             this.groupBoxCompression.TabStop = false;
             this.toolTip.SetToolTip(this.groupBoxCompression, resources.GetString("groupBoxCompression.ToolTip"));
@@ -153,7 +146,6 @@
             resources.ApplyResources(this.radioButtonCompXZ, "radioButtonCompXZ");
             this.radioButtonCompXZ.Name = "radioButtonCompXZ";
             this.radioButtonCompXZ.TabStop = true;
-            this.toolTip.SetToolTip(this.radioButtonCompXZ, resources.GetString("radioButtonCompXZ.ToolTip"));
             this.radioButtonCompXZ.UseVisualStyleBackColor = true;
             this.radioButtonCompXZ.CheckedChanged += new System.EventHandler(this.radioButtonCompXZ_CheckedChanged);
             // 
@@ -163,7 +155,6 @@
             this.radioButtonCompNone.Checked = true;
             this.radioButtonCompNone.Name = "radioButtonCompNone";
             this.radioButtonCompNone.TabStop = true;
-            this.toolTip.SetToolTip(this.radioButtonCompNone, resources.GetString("radioButtonCompNone.ToolTip"));
             this.radioButtonCompNone.UseVisualStyleBackColor = true;
             this.radioButtonCompNone.CheckedChanged += new System.EventHandler(this.RadioButtonCompNoneCheckedChanged);
             // 
@@ -171,7 +162,6 @@
             // 
             resources.ApplyResources(this.radioButtonCompTgz, "radioButtonCompTgz");
             this.radioButtonCompTgz.Name = "radioButtonCompTgz";
-            this.toolTip.SetToolTip(this.radioButtonCompTgz, resources.GetString("radioButtonCompTgz.ToolTip"));
             this.radioButtonCompTgz.UseVisualStyleBackColor = true;
             this.radioButtonCompTgz.CheckedChanged += new System.EventHandler(this.RadioButtonCompTgzCheckedChanged);
             // 
@@ -179,7 +169,6 @@
             // 
             resources.ApplyResources(this.radioButtonCompGz, "radioButtonCompGz");
             this.radioButtonCompGz.Name = "radioButtonCompGz";
-            this.toolTip.SetToolTip(this.radioButtonCompGz, resources.GetString("radioButtonCompGz.ToolTip"));
             this.radioButtonCompGz.UseVisualStyleBackColor = true;
             this.radioButtonCompGz.CheckedChanged += new System.EventHandler(this.RadioButtonCompGzCheckedChanged);
             // 
@@ -187,111 +176,107 @@
             // 
             resources.ApplyResources(this.radioButtonCompZip, "radioButtonCompZip");
             this.radioButtonCompZip.Name = "radioButtonCompZip";
-            this.toolTip.SetToolTip(this.radioButtonCompZip, resources.GetString("radioButtonCompZip.ToolTip"));
             this.radioButtonCompZip.UseVisualStyleBackColor = true;
             this.radioButtonCompZip.CheckedChanged += new System.EventHandler(this.RadioButtonCompZipCheckedChanged);
             // 
             // menuStripMain
             // 
-            resources.ApplyResources(this.menuStripMain, "menuStripMain");
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem,
             this.aboutToolStripMenuItem});
+            resources.ApplyResources(this.menuStripMain, "menuStripMain");
             this.menuStripMain.Name = "menuStripMain";
-            this.toolTip.SetToolTip(this.menuStripMain, resources.GetString("menuStripMain.ToolTip"));
             // 
             // optionsToolStripMenuItem
             // 
-            resources.ApplyResources(this.optionsToolStripMenuItem, "optionsToolStripMenuItem");
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.displayAllDrivesToolStripMenuItem,
             this.useMBRToolStripMenuItem,
             this.unmountDrivesToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            resources.ApplyResources(this.optionsToolStripMenuItem, "optionsToolStripMenuItem");
             // 
             // displayAllDrivesToolStripMenuItem
             // 
-            resources.ApplyResources(this.displayAllDrivesToolStripMenuItem, "displayAllDrivesToolStripMenuItem");
             this.displayAllDrivesToolStripMenuItem.CheckOnClick = true;
             this.displayAllDrivesToolStripMenuItem.Name = "displayAllDrivesToolStripMenuItem";
+            resources.ApplyResources(this.displayAllDrivesToolStripMenuItem, "displayAllDrivesToolStripMenuItem");
             this.displayAllDrivesToolStripMenuItem.CheckedChanged += new System.EventHandler(this.DisplayAllDrivesToolStripMenuItemCheckedChanged);
             // 
             // useMBRToolStripMenuItem
             // 
-            resources.ApplyResources(this.useMBRToolStripMenuItem, "useMBRToolStripMenuItem");
             this.useMBRToolStripMenuItem.Checked = true;
             this.useMBRToolStripMenuItem.CheckOnClick = true;
             this.useMBRToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.useMBRToolStripMenuItem.Name = "useMBRToolStripMenuItem";
+            resources.ApplyResources(this.useMBRToolStripMenuItem, "useMBRToolStripMenuItem");
             // 
             // unmountDrivesToolStripMenuItem
             // 
-            resources.ApplyResources(this.unmountDrivesToolStripMenuItem, "unmountDrivesToolStripMenuItem");
             this.unmountDrivesToolStripMenuItem.Checked = true;
             this.unmountDrivesToolStripMenuItem.CheckOnClick = true;
             this.unmountDrivesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.unmountDrivesToolStripMenuItem.Name = "unmountDrivesToolStripMenuItem";
+            resources.ApplyResources(this.unmountDrivesToolStripMenuItem, "unmountDrivesToolStripMenuItem");
             // 
             // aboutToolStripMenuItem
             // 
-            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.languageToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             // 
             // languageToolStripMenuItem
             // 
-            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.englishToolStripMenuItem,
             this.russianToolStripMenuItem});
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             // 
             // englishToolStripMenuItem
             // 
-            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
             // russianToolStripMenuItem
             // 
-            resources.ApplyResources(this.russianToolStripMenuItem, "russianToolStripMenuItem");
             this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
+            resources.ApplyResources(this.russianToolStripMenuItem, "russianToolStripMenuItem");
             this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
-            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // checkedListBoxDrives
             // 
-            resources.ApplyResources(this.checkedListBoxDrives, "checkedListBoxDrives");
             this.checkedListBoxDrives.FormattingEnabled = true;
+            resources.ApplyResources(this.checkedListBoxDrives, "checkedListBoxDrives");
             this.checkedListBoxDrives.Name = "checkedListBoxDrives";
             this.checkedListBoxDrives.Sorted = true;
             this.toolTip.SetToolTip(this.checkedListBoxDrives, resources.GetString("checkedListBoxDrives.ToolTip"));
             // 
             // flowLayoutPanelProgressBars
             // 
-            resources.ApplyResources(this.flowLayoutPanelProgressBars, "flowLayoutPanelProgressBars");
             this.flowLayoutPanelProgressBars.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.flowLayoutPanelProgressBars, "flowLayoutPanelProgressBars");
             this.flowLayoutPanelProgressBars.Name = "flowLayoutPanelProgressBars";
-            this.toolTip.SetToolTip(this.flowLayoutPanelProgressBars, resources.GetString("flowLayoutPanelProgressBars.ToolTip"));
             // 
             // flowLayoutPanelProgressLabels
             // 
-            resources.ApplyResources(this.flowLayoutPanelProgressLabels, "flowLayoutPanelProgressLabels");
             this.flowLayoutPanelProgressLabels.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.flowLayoutPanelProgressLabels, "flowLayoutPanelProgressLabels");
             this.flowLayoutPanelProgressLabels.Name = "flowLayoutPanelProgressLabels";
-            this.toolTip.SetToolTip(this.flowLayoutPanelProgressLabels, resources.GetString("flowLayoutPanelProgressLabels.ToolTip"));
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // toolTip
             // 
@@ -322,7 +307,6 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
