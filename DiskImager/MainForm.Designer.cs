@@ -49,12 +49,13 @@
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayAllDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.useMBRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unmountDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBoxTruncation = new System.Windows.Forms.GroupBox();
-            this.checkBoxUnmount = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseMBR = new System.Windows.Forms.CheckBox();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkedListBoxDrives = new System.Windows.Forms.CheckedListBox();
             this.flowLayoutPanelProgressBars = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanelProgressLabels = new System.Windows.Forms.FlowLayoutPanel();
@@ -63,7 +64,6 @@
             this.statusStrip1.SuspendLayout();
             this.groupBoxCompression.SuspendLayout();
             this.menuStripMain.SuspendLayout();
-            this.groupBoxTruncation.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxFileName
@@ -195,7 +195,8 @@
             // 
             resources.ApplyResources(this.menuStripMain, "menuStripMain");
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem});
+            this.optionsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStripMain.Name = "menuStripMain";
             this.toolTip.SetToolTip(this.menuStripMain, resources.GetString("menuStripMain.ToolTip"));
             // 
@@ -204,7 +205,8 @@
             resources.ApplyResources(this.optionsToolStripMenuItem, "optionsToolStripMenuItem");
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.displayAllDrivesToolStripMenuItem,
-            this.languageToolStripMenuItem});
+            this.useMBRToolStripMenuItem,
+            this.unmountDrivesToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             // 
             // displayAllDrivesToolStripMenuItem
@@ -213,6 +215,30 @@
             this.displayAllDrivesToolStripMenuItem.CheckOnClick = true;
             this.displayAllDrivesToolStripMenuItem.Name = "displayAllDrivesToolStripMenuItem";
             this.displayAllDrivesToolStripMenuItem.CheckedChanged += new System.EventHandler(this.DisplayAllDrivesToolStripMenuItemCheckedChanged);
+            // 
+            // useMBRToolStripMenuItem
+            // 
+            resources.ApplyResources(this.useMBRToolStripMenuItem, "useMBRToolStripMenuItem");
+            this.useMBRToolStripMenuItem.Checked = true;
+            this.useMBRToolStripMenuItem.CheckOnClick = true;
+            this.useMBRToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.useMBRToolStripMenuItem.Name = "useMBRToolStripMenuItem";
+            // 
+            // unmountDrivesToolStripMenuItem
+            // 
+            resources.ApplyResources(this.unmountDrivesToolStripMenuItem, "unmountDrivesToolStripMenuItem");
+            this.unmountDrivesToolStripMenuItem.Checked = true;
+            this.unmountDrivesToolStripMenuItem.CheckOnClick = true;
+            this.unmountDrivesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.unmountDrivesToolStripMenuItem.Name = "unmountDrivesToolStripMenuItem";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.languageToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             // 
             // languageToolStripMenuItem
             // 
@@ -234,28 +260,10 @@
             this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
             this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
             // 
-            // groupBoxTruncation
+            // helpToolStripMenuItem
             // 
-            resources.ApplyResources(this.groupBoxTruncation, "groupBoxTruncation");
-            this.groupBoxTruncation.Controls.Add(this.checkBoxUnmount);
-            this.groupBoxTruncation.Controls.Add(this.checkBoxUseMBR);
-            this.groupBoxTruncation.Name = "groupBoxTruncation";
-            this.groupBoxTruncation.TabStop = false;
-            this.toolTip.SetToolTip(this.groupBoxTruncation, resources.GetString("groupBoxTruncation.ToolTip"));
-            // 
-            // checkBoxUnmount
-            // 
-            resources.ApplyResources(this.checkBoxUnmount, "checkBoxUnmount");
-            this.checkBoxUnmount.Name = "checkBoxUnmount";
-            this.toolTip.SetToolTip(this.checkBoxUnmount, resources.GetString("checkBoxUnmount.ToolTip"));
-            this.checkBoxUnmount.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxUseMBR
-            // 
-            resources.ApplyResources(this.checkBoxUseMBR, "checkBoxUseMBR");
-            this.checkBoxUseMBR.Name = "checkBoxUseMBR";
-            this.toolTip.SetToolTip(this.checkBoxUseMBR, resources.GetString("checkBoxUseMBR.ToolTip"));
-            this.checkBoxUseMBR.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             // 
             // checkedListBoxDrives
             // 
@@ -299,7 +307,6 @@
             this.Controls.Add(this.flowLayoutPanelProgressLabels);
             this.Controls.Add(this.flowLayoutPanelProgressBars);
             this.Controls.Add(this.checkedListBoxDrives);
-            this.Controls.Add(this.groupBoxTruncation);
             this.Controls.Add(this.groupBoxCompression);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.labelDriveTitle);
@@ -323,8 +330,6 @@
             this.groupBoxCompression.PerformLayout();
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
-            this.groupBoxTruncation.ResumeLayout(false);
-            this.groupBoxTruncation.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,18 +355,19 @@
         private System.Windows.Forms.MenuStrip menuStripMain;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem displayAllDrivesToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBoxTruncation;
-        private System.Windows.Forms.CheckBox checkBoxUseMBR;
         private System.Windows.Forms.CheckedListBox checkedListBoxDrives;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelProgressBars;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelProgressLabels;
-        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
-        private System.Windows.Forms.CheckBox checkBoxUnmount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton radioButtonCompXZ;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem useMBRToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem unmountDrivesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
 

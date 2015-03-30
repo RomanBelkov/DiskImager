@@ -168,11 +168,38 @@
 
 СОВЕТ: Для хранения резервных копий рекомендуется использовать XZ.</value>
   </data>
+  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Опции</value>
+  </data>
   <data name="displayAllDrivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 22</value>
+    <value>296, 22</value>
   </data>
   <data name="displayAllDrivesToolStripMenuItem.Text" xml:space="preserve">
     <value>Показать все диски ***ОПАСНО***</value>
+  </data>
+  <data name="useMBRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 22</value>
+  </data>
+  <data name="useMBRToolStripMenuItem.Text" xml:space="preserve">
+    <value>Использовать MBR при бэкапе</value>
+  </data>
+  <data name="unmountDrivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 22</value>
+  </data>
+  <data name="unmountDrivesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Удалить диски из системы после записи</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 20</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Язык</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 22</value>
@@ -186,51 +213,8 @@
   <data name="russianToolStripMenuItem.Text" xml:space="preserve">
     <value>Русский</value>
   </data>
-  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 22</value>
-  </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Язык</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Опции</value>
-  </data>
-  <data name="checkBoxUnmount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 17</value>
-  </data>
-  <data name="checkBoxUnmount.Text" xml:space="preserve">
-    <value>Размонтировать диски после записи</value>
-  </data>
-  <data name="checkBoxUnmount.ToolTip" xml:space="preserve">
-    <value>Если отмечено, то программа безопасно отключает флешки, на которые производилась запись,
-от системы (т.е. после записи можно попросту достать флешку из гнезда USB).
-Если не отмечено, то необходимо самостоятельно безопасно удалить флешку из системы
-перед её извлечением.
-
-СОВЕТ: Если не знаете, зачем это, оставьте отмеченным.</value>
-  </data>
-  <data name="checkBoxUseMBR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 17</value>
-  </data>
-  <data name="checkBoxUseMBR.Text" xml:space="preserve">
-    <value>Использовать MBR образа (чтение)</value>
-  </data>
-  <data name="checkBoxUseMBR.ToolTip" xml:space="preserve">
-    <value>Если отмечено, то программа при чтении с диска не будет сохранять
-неразмеченное место флешки, сохраняя лишь значимую информацию.
-Если не отмечено, то программа сохранит полный образ диска 
-(сохранённый образ флешки будет больше по размеру)
-
-СОВЕТ: Если не знаете, зачем это, оставьте отмеченным.</value>
-  </data>
-  <data name="groupBoxTruncation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 78</value>
-  </data>
-  <data name="groupBoxTruncation.Text" xml:space="preserve">
-    <value>Образ логических разделов</value>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Помощь</value>
   </data>
   <data name="checkedListBoxDrives.ToolTip" xml:space="preserve">
     <value>Список носителей информации, подключенных к системе.

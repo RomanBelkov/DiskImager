@@ -51,8 +51,8 @@ namespace DynamicDevices.DiskWriter
             CreateRegistry();
             ChangeLanguage("en-US");
 
-            checkBoxUseMBR.Checked  = true;
-            checkBoxUnmount.Checked = true;
+            useMBRToolStripMenuItem.Checked  = true;
+            unmountDrivesToolStripMenuItem.Checked = true;
 
             //MessageBoxEx.Owner = Handle;
 
@@ -142,7 +142,7 @@ namespace DynamicDevices.DiskWriter
                 var res = false;
                 try
                 {
-                    res = disk.ReadDrive(drive, textBoxFileName.Text, _eCompType, checkBoxUseMBR.Checked);
+                    res = disk.ReadDrive(drive, textBoxFileName.Text, _eCompType, unmountDrivesToolStripMenuItem.Checked);
                 }
                 catch (Exception ex)
                 {
@@ -214,7 +214,7 @@ namespace DynamicDevices.DiskWriter
                     var res = false;
                     try
                     {
-                        res = disk.WriteDrive(drive, textBoxFileName.Text, _eCompType, checkBoxUnmount.Checked);
+                        res = disk.WriteDrive(drive, textBoxFileName.Text, _eCompType, unmountDrivesToolStripMenuItem.Checked);
                     }
                     catch (Exception ex)
                     {
@@ -498,7 +498,6 @@ namespace DynamicDevices.DiskWriter
             textBoxFileName.Enabled = false;
             buttonChooseFile.Enabled = false;
             groupBoxCompression.Enabled = false;
-            groupBoxTruncation.Enabled = false;
             menuStripMain.Enabled = !running;
         }
 
@@ -514,7 +513,6 @@ namespace DynamicDevices.DiskWriter
             textBoxFileName.Enabled = true;
             buttonChooseFile.Enabled = true;
             groupBoxCompression.Enabled = true;
-            groupBoxTruncation.Enabled = true;
             menuStripMain.Enabled = true;
         }
 
@@ -599,8 +597,8 @@ namespace DynamicDevices.DiskWriter
             toolTip.SetToolTip(buttonChooseFile, resources.GetString("buttonChooseFile.ToolTip"));
             toolTip.SetToolTip(groupBoxCompression, resources.GetString("groupBoxCompression.ToolTip"));
             toolTip.SetToolTip(checkedListBoxDrives, resources.GetString("checkedListBoxDrives.ToolTip"));
-            toolTip.SetToolTip(checkBoxUnmount, resources.GetString("checkBoxUnmount.ToolTip"));
-            toolTip.SetToolTip(checkBoxUseMBR, resources.GetString("checkBoxUseMBR.ToolTip"));
+            //toolTip.SetToolTip(checkBoxUnmount, resources.GetString("checkBoxUnmount.ToolTip"));
+            //toolTip.SetToolTip(checkBoxUseMBR, resources.GetString("checkBoxUseMBR.ToolTip"));
         }
 
         //refresh all the sub-controls of the form recursively
@@ -640,5 +638,6 @@ namespace DynamicDevices.DiskWriter
         }
 
         #endregion
+
     }
 }
