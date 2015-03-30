@@ -55,8 +55,6 @@ namespace DynamicDevices.DiskWriter
             useMBRToolStripMenuItem.Checked  = true;
             unmountDrivesToolStripMenuItem.Checked = true;
 
-            //MessageBoxEx.Owner = Handle;
-
             toolStripStatusLabel1.Text = Resources.MainForm_MainForm_Initialised__Licensed_under_GPLv3__Use_at_own_risk_;
 
             saveFileDialog1.OverwritePrompt = false;
@@ -457,8 +455,6 @@ namespace DynamicDevices.DiskWriter
             }
 #endif
 
-            //if (comboBoxDrives.Items.Count > 0)
-            //    comboBoxDrives.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -594,8 +590,6 @@ namespace DynamicDevices.DiskWriter
             toolTip.SetToolTip(buttonChooseFile, resources.GetString("buttonChooseFile.ToolTip"));
             toolTip.SetToolTip(groupBoxCompression, resources.GetString("groupBoxCompression.ToolTip"));
             toolTip.SetToolTip(checkedListBoxDrives, resources.GetString("checkedListBoxDrives.ToolTip"));
-            //toolTip.SetToolTip(checkBoxUnmount, resources.GetString("checkBoxUnmount.ToolTip"));
-            //toolTip.SetToolTip(checkBoxUseMBR, resources.GetString("checkBoxUseMBR.ToolTip"));
         }
 
         //refresh all the sub-controls of the form recursively
