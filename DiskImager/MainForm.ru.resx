@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBoxFileName.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonRead.Location" type="System.Drawing.Point, System.Drawing">
     <value>429, 190</value>
@@ -124,14 +127,23 @@
   <data name="buttonRead.Text" xml:space="preserve">
     <value>Чтение</value>
   </data>
+  <data name="buttonRead.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="buttonWrite.Location" type="System.Drawing.Point, System.Drawing">
     <value>527, 190</value>
   </data>
   <data name="buttonWrite.Text" xml:space="preserve">
     <value>Запись</value>
   </data>
+  <data name="buttonWrite.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="buttonChooseFile.ToolTip" xml:space="preserve">
     <value>Открыть диалог выбора файла</value>
+  </data>
+  <data name="statusStrip1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
     <value>Файлы образов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|XZ архивы (*.xz)|*.xz|ZIP архивы (*.zip)|*.zip|GZ архивы (*.gz,*.tgz)|*.gz;*.tgz|Все файлы (*.*)|*.*</value>
@@ -142,17 +154,41 @@
   <data name="labelFileName.Text" xml:space="preserve">
     <value>Имя файла</value>
   </data>
+  <data name="labelFileName.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="labelDriveTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
   </data>
   <data name="labelDriveTitle.Text" xml:space="preserve">
     <value>Диски</value>
   </data>
+  <data name="labelDriveTitle.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>621, 190</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Отмена</value>
+  </data>
+  <data name="buttonCancel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButtonCompXZ.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButtonCompNone.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButtonCompTgz.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButtonCompGz.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButtonCompZip.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="groupBoxCompression.Location" type="System.Drawing.Point, System.Drawing">
     <value>429, 118</value>
@@ -167,12 +203,6 @@
 Для создания и сохранения образа диска можно указать любой желаемый формат.
 
 СОВЕТ: Для хранения резервных копий рекомендуется использовать XZ.</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Опции</value>
   </data>
   <data name="displayAllDrivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 22</value>
@@ -192,14 +222,11 @@
   <data name="unmountDrivesToolStripMenuItem.Text" xml:space="preserve">
     <value>Удалить диски из системы после записи</value>
   </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 20</value>
+  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
   </data>
-  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>О программе</value>
-  </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Язык</value>
+  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Опции</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 22</value>
@@ -213,18 +240,42 @@
   <data name="russianToolStripMenuItem.Text" xml:space="preserve">
     <value>Русский</value>
   </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Язык</value>
+  </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Помощь</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 20</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="menuStripMain.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkedListBoxDrives.ToolTip" xml:space="preserve">
     <value>Список носителей информации, подключенных к системе.
 По умолчанию отображаются флешки, но можно дополнительно
 отобразить внутренние диски компьютера в 'Опции -&gt; Показать все диски'</value>
   </data>
+  <data name="flowLayoutPanelProgressBars.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="flowLayoutPanelProgressLabels.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Прогресс</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

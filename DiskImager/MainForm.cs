@@ -66,10 +66,6 @@ namespace DynamicDevices.DiskWriter
             var version = Assembly.GetEntryAssembly().GetName().Version;
             Text += @" v" + version;
 
-            // Set app icon (not working on Mono/Linux)
-            if (Environment.OSVersion.Platform != PlatformID.Unix)
-                Icon = Utility.GetAppIcon();
-
             PopulateDrives();
             if (checkedListBoxDrives.Items.Count > 0)
                 EnableButtons();

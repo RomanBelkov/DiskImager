@@ -96,7 +96,6 @@
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility.cs" />
     <Compile Include="Handle.cs" />
     <Compile Include="IDiskAccess.cs" />
     <Compile Include="IHandle.cs" />
