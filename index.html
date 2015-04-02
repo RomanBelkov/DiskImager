@@ -1,73 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    <meta charset="UTF-8">
     <title>Disk Imager by RomanBelkov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Disk Imager</h1>
-        <h2>Windows Disk Imager. A C#.NET utility for reading &amp; writing SD cards and USB devices</h2>
-        <a href="https://github.com/RomanBelkov/DiskImager" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+    <section class="page-header">
+      <h1 class="project-name">Disk Imager</h1>
+      <h2 class="project-tagline">Windows Disk Imager. A C#.NET utility for reading &amp; writing SD cards and USB devices</h2>
+      <a href="https://github.com/RomanBelkov/DiskImager" class="btn">View on GitHub</a>
+      <a href="https://github.com/RomanBelkov/DiskImager/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/RomanBelkov/DiskImager/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
-<a id="disk-imager" class="anchor" href="#disk-imager" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disk Imager</h1>
+    <section class="main-content">
+      <h1>
+<a id="diskimager" class="anchor" href="#diskimager" aria-hidden="true"><span class="octicon octicon-link"></span></a>DiskImager</h1>
 
-<p>A Windows Disk Imager. A C#.NET utility for reading / writing SD cards and USB devices</p>
+<p>A Windows Disk Imager. A C#.NET utility for reading / writing SD cards and USB devices.</p>
 
-<p>License: This software utility is released under GPLv3.</p>
+<p>Licensed under GNU General Public License 3.0 or later.
+Some rights reserved. See LICENSE, AUTHORS.</p>
 
-<p>The current release can be downloaded here </p>
+<p>The current release can be downloaded <a href="https://github.com/RomanBelkov/DiskImager/releases">here</a>
+or <a href="http://www.dynamicdevices.co.uk/downloads/DiskImager.Installer.msi">here (old link)</a></p>
 
-<p><a href="http://www.dynamicdevices.co.uk/downloads/DiskImager.Installer.msi">http://www.dynamicdevices.co.uk/downloads/DiskImager.Installer.msi</a></p>
+<p>Utility was tested on Windows 7 and Windows 8.1 Pro.</p>
 
 <p>(Please feed back any platform testing you do, or any issues you encounter. Thanks.)</p>
 
-<p>This utility is a C#.NET implementation, and adds a couple of features I wanted to see:</p>
+<h2>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h2>
+
+<p>This utility is a C#.NET implementation of Win32DiskImager with a couple of features authors wanted to use:</p>
 
 <ul>
-<li><p>reads/writes images to/from compressed file formats: ZIP, TGZ, GZ</p></li>
+<li><p>writing images to a number of SD cards at once</p></li>
+<li><p>reads/writes images to/from compressed file formats: ZIP, TGZ, GZ, XZ</p></li>
 <li><p>remembers the last file you read/wrote </p></li>
+<li><p>unmounts drives after write</p></li>
 <li><p>provides more file filters within file dialog for typical image files (.img, .bin, .sdcard)</p></li>
 <li><p>it also <em>might</em> be slightly faster when dealing with uncompressed read/write</p></li>
 </ul>
 
-<p><em>NOTE This application is under development and could possibly cause damage to your computer drive(s). We cannot take responsibility for any damage caused or losses incurred through use of this utility. Use at own risk!</em></p>
+<p><em>NOTE: This application is under development and could possibly cause damage to your computer drive(s). We cannot take responsibility for any damage caused or losses incurred through use of this utility. Use at own risk!</em></p>
 
 <p>Credits: Inspired by the excellent Win32DiskImager.</p>
 
-<h1>
-<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>ChangeLog</h1>
+<h2>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>ChangeLog</h2>
+
+<p>1.3.1 16/03/2015 RB Added MultiThreaded XZ compression &amp; helping tooltips</p>
+
+<p>1.3.0 19/02/2015 RB Added XZ support</p>
+
+<p>1.2.2 21/01/2015 RB Added 'Remove drives after write' and drew new GUI</p>
+
+<p>1.2.1 14/01/15 RB Added Russian localization and tweaked GUI a bit.</p>
+
+<p>1.2.0 06/01/15 RB Added ability to write the same image to many SD simultaneously. Changed the look of GUI. </p>
+
+<p>1.1.0   12/05/14    AJL     Updated to use latest SharpZipLib as we were encountering (de-)compression errors with the previous version.
+                            Added the option to truncate the read image based on the partition sizes found in the master boot record on the disk/stick.
+                            Improved logging of sizes read and written.</p>
+
+<p>1.0.3   30/04/14    AJL     Added warning dialog box when there's a write error.</p>
 
 <p>1.0.2   09/11/13    AJL     Added support for reading and writing directly to compressed formats: .zip, .tgz, .gz</p>
 
 <pre><code>Testing - Windows 8.1 Professional
 </code></pre>
 
-<p>1.0.1   08/11/13    AJL     Refactoring for cleanup. Fixed issue with SEH exception due to SafeHandle disposal</p>
+<p>1.0.1   08/11/13    AJL     Refactoring for cleanup. Fixed issue with SEH exception due to SafeHandle disposal.</p>
 
 <pre><code>Testing - Windows 8.1 Professional
 </code></pre>
 
-<p>1.0.0   08/11/13    AJL     Initial Commit. Reads and Writes SD cards</p>
+<p>1.0.0   08/11/13    AJL     Initial Commit. Reads and Writes SD cards.</p>
 
 <pre><code>Testing - Windows 8.1 Professional
 </code></pre>
@@ -75,26 +89,29 @@
 <h1>
 <a id="contact" class="anchor" href="#contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contact</h1>
 
+<p>Roman Belkov  - <a href="mailto:romanbelkov@gmail.com">romanbelkov@gmail.com</a></p>
+
 <p>Alex J Lennon - <a href="mailto:ajlennon@dynamicdevices.co.uk">ajlennon@dynamicdevices.co.uk</a></p>
-        </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/RomanBelkov/DiskImager/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/RomanBelkov/DiskImager/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/RomanBelkov/DiskImager">Disk Imager</a> is maintained by <a href="https://github.com/RomanBelkov">RomanBelkov</a>.</span>
 
-          <p class="repo-owner"><a href="https://github.com/RomanBelkov/DiskImager"></a> is maintained by <a href="https://github.com/RomanBelkov">RomanBelkov</a>.</p>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
+    </section>
 
-  
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-61496403-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
+
