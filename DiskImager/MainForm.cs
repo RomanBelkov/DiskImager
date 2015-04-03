@@ -266,68 +266,9 @@ namespace DynamicDevices.DiskWriter
             }
         }
 
-        private void RadioButtonCompZipCheckedChanged(object sender, EventArgs e)
-        {
-            UpdateFileNameText();
-        }
-
-        private void RadioButtonCompTgzCheckedChanged(object sender, EventArgs e)
-        {
-            UpdateFileNameText();
-        }
-
-        private void RadioButtonCompGzCheckedChanged(object sender, EventArgs e)
-        {
-            UpdateFileNameText();
-        }
-
-        private void radioButtonCompXZ_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateFileNameText();
-        }
-
-        private void RadioButtonCompNoneCheckedChanged(object sender, EventArgs e)
-        {
-            UpdateFileNameText();
-        }
-
         #endregion
 
         #region Implementation
-
-        private void UpdateFileNameText()
-        {
-            var text = textBoxFileName.Text;
-         
-            text = text.Replace(".tar.gz", "");
-            text = text.Replace(".tgz", "");
-            text = text.Replace(".tar", "");
-            text = text.Replace(".gzip", "");
-            text = text.Replace(".gz", "");
-            text = text.Replace(".zip", "");
-            text = text.Replace(".xz", "");
-
-            if (radioButtonCompNone.Checked)
-            {
-                textBoxFileName.Text = text;
-            } else if(radioButtonCompZip.Checked)
-            {
-                text += ".zip";
-                textBoxFileName.Text = text;                
-            } else if(radioButtonCompTgz.Checked)
-            {
-                text += ".tgz";
-                textBoxFileName.Text = text;
-            } else if (radioButtonCompGz.Checked)
-            {
-                text += ".gz";
-                textBoxFileName.Text = text;
-            } else if (radioButtonCompXZ.Checked)
-            {
-                text += ".xz";
-                textBoxFileName.Text = text;
-            }
-        }
 
         /// <summary>
         /// Select the file for read / write and setup defaults for whether we're using compression based on extension
@@ -390,26 +331,15 @@ namespace DynamicDevices.DiskWriter
         private void TextBoxFileNameTextChanged(object sender, EventArgs e)
         {
             if (textBoxFileName.Text.ToLower().EndsWith(".tar.gz") || textBoxFileName.Text.ToLower().EndsWith(".tgz"))
-                radioButtonCompTgz.Checked = true;
-            else if (textBoxFileName.Text.ToLower().EndsWith(".gz"))
-                radioButtonCompGz.Checked = true;
-            else if (textBoxFileName.Text.ToLower().EndsWith(".zip"))
-                radioButtonCompZip.Checked = true;
-            else if (textBoxFileName.Text.ToLower().EndsWith(".img") || textBoxFileName.Text.ToLower().EndsWith(".bin") || textBoxFileName.Text.ToLower().EndsWith(".sdcard"))
-                radioButtonCompNone.Checked = true;
-            else if (textBoxFileName.Text.ToLower().EndsWith(".xz"))
-                radioButtonCompXZ.Checked = true;
-
-            if (radioButtonCompNone.Checked)
-                _eCompType = EnumCompressionType.None;
-            else if (radioButtonCompTgz.Checked)
                 _eCompType = EnumCompressionType.Targzip;
-            else if (radioButtonCompGz.Checked)
+            else if (textBoxFileName.Text.ToLower().EndsWith(".gz"))
                 _eCompType = EnumCompressionType.Gzip;
-            else if (radioButtonCompZip.Checked)
+            else if (textBoxFileName.Text.ToLower().EndsWith(".zip"))
                 _eCompType = EnumCompressionType.Zip;
-            else if (radioButtonCompXZ.Checked)
+            else if (textBoxFileName.Text.ToLower().EndsWith(".xz"))
                 _eCompType = EnumCompressionType.XZ;
+            else 
+                _eCompType = EnumCompressionType.None;
         }
 
         private void DisplayAllDrivesToolStripMenuItemCheckedChanged(object sender, EventArgs e)
@@ -442,19 +372,6 @@ namespace DynamicDevices.DiskWriter
                     checkedListBoxDrives.Items.Add(drive.Name.TrimEnd('\\'));
                 }
             }
-
-#if false
-            //import the System.Management namespace at the top in your "using" statement.
-            var searcher = new ManagementObjectSearcher(
-                 "SELECT * FROM Win32_DiskDrive WHERE InterfaceType='USB'");
-            foreach (var disk in searcher.Get())
-            {
-                var props = disk.Properties;
-                foreach(var p in props)
-                    Console.WriteLine(p.Name + " = " + p.Value);
-            }
-#endif
-
         }
 
         /// <summary>
@@ -490,7 +407,6 @@ namespace DynamicDevices.DiskWriter
             checkedListBoxDrives.Enabled = false;
             textBoxFileName.Enabled = false;
             buttonChooseFile.Enabled = false;
-            groupBoxCompression.Enabled = false;
             menuStripMain.Enabled = !running;
         }
 
@@ -505,7 +421,6 @@ namespace DynamicDevices.DiskWriter
             checkedListBoxDrives.Enabled = true;
             textBoxFileName.Enabled = true;
             buttonChooseFile.Enabled = true;
-            groupBoxCompression.Enabled = true;
             menuStripMain.Enabled = true;
         }
 
@@ -588,7 +503,6 @@ namespace DynamicDevices.DiskWriter
         private void ChangeToolTipLanguage(ComponentResourceManager resources)
         {
             toolTip.SetToolTip(buttonChooseFile, resources.GetString("buttonChooseFile.ToolTip"));
-            toolTip.SetToolTip(groupBoxCompression, resources.GetString("groupBoxCompression.ToolTip"));
             toolTip.SetToolTip(checkedListBoxDrives, resources.GetString("checkedListBoxDrives.ToolTip"));
         }
 
