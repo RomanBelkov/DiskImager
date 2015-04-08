@@ -2,3 +2,5 @@ Alex J. Lennon - first version of all files
 Roman Belkov - extensive changes and revisions in Disk.cs, MainForm.cs, 
                                                   MainForm.Designer.cs, Win32DiskAccess.cs, 
                                                   AssemblyInfo.cs 
+               removed Utility.cs, MessageBoxEx.cs because of their complexity when being
+               obviously redundant

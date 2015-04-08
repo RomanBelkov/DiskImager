@@ -9,12 +9,12 @@ Some rights reserved. See LICENSE, AUTHORS.
 The current release can be downloaded [here](https://github.com/RomanBelkov/DiskImager/releases)
 or [here (old link)](http://www.dynamicdevices.co.uk/downloads/DiskImager.Installer.msi)
 
-Utility was tested on Windows 7 and Windows 8.1 Pro.
+Utility was tested on Windows 7 and Windows 8/8.1/8.1 Pro.
 
 (Please feed back any platform testing you do, or any issues you encounter. Thanks.)
 
 ## Description ##
-This utility is a C#.NET implementation of Win32DiskImager with a couple of features authors wanted to use:
+This utility is a .NET implementation of Win32DiskImager with a couple of features authors wanted to use:
 
 - writing images to a number of SD cards at once
 
@@ -34,15 +34,19 @@ Credits: Inspired by the excellent Win32DiskImager.
 
 ## ChangeLog ##
 
+1.4.0 08/04/2015 RB Simplified UI
+
+1.3.2 25/03/2015 RB Added post-action notification & resolved issue when MBR's with more than one partition were read incorrectly
+
 1.3.1 16/03/2015 RB Added MultiThreaded XZ compression & helping tooltips
 
 1.3.0 19/02/2015 RB Added XZ support
 
 1.2.2 21/01/2015 RB Added 'Remove drives after write' and drew new GUI
 
-1.2.1 14/01/15 RB Added Russian localization and tweaked GUI a bit.
+1.2.1 14/01/2015 RB Added Russian localization and tweaked GUI a bit.
 
-1.2.0 06/01/15 RB Added ability to write the same image to many SD simultaneously. Changed the look of GUI. 
+1.2.0 06/01/2015 RB Added ability to write the same image to many SD simultaneously. Changed the look of GUI. 
 	
 
 1.1.0	12/05/14	AJL		Updated to use latest SharpZipLib as we were encountering (de-)compression errors with the previous version.
