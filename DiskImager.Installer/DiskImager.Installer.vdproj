@@ -22,7 +22,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2EDAE7D75BD049EDAD582AC2E450E80B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4C9E153BB206498EB3F99948F60DD2E3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7A90225E7B5B42BF83B88E936E1116F1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -35,6 +47,30 @@
         "Entry"
         {
         "MsmKey" = "8:_8FDF365DCE9B4F70A60EF2BB1651CCBF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A17092931AB948C08820FE8E9E8B24A5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BD562995EA454F2DBD8AACDE632CAD6B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D85B011261904A36AFB642E7EEFB58B8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F479C88FA4FB43D9A2BD242B5AAE5DF9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -81,6 +117,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
         "Release"
@@ -179,10 +223,50 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2EDAE7D75BD049EDAD582AC2E450E80B"
+            {
+            "SourcePath" = "8:..\\doc\\LICENSE.txt"
+            "TargetName" = "8:LICENSE.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4C9E153BB206498EB3F99948F60DD2E3"
             {
             "SourcePath" = "8:..\\XZ.NET\\liblzma.dll"
             "TargetName" = "8:liblzma.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A90225E7B5B42BF83B88E936E1116F1"
+            {
+            "SourcePath" = "8:..\\doc\\CHANGELOG.txt"
+            "TargetName" = "8:CHANGELOG.txt"
             "Tag" = "8:"
             "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
             "Condition" = "8:"
@@ -230,6 +314,86 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A17092931AB948C08820FE8E9E8B24A5"
+            {
+            "SourcePath" = "8:..\\doc\\UserGuide.docx"
+            "TargetName" = "8:UserGuide.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_49DC947A3E944FD09BA60CB082D9EC7E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BD562995EA454F2DBD8AACDE632CAD6B"
+            {
+            "SourcePath" = "8:..\\doc\\UserGuide.pdf"
+            "TargetName" = "8:UserGuide.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_49DC947A3E944FD09BA60CB082D9EC7E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D85B011261904A36AFB642E7EEFB58B8"
+            {
+            "SourcePath" = "8:..\\doc\\AUTHORS.txt"
+            "TargetName" = "8:AUTHORS.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F479C88FA4FB43D9A2BD242B5AAE5DF9"
+            {
+            "SourcePath" = "8:..\\doc\\README.txt"
+            "TargetName" = "8:README.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -246,6 +410,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_49DC947A3E944FD09BA60CB082D9EC7E"
+                    {
+                    "Name" = "8:doc"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_B25DEA6D6F694EBFB1A285696C612E48"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_417D5936AB4843AB94B7A7788595C1A4"
@@ -287,7 +462,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Disk Imager"
         "ProductCode" = "8:{7F9C3BF0-DDA2-4251-A434-E62ED3837FDE}"
-        "PackageCode" = "8:{4BF92D0C-3A03-49B7-A40D-BEA91F44E9BB}"
+        "PackageCode" = "8:{7C424B5F-AE58-48D3-B993-1CF1512E09D2}"
         "UpgradeCode" = "8:{A2F957D8-23F6-44DB-A22C-CCA8275E1FCE}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -295,15 +470,15 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.4.0"
-        "Manufacturer" = "8:Dynamic Devices"
+        "Manufacturer" = "8:Roman Belkov & Dynamic Devices"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:DiskImager"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Dynamic Devices Ltd"
+        "ARPCONTACT" = "8:Roman Belkov & Dynamic Devices Ltd"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Disk Imaging Utility"
-        "ARPURLINFOABOUT" = "8:http://www.dynamicdevices.co.uk"
+        "ARPURLINFOABOUT" = "8:htpps://romanbelkov.github.io/DiskImager"
         "ARPPRODUCTICON" = "8:_8FDF365DCE9B4F70A60EF2BB1651CCBF"
         "ARPIconIndex" = "3:32512"
         "SearchPath" = "8:"

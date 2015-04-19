@@ -520,7 +520,7 @@ namespace DynamicDevices.DiskWriter
 
         #region Registry
 
-        private const string RegistryPath = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Dynamic Devices Ltd\\DiskImager";
+        private const string RegistryPath = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Roman Belkov & Dynamic Devices Ltd\\DiskImager";
 
         private static void CreateRegistry()
         {
