@@ -144,12 +144,6 @@
   <data name="MainForm_MainForm_Initialised__Licensed_under_GPLv3__Use_at_own_risk_" xml:space="preserve">
     <value>Программа лицензирована GNU GPL v3. Авторы не несут ответственность за ущерб!</value>
   </data>
-  <data name="Disk_ReadDrive__Physical__" xml:space="preserve">
-    <value>(Физический: </value>
-  </data>
-  <data name="Disk_ReadDrive_Elapsed_time__" xml:space="preserve">
-    <value>Время: </value>
-  </data>
   <data name="Disk_ReadDrive_Error_reading_data_from_drive__" xml:space="preserve">
     <value>Ошибка чтения с диска:</value>
   </data>
@@ -162,23 +156,20 @@
   <data name="Disk_ReadDrive_Problem_with_filesystem__It_reports_it_is_larger_than_the_disk_" xml:space="preserve">
     <value>Проблема с файловой системой!</value>
   </data>
-  <data name="Disk_ReadDrive_Read_" xml:space="preserve">
+  <data name="Disk_ReadDrive_Read" xml:space="preserve">
     <value>Чтение</value>
   </data>
-  <data name="Disk_WriteDrive__bytes__Elapsed_time_" xml:space="preserve">
-    <value> байт. Время </value>
+  <data name="Disk_WriteDrive_bytes" xml:space="preserve">
+    <value>байт</value>
   </data>
   <data name="Disk_WriteDrive__doesn_t_exist" xml:space="preserve">
-    <value> не существует</value>
-  </data>
-  <data name="Disk_WriteDrive_All_Done___Wrote_" xml:space="preserve">
-    <value>Операция выполнена. Записано </value>
+    <value>не существует</value>
   </data>
   <data name="Disk_WriteDrive_Cancelled" xml:space="preserve">
     <value>Отменено</value>
   </data>
-  <data name="Disk_WriteDrive_Elapsed_time__" xml:space="preserve">
-    <value>Время: </value>
+  <data name="Disk_Elapsed_time" xml:space="preserve">
+    <value>Время</value>
   </data>
   <data name="Disk_WriteDrive_Error__Couldn_t_map_partition_to_physical_drive" xml:space="preserve">
     <value>Ошибка: раздел не может быть записан на диск</value>
@@ -201,10 +192,10 @@
   <data name="Disk_WriteDrive_Failed_to_open_physical_drive" xml:space="preserve">
     <value>Невозможно открыть доступ к диску</value>
   </data>
-  <data name="Disk_WriteDrive_Wrote_" xml:space="preserve">
-    <value>Записано </value>
+  <data name="Disk_WriteDrive_Wrote" xml:space="preserve">
+    <value>Записано</value>
   </data>
-  <data name="Disk_ReadDrive_All_Done___Read_" xml:space="preserve">
+  <data name="Disk_ReadDrive_All_Done_Read" xml:space="preserve">
     <value>Прочитано</value>
   </data>
   <data name="MainForm_ButtonWriteClick_File_does_not_exist_" xml:space="preserve">
@@ -218,5 +209,8 @@
   </data>
   <data name="MainForm_ButtonWriteClick_All_drives_are_ready" xml:space="preserve">
     <value>Программа завершила заданные операции</value>
+  </data>
+  <data name="Disk_ReadDrive_Physical" xml:space="preserve">
+    <value>Физический</value>
   </data>
 </root>

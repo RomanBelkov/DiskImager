@@ -142,7 +142,7 @@
     <value>Write Error</value>
   </data>
   <data name="Disk_WriteDrive__doesn_t_exist" xml:space="preserve">
-    <value> doesn't exist</value>
+    <value>doesn't exist</value>
   </data>
   <data name="Disk_WriteDrive_Error__Couldn_t_map_partition_to_physical_drive" xml:space="preserve">
     <value>Error: Couldn't map partition to physical drive</value>
@@ -168,17 +168,14 @@
   <data name="Disk_WriteDrive_Cancelled" xml:space="preserve">
     <value>Cancelled</value>
   </data>
-  <data name="Disk_WriteDrive_All_Done___Wrote_" xml:space="preserve">
-    <value>All Done - Wrote </value>
+  <data name="Disk_WriteDrive_bytes" xml:space="preserve">
+    <value>bytes</value>
   </data>
-  <data name="Disk_WriteDrive__bytes__Elapsed_time_" xml:space="preserve">
-    <value> bytes. Elapsed time </value>
+  <data name="Disk_WriteDrive_Wrote" xml:space="preserve">
+    <value>Wrote</value>
   </data>
-  <data name="Disk_WriteDrive_Wrote_" xml:space="preserve">
-    <value>Wrote </value>
-  </data>
-  <data name="Disk_WriteDrive_Elapsed_time__" xml:space="preserve">
-    <value>Elapsed time: </value>
+  <data name="Disk_Elapsed_time" xml:space="preserve">
+    <value>Elapsed time</value>
   </data>
   <data name="Disk_ReadDrive_Error_reading_data_from_drive__" xml:space="preserve">
     <value>Error reading data from drive: </value>
@@ -192,17 +189,14 @@
   <data name="Disk_ReadDrive_No_valid_partitions_on_drive" xml:space="preserve">
     <value>No valid partitions on drive</value>
   </data>
-  <data name="Disk_ReadDrive_Read_" xml:space="preserve">
-    <value>Read </value>
+  <data name="Disk_ReadDrive_Read" xml:space="preserve">
+    <value>Read</value>
   </data>
-  <data name="Disk_ReadDrive__Physical__" xml:space="preserve">
-    <value>(Physical: </value>
+  <data name="Disk_ReadDrive_Physical" xml:space="preserve">
+    <value>Physical</value>
   </data>
-  <data name="Disk_ReadDrive_Elapsed_time__" xml:space="preserve">
-    <value>Elapsed time: </value>
-  </data>
-  <data name="Disk_ReadDrive_All_Done___Read_" xml:space="preserve">
-    <value>All Done - Read </value>
+  <data name="Disk_ReadDrive_All_Done_Read" xml:space="preserve">
+    <value>Read</value>
   </data>
   <data name="MainForm_ButtonWriteClick_File_does_not_exist_" xml:space="preserve">
     <value>File does not exist!</value>

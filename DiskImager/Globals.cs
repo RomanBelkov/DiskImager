@@ -19,6 +19,8 @@ namespace DynamicDevices.DiskWriter
         private static int _maxBufferSize = MAX_BUFFER_SIZE;
         private static int _compressionLevel = DEFAULT_COMPRESSION_LEVEL;
 
+        public const long MbModifier = 1024 * 1024;
+
         public static int MaxBufferSize { get { return _maxBufferSize; } set { _maxBufferSize = value;  } }
 
         public static int CompressionLevel { get { return _compressionLevel; } set { _compressionLevel = value;  } }

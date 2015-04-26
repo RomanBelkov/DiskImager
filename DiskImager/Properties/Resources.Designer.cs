@@ -61,29 +61,20 @@ namespace DynamicDevices.DiskWriter.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Physical: .
+        ///   Looks up a localized string similar to Elapsed time.
         /// </summary>
-        internal static string Disk_ReadDrive__Physical__ {
+        internal static string Disk_Elapsed_time {
             get {
-                return ResourceManager.GetString("Disk_ReadDrive__Physical__", resourceCulture);
+                return ResourceManager.GetString("Disk_Elapsed_time", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All Done - Read .
+        ///   Looks up a localized string similar to Read.
         /// </summary>
-        internal static string Disk_ReadDrive_All_Done___Read_ {
+        internal static string Disk_ReadDrive_All_Done_Read {
             get {
-                return ResourceManager.GetString("Disk_ReadDrive_All_Done___Read_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Elapsed time: .
-        /// </summary>
-        internal static string Disk_ReadDrive_Elapsed_time__ {
-            get {
-                return ResourceManager.GetString("Disk_ReadDrive_Elapsed_time__", resourceCulture);
+                return ResourceManager.GetString("Disk_ReadDrive_All_Done_Read", resourceCulture);
             }
         }
         
@@ -115,6 +106,15 @@ namespace DynamicDevices.DiskWriter.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Physical.
+        /// </summary>
+        internal static string Disk_ReadDrive_Physical {
+            get {
+                return ResourceManager.GetString("Disk_ReadDrive_Physical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Problem with filesystem. It reports it is larger than the disk!.
         /// </summary>
         internal static string Disk_ReadDrive_Problem_with_filesystem__It_reports_it_is_larger_than_the_disk_ {
@@ -124,25 +124,16 @@ namespace DynamicDevices.DiskWriter.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Read .
+        ///   Looks up a localized string similar to Read.
         /// </summary>
-        internal static string Disk_ReadDrive_Read_ {
+        internal static string Disk_ReadDrive_Read {
             get {
-                return ResourceManager.GetString("Disk_ReadDrive_Read_", resourceCulture);
+                return ResourceManager.GetString("Disk_ReadDrive_Read", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  bytes. Elapsed time .
-        /// </summary>
-        internal static string Disk_WriteDrive__bytes__Elapsed_time_ {
-            get {
-                return ResourceManager.GetString("Disk_WriteDrive__bytes__Elapsed_time_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to  doesn&apos;t exist.
+        ///   Looks up a localized string similar to doesn&apos;t exist.
         /// </summary>
         internal static string Disk_WriteDrive__doesn_t_exist {
             get {
@@ -151,11 +142,11 @@ namespace DynamicDevices.DiskWriter.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All Done - Wrote .
+        ///   Looks up a localized string similar to bytes.
         /// </summary>
-        internal static string Disk_WriteDrive_All_Done___Wrote_ {
+        internal static string Disk_WriteDrive_bytes {
             get {
-                return ResourceManager.GetString("Disk_WriteDrive_All_Done___Wrote_", resourceCulture);
+                return ResourceManager.GetString("Disk_WriteDrive_bytes", resourceCulture);
             }
         }
         
@@ -165,15 +156,6 @@ namespace DynamicDevices.DiskWriter.Properties {
         internal static string Disk_WriteDrive_Cancelled {
             get {
                 return ResourceManager.GetString("Disk_WriteDrive_Cancelled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Elapsed time: .
-        /// </summary>
-        internal static string Disk_WriteDrive_Elapsed_time__ {
-            get {
-                return ResourceManager.GetString("Disk_WriteDrive_Elapsed_time__", resourceCulture);
             }
         }
         
@@ -241,11 +223,11 @@ namespace DynamicDevices.DiskWriter.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wrote .
+        ///   Looks up a localized string similar to Wrote.
         /// </summary>
-        internal static string Disk_WriteDrive_Wrote_ {
+        internal static string Disk_WriteDrive_Wrote {
             get {
-                return ResourceManager.GetString("Disk_WriteDrive_Wrote_", resourceCulture);
+                return ResourceManager.GetString("Disk_WriteDrive_Wrote", resourceCulture);
             }
         }
         

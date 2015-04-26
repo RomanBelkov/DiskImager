@@ -281,9 +281,9 @@ namespace DynamicDevices.DiskWriter
 
                         Progress(percentDone);
                         
-                        LogMsg(Resources.Disk_WriteDrive_Wrote_ + percentDone + @"%, " + (offset / (1024 * 1024)) + @" MB / " +
-                                                     (uncompressedlength / (1024 * 1024) + " MB, " +
-                                                      string.Format("{0:F}", (bytesPerSec / (1024 * 1024))) + @" MB/sec," +  Resources.Disk_WriteDrive_Elapsed_time__ + tsElapsed.ToString(@"dd\.hh\:mm\:ss")));
+                        LogMsg(Resources.Disk_WriteDrive_Wrote + @": " + (offset / Globals.MbModifier) + @" / " +
+                                                     (uncompressedlength / Globals.MbModifier) + " MB; " +
+                                                      string.Format("{0:F}", (bytesPerSec / Globals.MbModifier)) + @" MB/s; " +  Resources.Disk_Elapsed_time + ": " + tsElapsed.ToString(@"hh\:mm\:ss"));
                     }
                 }
 
@@ -317,8 +317,8 @@ namespace DynamicDevices.DiskWriter
 
             if (IsCancelling)
                 LogMsg(Resources.Disk_WriteDrive_Cancelled);
-            else 
-                LogMsg(Resources.Disk_WriteDrive_All_Done___Wrote_ + offset + Resources.Disk_WriteDrive__bytes__Elapsed_time_ + tstotalTime.ToString(@"dd\.hh\:mm\:ss"));
+            else
+                LogMsg(Resources.Disk_WriteDrive_Wrote + @" " + offset + @" " + Resources.Disk_WriteDrive_bytes + @". " + Resources.Disk_Elapsed_time + @": " + tstotalTime.ToString(@"hh\:mm\:ss"));
 
             Progress(0);
             return !errored;
@@ -528,10 +528,10 @@ namespace DynamicDevices.DiskWriter
                         var bytesPerSec = offset/tsElapsed.TotalSeconds;
 
                         Progress(percentDone);
-                        LogMsg(Resources.Disk_ReadDrive_Read_ + percentDone + @"%, " + (offset/(1024*1024)) + @" MB / " +
-                                       (readSize/(1024*1024) + @" MB" + Resources.Disk_ReadDrive__Physical__ + (driveSize/(1024*1024)) + " MB), " +
-                                        string.Format("{0:F}", (bytesPerSec/(1024*1024))) + @" MB/sec," + Resources.Disk_ReadDrive_Elapsed_time__ +
-                                        tsElapsed.ToString(@"dd\.hh\:mm\:ss")));
+                        LogMsg(Resources.Disk_ReadDrive_Read + @": " + (offset / Globals.MbModifier) + @" / " +
+                                       (readSize / Globals.MbModifier) + @" MB " + @"(" + Resources.Disk_ReadDrive_Physical + @": " + (driveSize / Globals.MbModifier) + " MB); " +
+                                        string.Format("{0:F}", (bytesPerSec / Globals.MbModifier)) + @" MB/s; " + Resources.Disk_Elapsed_time + ": " +
+                                        tsElapsed.ToString(@"hh\:mm\:ss"));
 
                     }
                 
@@ -563,7 +563,7 @@ namespace DynamicDevices.DiskWriter
             if (IsCancelling)
                 LogMsg(Resources.Disk_WriteDrive_Cancelled);
             else
-                LogMsg(Resources.Disk_ReadDrive_All_Done___Read_ + offset + Resources.Disk_WriteDrive__bytes__Elapsed_time_ + tstotalTime.ToString(@"dd\.hh\:mm\:ss"));
+                LogMsg(Resources.Disk_ReadDrive_All_Done_Read + @" " + offset + @" " + Resources.Disk_WriteDrive_bytes + @". " + Resources.Disk_Elapsed_time + @": " + tstotalTime.ToString(@"hh\:mm\:ss"));
             Progress(0);
             return true;
         }
