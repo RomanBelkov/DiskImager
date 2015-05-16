@@ -121,20 +121,26 @@
   <data name="textBoxFileName.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 47</value>
   </data>
+  <data name="textBoxFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 20</value>
+  </data>
   <data name="buttonRead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>429, 45</value>
+    <value>259, 44</value>
   </data>
   <data name="buttonRead.Text" xml:space="preserve">
-    <value>Чтение</value>
+    <value>Создать образ диска...</value>
   </data>
   <data name="buttonWrite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 45</value>
+    <value>407, 44</value>
+  </data>
+  <data name="buttonWrite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 23</value>
   </data>
   <data name="buttonWrite.Text" xml:space="preserve">
-    <value>Запись</value>
+    <value>Восстановить диск из образа...</value>
   </data>
   <data name="buttonChooseFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 45</value>
+    <value>211, 45</value>
   </data>
   <data name="buttonChooseFile.ToolTip" xml:space="preserve">
     <value>Открыть диалог выбора файла</value>
@@ -156,9 +162,6 @@
   </data>
   <data name="labelDriveTitle.Text" xml:space="preserve">
     <value>Диски</value>
-  </data>
-  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>591, 45</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Отмена</value>
@@ -194,7 +197,7 @@
     <value>О программе</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>123, 22</value>
   </data>
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>Язык</value>
@@ -212,7 +215,7 @@
     <value>Русский</value>
   </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>123, 22</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Помощь</value>

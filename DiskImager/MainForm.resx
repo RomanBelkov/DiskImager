@@ -134,7 +134,7 @@
     <value>54, 13</value>
   </data>
   <data name="buttonRead.Text" xml:space="preserve">
-    <value>Read</value>
+    <value>Create a backup image...</value>
   </data>
   <data name="labelDriveTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -1261,7 +1261,7 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>15</value>
   </data>
   <data name="buttonRead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>429, 46</value>
+    <value>279, 45</value>
   </data>
   <data name="&gt;&gt;labelDriveTitle.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -1348,7 +1348,7 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>English</value>
   </data>
   <data name="buttonWrite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>160, 23</value>
   </data>
   <data name="&gt;&gt;buttonWrite.ZOrder" xml:space="preserve">
     <value>11</value>
@@ -1363,10 +1363,10 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>$this</value>
   </data>
   <data name="textBoxFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 48</value>
+    <value>15, 47</value>
   </data>
   <data name="buttonWrite.Text" xml:space="preserve">
-    <value>Write</value>
+    <value>Restore a drive from image...</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
@@ -1378,13 +1378,13 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>25, 13</value>
   </data>
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>591, 46</value>
+    <value>593, 45</value>
   </data>
   <data name="&gt;&gt;optionsToolStripMenuItem.Name" xml:space="preserve">
     <value>optionsToolStripMenuItem</value>
   </data>
   <data name="buttonChooseFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 46</value>
+    <value>231, 45</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1429,7 +1429,7 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>126, 22</value>
   </data>
   <data name="buttonWrite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 46</value>
+    <value>427, 45</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -1519,7 +1519,7 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>10</value>
   </data>
   <data name="textBoxFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>366, 20</value>
+    <value>213, 20</value>
   </data>
   <data name="menuStripMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>680, 24</value>
@@ -1567,7 +1567,7 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>True</value>
   </data>
   <data name="buttonRead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>142, 23</value>
   </data>
   <data name="flowLayoutPanelProgressBars.Location" type="System.Drawing.Point, System.Drawing">
     <value>141, 89</value>
@@ -1660,7 +1660,7 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>273, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>54</value>
+    <value>82</value>
   </metadata>
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
