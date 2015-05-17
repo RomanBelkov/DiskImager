@@ -30,14 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.textBoxFileName = new System.Windows.Forms.TextBox();
             this.buttonRead = new System.Windows.Forms.Button();
             this.buttonWrite = new System.Windows.Forms.Button();
-            this.buttonChooseFile = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.labelFileName = new System.Windows.Forms.Label();
             this.labelDriveTitle = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
@@ -56,16 +53,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.statusStrip1.SuspendLayout();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBoxFileName
-            // 
-            resources.ApplyResources(this.textBoxFileName, "textBoxFileName");
-            this.textBoxFileName.Name = "textBoxFileName";
-            this.toolTip.SetToolTip(this.textBoxFileName, resources.GetString("textBoxFileName.ToolTip"));
-            this.textBoxFileName.TextChanged += new System.EventHandler(this.TextBoxFileNameTextChanged);
             // 
             // buttonRead
             // 
@@ -82,14 +73,6 @@
             this.toolTip.SetToolTip(this.buttonWrite, resources.GetString("buttonWrite.ToolTip"));
             this.buttonWrite.UseVisualStyleBackColor = true;
             this.buttonWrite.Click += new System.EventHandler(this.ButtonWriteClick);
-            // 
-            // buttonChooseFile
-            // 
-            resources.ApplyResources(this.buttonChooseFile, "buttonChooseFile");
-            this.buttonChooseFile.Name = "buttonChooseFile";
-            this.toolTip.SetToolTip(this.buttonChooseFile, resources.GetString("buttonChooseFile.ToolTip"));
-            this.buttonChooseFile.UseVisualStyleBackColor = true;
-            this.buttonChooseFile.Click += new System.EventHandler(this.ButtonChooseFileClick);
             // 
             // statusStrip1
             // 
@@ -108,12 +91,6 @@
             // 
             this.saveFileDialog1.DefaultExt = "img";
             resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
-            // 
-            // labelFileName
-            // 
-            resources.ApplyResources(this.labelFileName, "labelFileName");
-            this.labelFileName.Name = "labelFileName";
-            this.toolTip.SetToolTip(this.labelFileName, resources.GetString("labelFileName.ToolTip"));
             // 
             // labelDriveTitle
             // 
@@ -245,6 +222,10 @@
             this.label2.Name = "label2";
             this.toolTip.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
+            // openFileDialog1
+            // 
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -256,13 +237,10 @@
             this.Controls.Add(this.checkedListBoxDrives);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.labelDriveTitle);
-            this.Controls.Add(this.labelFileName);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStripMain);
-            this.Controls.Add(this.buttonChooseFile);
             this.Controls.Add(this.buttonWrite);
             this.Controls.Add(this.buttonRead);
-            this.Controls.Add(this.textBoxFileName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStripMain;
             this.MaximizeBox = false;
@@ -281,14 +259,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxFileName;
         private System.Windows.Forms.Button buttonRead;
         private System.Windows.Forms.Button buttonWrite;
-        private System.Windows.Forms.Button buttonChooseFile;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Label labelFileName;
         private System.Windows.Forms.Label labelDriveTitle;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.MenuStrip menuStripMain;
@@ -307,6 +282,7 @@
         private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

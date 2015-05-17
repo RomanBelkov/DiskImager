@@ -126,16 +126,10 @@
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="&gt;&gt;languageToolStripMenuItem.Name" xml:space="preserve">
-    <value>languageToolStripMenuItem</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
-  </data>
   <data name="buttonRead.Text" xml:space="preserve">
     <value>Create a backup image...</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="labelDriveTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
   </data>
@@ -144,9 +138,6 @@
   </data>
   <data name="&gt;&gt;flowLayoutPanelProgressBars.Name" xml:space="preserve">
     <value>flowLayoutPanelProgressBars</value>
-  </data>
-  <data name="&gt;&gt;labelFileName.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="flowLayoutPanelProgressBars.AutoScroll" type="System.Boolean, mscorlib">
@@ -158,8 +149,8 @@
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelFileName.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;menuStripMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -168,13 +159,13 @@
     <value>russianToolStripMenuItem</value>
   </data>
   <data name="flowLayoutPanelProgressLabels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>285, 89</value>
+    <value>159, 186</value>
   </data>
   <data name="menuStripMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;buttonChooseFile.Name" xml:space="preserve">
-    <value>buttonChooseFile</value>
+  <data name="flowLayoutPanelProgressBars.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 186</value>
   </data>
   <data name="menuStripMain.Text" xml:space="preserve">
     <value>menuStrip1</value>
@@ -189,9 +180,6 @@ By default it shows only removable drives, but you can
 change this in 'Options -&gt; Display all drives'</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanelProgressBars.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonChooseFile.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="labelDriveTitle.TabIndex" type="System.Int32, mscorlib">
@@ -209,23 +197,17 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="menuStripMain.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;checkedListBoxDrives.Name" xml:space="preserve">
-    <value>checkedListBoxDrives</value>
-  </data>
   <data name="statusStrip1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;languageToolStripMenuItem.Name" xml:space="preserve">
+    <value>languageToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="textBoxFileName.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;menuStripMain.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Options</value>
@@ -236,8 +218,8 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
     <value>buttonCancel</value>
   </data>
-  <data name="buttonChooseFile.Text" xml:space="preserve">
-    <value>...</value>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|XZ archives (*.xz)|*.xz|ZIP archives (*.zip)|*.zip|GZ archives (*.gz,*.tgz)|*.gz;*.tgz|All files (*.*)|*.*</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -1227,14 +1209,11 @@ change this in 'Options -&gt; Display all drives'</value>
         rEHgB6xB4AesQeAHrEHgB6xB4AesQeAHrEHwB6xB/B+sQf//rEH//6xB//+sQQ==
 </value>
   </data>
-  <data name="unmountDrivesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Unmount drives after write</value>
-  </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Help</value>
   </data>
-  <data name="&gt;&gt;buttonChooseFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="flowLayoutPanelProgressLabels.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
     <value>saveFileDialog1</value>
@@ -1248,20 +1227,14 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="buttonChooseFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 23</value>
-  </data>
-  <data name="displayAllDrivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 22</value>
+  <data name="flowLayoutPanelProgressBars.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;unmountDrivesToolStripMenuItem.Name" xml:space="preserve">
     <value>unmountDrivesToolStripMenuItem</value>
   </data>
-  <data name="checkedListBoxDrives.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
   <data name="buttonRead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>279, 45</value>
+    <value>131, 77</value>
   </data>
   <data name="&gt;&gt;labelDriveTitle.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -1284,8 +1257,8 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="menuStripMain.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="buttonChooseFile.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="saveFileDialog1.Filter" xml:space="preserve">
+    <value>Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|XZ archives (*.xz)|*.xz|ZIP archives (*.zip)|*.zip|GZ archives (*.gz,*.tgz)|*.gz;*.tgz|All files (*.*)|*.*</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1302,9 +1275,6 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="&gt;&gt;checkedListBoxDrives.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="labelFileName.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;displayAllDrivesToolStripMenuItem.Name" xml:space="preserve">
     <value>displayAllDrivesToolStripMenuItem</value>
   </data>
@@ -1320,9 +1290,6 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="statusStrip1.Text" xml:space="preserve">
     <value>statusStrip1</value>
   </data>
-  <data name="labelFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 32</value>
-  </data>
   <data name="&gt;&gt;buttonWrite.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1330,13 +1297,7 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>toolStripStatusLabel1</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 73</value>
-  </data>
-  <data name="saveFileDialog1.Filter" xml:space="preserve">
-    <value>Image Files (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|XZ archives (*.xz)|*.xz|ZIP archives (*.zip)|*.zip|GZ archives (*.gz,*.tgz)|*.gz;*.tgz|All files (*.*)|*.*</value>
-  </data>
-  <data name="&gt;&gt;textBoxFileName.Name" xml:space="preserve">
-    <value>textBoxFileName</value>
+    <value>12, 170</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
@@ -1344,17 +1305,14 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="displayAllDrivesToolStripMenuItem.Text" xml:space="preserve">
     <value>Display All Drives  *** DANGEROUS ***</value>
   </data>
-  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
-    <value>English</value>
+  <data name="&gt;&gt;englishToolStripMenuItem.Name" xml:space="preserve">
+    <value>englishToolStripMenuItem</value>
   </data>
   <data name="buttonWrite.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 23</value>
   </data>
   <data name="&gt;&gt;buttonWrite.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="textBoxFileName.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;russianToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1362,29 +1320,26 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="textBoxFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 47</value>
-  </data>
   <data name="buttonWrite.Text" xml:space="preserve">
-    <value>Restore a drive from image...</value>
+    <value>Restore drive(s) from image...</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 285</value>
+    <value>0, 374</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 13</value>
   </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>593, 45</value>
+    <value>445, 77</value>
   </data>
   <data name="&gt;&gt;optionsToolStripMenuItem.Name" xml:space="preserve">
     <value>optionsToolStripMenuItem</value>
-  </data>
-  <data name="buttonChooseFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 45</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1401,6 +1356,9 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="&gt;&gt;flowLayoutPanelProgressLabels.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
+    <value>openFileDialog1</value>
+  </data>
   <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -1408,7 +1366,7 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>$this</value>
   </data>
   <data name="checkedListBoxDrives.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 184</value>
+    <value>113, 124</value>
   </data>
   <data name="buttonCancel.ToolTip" xml:space="preserve">
     <value />
@@ -1422,23 +1380,17 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="&gt;&gt;buttonWrite.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBoxFileName.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
   <data name="buttonWrite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>427, 45</value>
+    <value>279, 77</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;textBoxFileName.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -1464,14 +1416,8 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="buttonWrite.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="labelFileName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="checkedListBoxDrives.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 89</value>
-  </data>
-  <data name="&gt;&gt;labelFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>12, 45</value>
   </data>
   <data name="&gt;&gt;labelDriveTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1479,11 +1425,8 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="russianToolStripMenuItem.Text" xml:space="preserve">
     <value>Russian</value>
   </data>
-  <data name="&gt;&gt;labelFileName.Name" xml:space="preserve">
-    <value>labelFileName</value>
-  </data>
-  <data name="&gt;&gt;menuStripMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="flowLayoutPanelProgressLabels.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="buttonRead.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1497,8 +1440,8 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="buttonChooseFile.ToolTip" xml:space="preserve">
-    <value>Opens file selection dialog</value>
+  <data name="unmountDrivesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Unmount drives after write</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Info</value>
@@ -1518,11 +1461,11 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="textBoxFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 20</value>
+  <data name="labelDriveTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 29</value>
   </data>
   <data name="menuStripMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>680, 24</value>
+    <value>563, 24</value>
   </data>
   <data name="useMBRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>275, 22</value>
@@ -1546,10 +1489,7 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>680, 22</value>
-  </data>
-  <data name="buttonWrite.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>563, 22</value>
   </data>
   <data name="&gt;&gt;menuStripMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1560,20 +1500,17 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="$this.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="flowLayoutPanelProgressLabels.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="checkedListBoxDrives.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="buttonRead.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 23</value>
   </data>
-  <data name="flowLayoutPanelProgressBars.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 89</value>
+  <data name="&gt;&gt;checkedListBoxDrives.Name" xml:space="preserve">
+    <value>checkedListBoxDrives</value>
   </data>
-  <data name="flowLayoutPanelProgressBars.ToolTip" xml:space="preserve">
-    <value />
+  <data name="buttonWrite.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="labelDriveTitle.ToolTip" xml:space="preserve">
     <value />
@@ -1581,8 +1518,8 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="&gt;&gt;flowLayoutPanelProgressLabels.Name" xml:space="preserve">
     <value>flowLayoutPanelProgressLabels</value>
   </data>
-  <data name="&gt;&gt;buttonChooseFile.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -1591,16 +1528,13 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>toolStripStatusLabel1</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 73</value>
+    <value>156, 170</value>
   </data>
   <data name="labelDriveTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>680, 307</value>
-  </data>
-  <data name="&gt;&gt;textBoxFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>563, 396</value>
   </data>
   <data name="label1.ToolTip" xml:space="preserve">
     <value />
@@ -1608,11 +1542,11 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="&gt;&gt;displayAllDrivesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelFileName.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
   <data name="flowLayoutPanelProgressLabels.Size" type="System.Drawing.Size, System.Drawing">
-    <value>381, 184</value>
+    <value>392, 184</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonRead.ToolTip" xml:space="preserve">
     <value />
@@ -1621,16 +1555,10 @@ change this in 'Options -&gt; Display all drives'</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonRead.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="labelFileName.Text" xml:space="preserve">
-    <value>File Name</value>
+    <value>10</value>
   </data>
   <data name="flowLayoutPanelProgressLabels.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
-  </data>
-  <data name="&gt;&gt;englishToolStripMenuItem.Name" xml:space="preserve">
-    <value>englishToolStripMenuItem</value>
   </data>
   <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 22</value>
@@ -1641,14 +1569,14 @@ change this in 'Options -&gt; Display all drives'</value>
   <data name="&gt;&gt;checkedListBoxDrives.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelDriveTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 73</value>
+  <data name="displayAllDrivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 22</value>
   </data>
-  <data name="flowLayoutPanelProgressLabels.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="flowLayoutPanelProgressBars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 184</value>
+    <value>141, 184</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
@@ -1664,6 +1592,9 @@ change this in 'Options -&gt; Display all drives'</value>
   </metadata>
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>128, 19</value>
   </metadata>
   <metadata name="menuStripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>409, 17</value>

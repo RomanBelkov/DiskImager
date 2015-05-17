@@ -41,6 +41,9 @@ namespace DynamicDevices.DiskWriter
         
         private CultureInfo CurrentLocale { get; set; }
 
+        private String lastFileUsed = "";
+        private String lastDirectoryUsed = "";
+
         #endregion
 
         #region Constructor
@@ -92,10 +95,10 @@ namespace DynamicDevices.DiskWriter
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonChooseFileClick(object sender, EventArgs e)
-        {
-            ChooseFile();
-        }
+        //private void ButtonChooseFileClick(object sender, EventArgs e)
+        //{
+        //    ChooseFile();
+        //}
 
         /// <summary>
         /// Read from removable media to file
@@ -115,8 +118,10 @@ namespace DynamicDevices.DiskWriter
             var drive = (string)checkedListBoxDrives.CheckedItems[0];
 
             ClearLayoutPanels();
-            if (GetPathIfEmpty() == false)
+            if (ChooseFileToRead() == false)
                 return;
+
+            var filePath = lastDirectoryUsed + "//" + lastFileUsed;
 
             DisableButtons(true);
 
@@ -137,7 +142,7 @@ namespace DynamicDevices.DiskWriter
                 var res = false;
                 try
                 {
-                    res = disk.ReadDrive(drive, textBoxFileName.Text, _eCompType, unmountDrivesToolStripMenuItem.Checked);
+                    res = disk.ReadDrive(drive, filePath, _eCompType, unmountDrivesToolStripMenuItem.Checked);
                 }
                 catch (Exception ex)
                 {
@@ -179,10 +184,12 @@ namespace DynamicDevices.DiskWriter
             }
 
             ClearLayoutPanels();
-            if (GetPathIfEmpty() == false) 
+            if (ChooseFileToWrite() == false) 
                 return;
 
-            if (!File.Exists(textBoxFileName.Text))
+            var filePath = lastDirectoryUsed + "//" + lastFileUsed;
+
+            if (!File.Exists(filePath))
             {
                 MessageBox.Show(Resources.MainForm_ButtonWriteClick_File_does_not_exist_, Resources.MainForm_ButtonWriteClick_I_O_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -209,7 +216,7 @@ namespace DynamicDevices.DiskWriter
                     var res = false;
                     try
                     {
-                        res = disk.WriteDrive(drive, textBoxFileName.Text, _eCompType, unmountDrivesToolStripMenuItem.Checked);
+                        res = disk.WriteDrive(drive, filePath, _eCompType, unmountDrivesToolStripMenuItem.Checked);
                     }
                     catch (Exception ex)
                     {
@@ -243,9 +250,10 @@ namespace DynamicDevices.DiskWriter
         /// <param name="e"></param>
         private void MainFormFormClosing(object sender, FormClosingEventArgs e)
         {
-            const string registryPath = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Dynamic Devices Ltd\\DiskImager";
-
-            Registry.SetValue(registryPath, "FileName", textBoxFileName.Text);
+            const string registryPath = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Roman Belkov & Dynamic Devices Ltd\\DiskImager";
+            
+            Registry.SetValue(registryPath, "FileName", lastFileUsed);
+            Registry.SetValue(registryPath, "Directory", lastDirectoryUsed);
             Registry.SetValue(registryPath, "Language", CurrentLocale.Name);
 
             _watcher.DeviceArrived -= OnDriveArrived;
@@ -271,27 +279,54 @@ namespace DynamicDevices.DiskWriter
         #region Implementation
 
         /// <summary>
-        /// Select the file for read / write and setup defaults for whether we're using compression based on extension
+        /// Select the file for write and setup defaults for whether we're using compression based on extension
         /// </summary>
-        private bool ChooseFile()
+        private bool ChooseFileToWrite()
         {
-            var dr = saveFileDialog1.ShowDialog();
+            openFileDialog1.InitialDirectory = lastDirectoryUsed;
+            openFileDialog1.FileName = lastFileUsed;
 
+            var dr = openFileDialog1.ShowDialog();
             if (dr != DialogResult.OK)
                 return false;
-            
-            textBoxFileName.Text = saveFileDialog1.FileName;
-            TextBoxFileNameTextChanged(this, null);
+
+            lastDirectoryUsed = Path.GetDirectoryName(openFileDialog1.FileName);
+            lastFileUsed = Path.GetFileName(openFileDialog1.FileName);
+
+            DefineCompressionType(lastFileUsed);
+
+            return true;
+        }
+
+        /// <summary>
+        /// Select the file for read and setup defaults for whether we're using compression based on extension
+        /// </summary>
+        private bool ChooseFileToRead()
+        {
+            saveFileDialog1.InitialDirectory = lastDirectoryUsed;
+            saveFileDialog1.FileName = lastFileUsed;
+
+            var dr = saveFileDialog1.ShowDialog();
+            if (dr != DialogResult.OK)
+                return false;
+
+            lastDirectoryUsed = Path.GetDirectoryName(saveFileDialog1.FileName);
+            lastFileUsed = Path.GetFileName(saveFileDialog1.FileName);
+
+            DefineCompressionType(lastFileUsed);
+
+            //textBoxFileName.Text = saveFileDialog1.FileName;
+            //TextBoxFileNameTextChanged(this, null);
             return true;
         }
 
         /// <summary>
         /// Before writing / reading we should check that FileName is not empty
         /// </summary>
-        private bool GetPathIfEmpty()
-        {
-            return !string.IsNullOrEmpty(textBoxFileName.Text) || ChooseFile();
-        }
+        //private bool GetPathIfEmpty()
+        //{
+        //    return !string.IsNullOrEmpty(textBoxFileName.Text) || ChooseFile();
+        //}
 
         /// <summary>
         /// Shows on-going process in UI using created elements
@@ -328,17 +363,17 @@ namespace DynamicDevices.DiskWriter
             return (Environment.OSVersion.Platform == PlatformID.Unix) ? new LinuxDiskAccess() as IDiskAccess : new Win32DiskAccess();
         }
 
-        private void TextBoxFileNameTextChanged(object sender, EventArgs e)
+        private void DefineCompressionType(string file)
         {
-            if (textBoxFileName.Text.ToLower().EndsWith(".tar.gz") || textBoxFileName.Text.ToLower().EndsWith(".tgz"))
+            if (file.ToLower().EndsWith(".tar.gz") || file.ToLower().EndsWith(".tgz"))
                 _eCompType = EnumCompressionType.Targzip;
-            else if (textBoxFileName.Text.ToLower().EndsWith(".gz"))
+            else if (file.ToLower().EndsWith(".gz"))
                 _eCompType = EnumCompressionType.Gzip;
-            else if (textBoxFileName.Text.ToLower().EndsWith(".zip"))
+            else if (file.ToLower().EndsWith(".zip"))
                 _eCompType = EnumCompressionType.Zip;
-            else if (textBoxFileName.Text.ToLower().EndsWith(".xz"))
+            else if (file.ToLower().EndsWith(".xz"))
                 _eCompType = EnumCompressionType.XZ;
-            else 
+            else
                 _eCompType = EnumCompressionType.None;
         }
 
@@ -405,8 +440,6 @@ namespace DynamicDevices.DiskWriter
             buttonWrite.Enabled = false;
             buttonCancel.Enabled = running;
             checkedListBoxDrives.Enabled = false;
-            textBoxFileName.Enabled = false;
-            buttonChooseFile.Enabled = false;
             menuStripMain.Enabled = !running;
         }
 
@@ -419,8 +452,6 @@ namespace DynamicDevices.DiskWriter
             buttonWrite.Enabled = true;
             buttonCancel.Enabled = false;
             checkedListBoxDrives.Enabled = true;
-            textBoxFileName.Enabled = true;
-            buttonChooseFile.Enabled = true;
             menuStripMain.Enabled = true;
         }
 
@@ -502,7 +533,6 @@ namespace DynamicDevices.DiskWriter
 
         private void ChangeToolTipLanguage(ComponentResourceManager resources)
         {
-            toolTip.SetToolTip(buttonChooseFile, resources.GetString("buttonChooseFile.ToolTip"));
             toolTip.SetToolTip(checkedListBoxDrives, resources.GetString("checkedListBoxDrives.ToolTip"));
         }
 
@@ -524,16 +554,25 @@ namespace DynamicDevices.DiskWriter
 
         private static void CreateRegistry()
         {
-            if ((string) Registry.GetValue(RegistryPath, "Language", "") != null) return;
+            if ((string) Registry.GetValue(RegistryPath, "Directory", "") != null) return;
             Registry.SetValue(RegistryPath, "FileName", "");
+            Registry.SetValue(RegistryPath, "Directory", "");
             Registry.SetValue(RegistryPath, "Language", "en-US");
         }
 
         private void ReadRegistry()
         {
+            var directory = (string) Registry.GetValue(RegistryPath, "Directory", "");
+            if (Directory.Exists(directory))
+            {
+                lastDirectoryUsed = directory;
+            } else
+            {
+                Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
+            }
+
             var file = (string)Registry.GetValue(RegistryPath, "FileName", "");
-            if (File.Exists(file))
-                textBoxFileName.Text = file;
+            lastFileUsed = file;
 
             var lang = (string)Registry.GetValue(RegistryPath, "Language", "en-US");
             if (lang != "en-US")

@@ -118,44 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="textBoxFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 47</value>
-  </data>
-  <data name="textBoxFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 20</value>
-  </data>
   <data name="buttonRead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 44</value>
+    <value>142, 93</value>
   </data>
   <data name="buttonRead.Text" xml:space="preserve">
-    <value>Создать образ диска...</value>
+    <value>Создать образ флешки...</value>
   </data>
   <data name="buttonWrite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>407, 44</value>
+    <value>290, 93</value>
   </data>
   <data name="buttonWrite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 23</value>
+    <value>196, 23</value>
   </data>
   <data name="buttonWrite.Text" xml:space="preserve">
-    <value>Восстановить диск из образа...</value>
+    <value>Восстановить флешки из образа...</value>
   </data>
-  <data name="buttonChooseFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 45</value>
-  </data>
-  <data name="buttonChooseFile.ToolTip" xml:space="preserve">
-    <value>Открыть диалог выбора файла</value>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>590, 22</value>
   </data>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
-    <value>Файлы образов (*.img,*.bin,*.sdcard)|*.img;*.bin;*.sdcard|XZ архивы (*.xz)|*.xz|ZIP архивы (*.zip)|*.zip|GZ архивы (*.gz,*.tgz)|*.gz;*.tgz|Все файлы (*.*)|*.*</value>
-  </data>
-  <data name="labelFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 31</value>
-  </data>
-  <data name="labelFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
-  </data>
-  <data name="labelFileName.Text" xml:space="preserve">
-    <value>Имя файла</value>
+    <value>Все поддерживаемые форматы(*.img,*.bin,*.sdimg, *.xz, *.zip, *.gz, *.tgz)|*.img;*.bin;*.sdimg; *.xz; *.zip; *.gz; *.tgz|Файлы образов (*.img,*.bin,*.sdimg)|*.img;*.bin;*.sdimg|XZ архивы (*.xz)|*.xz|ZIP архивы (*.zip)|*.zip|GZ архивы (*.gz,*.tgz)|*.gz;*.tgz|Все файлы (*.*)|*.*</value>
   </data>
   <data name="labelDriveTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -163,8 +145,14 @@
   <data name="labelDriveTitle.Text" xml:space="preserve">
     <value>Диски</value>
   </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>492, 93</value>
+  </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Отмена</value>
+  </data>
+  <data name="menuStripMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>590, 24</value>
   </data>
   <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -225,6 +213,9 @@
 По умолчанию отображаются флешки, но можно дополнительно
 отобразить внутренние диски компьютера в 'Опции -&gt; Показать все диски'</value>
   </data>
+  <data name="flowLayoutPanelProgressLabels.Size" type="System.Drawing.Size, System.Drawing">
+    <value>419, 184</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
   </data>
@@ -236,6 +227,12 @@
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Информация</value>
+  </data>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>Все поддерживаемые форматы(*.img,*.bin,*.sdimg, *.xz, *.zip, *.gz, *.tgz)|*.img;*.bin;*.sdimg; *.xz; *.zip; *.gz; *.tgz|Файлы образов (*.img,*.bin,*.sdimg)|*.img;*.bin;*.sdimg|XZ архивы (*.xz)|*.xz|ZIP архивы (*.zip)|*.zip|GZ архивы (*.gz,*.tgz)|*.gz;*.tgz|Все файлы (*.*)|*.*</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>590, 396</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
