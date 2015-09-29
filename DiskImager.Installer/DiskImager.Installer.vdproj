@@ -28,12 +28,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4C9E153BB206498EB3F99948F60DD2E3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7A90225E7B5B42BF83B88E936E1116F1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -53,6 +47,12 @@
         "Entry"
         {
         "MsmKey" = "8:_A17092931AB948C08820FE8E9E8B24A5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B5FC2750082B4FB18131860FB1717AF0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -83,13 +83,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2A202A8E898BF0213E650B636A646B65"
+        "OwnerKey" = "8:_8798A45953E30B8F6063024DF55EE398"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8798A45953E30B8F6063024DF55EE398"
+        "OwnerKey" = "8:_2A202A8E898BF0213E650B636A646B65"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -199,11 +199,6 @@
             "AssemblyAsmDisplayName" = "8:XZ.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_2A202A8E898BF0213E650B636A646B65"
-                    {
-                    "Name" = "8:XZ.NET.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:XZ.NET.dll"
             "TargetName" = "8:"
@@ -227,26 +222,6 @@
             {
             "SourcePath" = "8:..\\doc\\LICENSE.txt"
             "TargetName" = "8:LICENSE.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4C9E153BB206498EB3F99948F60DD2E3"
-            {
-            "SourcePath" = "8:..\\XZ.NET\\liblzma.dll"
-            "TargetName" = "8:liblzma.dll"
             "Tag" = "8:"
             "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
             "Condition" = "8:"
@@ -290,11 +265,6 @@
             "AssemblyAsmDisplayName" = "8:ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8798A45953E30B8F6063024DF55EE398"
-                    {
-                    "Name" = "8:ICSharpCode.SharpZipLib.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:ICSharpCode.SharpZipLib.dll"
             "TargetName" = "8:"
@@ -320,6 +290,26 @@
             "TargetName" = "8:UserGuide.docx"
             "Tag" = "8:"
             "Folder" = "8:_49DC947A3E944FD09BA60CB082D9EC7E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B5FC2750082B4FB18131860FB1717AF0"
+            {
+            "SourcePath" = "8:..\\DiskImager\\liblzma.dll"
+            "TargetName" = "8:liblzma.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_072AE4B10D3C471AA2B16D68E3691837"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
