@@ -142,7 +142,7 @@ namespace DynamicDevices.DiskWriter
                 var res = false;
                 try
                 {
-                    res = disk.ReadDrive(drive, filePath, _eCompType, unmountDrivesToolStripMenuItem.Checked);
+                    res = disk.ReadDrive(drive, filePath, _eCompType, useMBRToolStripMenuItem.Checked);
                 }
                 catch (Exception ex)
                 {
