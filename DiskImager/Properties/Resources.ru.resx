@@ -150,6 +150,9 @@
   <data name="Disk_ReadDrive_Error_reading_data_from_drive___past_EOF_" xml:space="preserve">
     <value>Ошибка чтения. Ушли за EOF?</value>
   </data>
+  <data name="Disk_WriteDrive_Image_size_too_big" xml:space="preserve">
+    <value>Размер образа слишком большой</value>
+  </data>
   <data name="Disk_ReadDrive_No_valid_partitions_on_drive" xml:space="preserve">
     <value>На диске нет доступных разделов</value>
   </data>
@@ -212,5 +215,8 @@
   </data>
   <data name="Disk_ReadDrive_Physical" xml:space="preserve">
     <value>Физический</value>
+  </data>
+  <data name="MainForm_ButtonWriteClick_See_an_error_in_section_Info" xml:space="preserve">
+    <value>Смотрите ошибку в разделе Инфо</value>
   </data>
 </root>

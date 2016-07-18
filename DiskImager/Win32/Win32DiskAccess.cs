@@ -16,7 +16,7 @@ using Microsoft.Win32.SafeHandles;
 
 namespace DynamicDevices.DiskWriter.Win32
 {
-    internal class Win32DiskAccess : IDiskAccess
+    internal class Win32DiskAccess
     {
         #region Fields
 
@@ -25,7 +25,7 @@ namespace DynamicDevices.DiskWriter.Win32
 
         #endregion
 
-        #region IDiskAccess Members
+        #region Win32DiskAccess Members
 
         public event TextHandler OnLogMsg;
 

@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using DynamicDevices.DiskWriter.Properties;
+using DynamicDevices.DiskWriter.Win32;
 using ICSharpCode.SharpZipLib.GZip;
 using ICSharpCode.SharpZipLib.Tar;
 using ICSharpCode.SharpZipLib.Zip;
@@ -65,13 +66,13 @@ namespace DynamicDevices.DiskWriter
             }
         }
 
-        private readonly IDiskAccess _diskAccess;
+        private readonly Win32DiskAccess _diskAccess;
 
         /// <summary>
         /// Construct Disk object with underlying platform specific disk access implementation
         /// </summary>
         /// <param name="diskAccess"></param>
-        public Disk(IDiskAccess diskAccess)
+        public Disk(Win32DiskAccess diskAccess)
         {
             _diskAccess = diskAccess;
         }
@@ -213,6 +214,12 @@ namespace DynamicDevices.DiskWriter
                         uncompressedlength = fs.Length;
 
                         break;
+                }
+
+                if (uncompressedlength > driveSize)
+                {
+                    LogMsg(Resources.Disk_WriteDrive_Image_size_too_big);
+                    return false;
                 }
 
                 var bufferOffset = 0;
