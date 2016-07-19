@@ -73,6 +73,9 @@ namespace DynamicDevices.DiskWriter
             else
                 DisableButtons(false);
 
+            Logger _log = new Logger();
+            _log.Error("Startup");
+
             ReadRegistry();
 
             _watcher.DeviceArrived += OnDriveArrived;
