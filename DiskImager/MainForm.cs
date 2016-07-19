@@ -34,7 +34,7 @@ namespace DynamicDevices.DiskWriter
         #region Fields
 
         private readonly List<Disk> _disks = new List<Disk>();
-        internal readonly List<IDiskAccess> DiskAccesses = new List<IDiskAccess>();
+        internal readonly List<Win32DiskAccess> DiskAccesses = new List<Win32DiskAccess>();
 
         private DriveDetector _watcher = new DriveDetector();
         private EnumCompressionType _eCompType;
@@ -130,7 +130,7 @@ namespace DynamicDevices.DiskWriter
                 DiskAccesses.Clear();
                 _disks.Clear();
 
-                var diskAccess = NewDiskAccess();
+                Win32DiskAccess diskAccess = new Win32DiskAccess() as Win32DiskAccess;
                 var disk = new Disk(diskAccess);
 
                 Thread.CurrentThread.CurrentUICulture = CurrentLocale;
@@ -204,7 +204,7 @@ namespace DynamicDevices.DiskWriter
 
                 var tasks = drives.Select(drive => Task.Factory.StartNew(() =>
                 {
-                    var diskAccess = NewDiskAccess();
+                    Win32DiskAccess diskAccess = new Win32DiskAccess() as Win32DiskAccess;
                     var disk = new Disk(diskAccess);
 
                     Thread.CurrentThread.CurrentUICulture = CurrentLocale;
@@ -225,6 +225,7 @@ namespace DynamicDevices.DiskWriter
 
                     if (!res && !disk.IsCancelling)
                     {
+
                         Invoke(new Action ( () => MessageBox.Show(Resources.MainForm_ButtonWriteClick_Problem_writing_to_disk__Is_it_write_protected_, Resources.MainForm_ButtonWriteClick_Write_Error,
                             MessageBoxButtons.OK, MessageBoxIcon.Error)));
                     }
@@ -358,10 +359,10 @@ namespace DynamicDevices.DiskWriter
         /// <summary>
         /// Create disk object for media accesses
         /// </summary>>
-        private static IDiskAccess NewDiskAccess()
+        /*private static Win32DiskAccess NewDiskAccess()
         {
-            return (Environment.OSVersion.Platform == PlatformID.Unix) ? new LinuxDiskAccess() as IDiskAccess : new Win32DiskAccess();
-        }
+            return (Environment.OSVersion.Platform == PlatformID.Unix) ? new LinuxDiskAccess() as Win32DiskAccess : new Win32DiskAccess() as Win32DiskAccess;
+        }*/
 
         private void DefineCompressionType(string file)
         {
