@@ -22,6 +22,7 @@ namespace DynamicDevices.DiskWriter.Win32
 
         SafeFileHandle _partitionHandle;
         SafeFileHandle _diskHandle;
+        private Logger _log = new Logger();
 
         #endregion
 
@@ -206,13 +207,17 @@ namespace DynamicDevices.DiskWriter.Win32
 
         public long GetDriveSize(string drivePath)
         {
+            //todo consider using Open method?
+
             //
             // Now that we've dismounted the logical volume mounted on the removable drive we can open up the physical disk to write
             //
-            var diskHandle = NativeMethods.CreateFile(drivePath, NativeMethods.GENERIC_WRITE, 0, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0, IntPtr.Zero);
+            var diskHandle = NativeMethods.CreateFile(drivePath, NativeMethods.GENERIC_WRITE, NativeMethods.FILE_SHARE_READ | NativeMethods.FILE_SHARE_WRITE, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0, IntPtr.Zero);
             if (diskHandle.IsInvalid)
             {
-                LogMsg( @"Failed to open device: " + Marshal.GetHRForLastWin32Error());
+                var lastErr = Marshal.GetHRForLastWin32Error();
+                LogMsg( @"Failed to open device: " + lastErr);
+                _log.Error("Failed to open device at GetDriveSize. Last error {0}", lastErr);
                 return -1;
             }
 
