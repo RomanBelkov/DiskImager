@@ -605,16 +605,16 @@ namespace DynamicDevices.DiskWriter
 
             // Following part is attempt to determine the size of all partitions 
             // by last byte of one of them
-            var endOfLastPartition = 0L;
+            Int64 endOfLastPartition = 0L;
 
             if(mbr.firstPartition.type != EnumPartitionType.EMPTY)
             {
-                endOfLastPartition = (mbr.firstPartition.sectorsFromMBRToPartition + mbr.firstPartition.sectorsInPartition) * 512;
+                endOfLastPartition = (mbr.firstPartition.sectorsFromMBRToPartition + mbr.firstPartition.sectorsInPartition) * 512L;
             }
 
             if (mbr.secondPartition.type != EnumPartitionType.EMPTY)
             {
-                var endOfPartition = (mbr.secondPartition.sectorsFromMBRToPartition + mbr.secondPartition.sectorsInPartition) * 512;
+                Int64 endOfPartition = (mbr.secondPartition.sectorsFromMBRToPartition + mbr.secondPartition.sectorsInPartition) * 512L;
                 if (endOfLastPartition < endOfPartition) 
                 {
                     endOfLastPartition = endOfPartition;
@@ -623,7 +623,7 @@ namespace DynamicDevices.DiskWriter
 
             if (mbr.thirdPartition.type != EnumPartitionType.EMPTY)
             {
-                var endOfPartition = (mbr.thirdPartition.sectorsFromMBRToPartition + mbr.thirdPartition.sectorsInPartition) * 512;
+                Int64 endOfPartition = (mbr.thirdPartition.sectorsFromMBRToPartition + mbr.thirdPartition.sectorsInPartition) * 512L;
                 if (endOfLastPartition < endOfPartition)
                 {
                     endOfLastPartition = endOfPartition;
@@ -632,7 +632,7 @@ namespace DynamicDevices.DiskWriter
 
             if (mbr.fourthPartition.type != EnumPartitionType.EMPTY)
             {
-                var endOfPartition = (mbr.fourthPartition.sectorsFromMBRToPartition + mbr.fourthPartition.sectorsInPartition) * 512;
+                Int64 endOfPartition = (mbr.fourthPartition.sectorsFromMBRToPartition + mbr.fourthPartition.sectorsInPartition) * 512L;
                 if (endOfLastPartition < endOfPartition)
                 {
                     endOfLastPartition = endOfPartition;
